@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="F40C860C4DC9AF3A">
+  <PROJECT FORMAT="1.00" NAME="EnergyNetSim" AUTHOR="Ludowicy" CREATED="2016.06.20 09:06:56" MODIFIED="2016.06.20 10:12:40">
+    <DIAGRAMS>
+      <DIAGRAM FORMAT="1.00" ID="0" NAME="Berechnung elektr. Stromverbrauch" CREATED="2016.06.20 09:09:31" MODIFIED="2016.06.20 10:12:40">
+        <LAYOUT FORMAT="1.00" COLUMNS="2" ROWS="19">
+          <ENTRIES>
+            <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
+              <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
+                <TEXT><![CDATA[Berechnung elektr. Stromverbrauch]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="1">
+              <FIGURE SUBTYPE="PapStart" FORMAT="1.00" ID="1">
+                <TEXT><![CDATA[Start]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="2">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="4">
+                <TEXT><![CDATA[Einlesen von Datenbanktabellen]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="3">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="58">
+                <TEXT><![CDATA[Eingabe der Einzel- oder Mehrfachauswahl der statischen Netze durch Anwendungsbenutzer]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="4">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="24" ASSOCIATE="26">
+                <TEXT><![CDATA[je ausgewähltes statisches Netz]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="5">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="6" ASSOCIATE="8">
+                <TEXT><![CDATA[je Netzlastprofil.Iterationsnummer]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="6">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="17">
+                <TEXT><![CDATA[interne Berechnungsvariablen neu setzen]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="7">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="11" ASSOCIATE="13">
+                <TEXT><![CDATA[je Netzlastprofil.NetzlastprofilID, wo die Iterationsnummer gleich der aktuellen Iterationsnummer ist]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="8">
+              <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="15">
+                <TEXT><![CDATA[Routingentscheidung]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="9">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="31">
+                <TEXT><![CDATA[valide Routingmöglichkeit gefunden?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="10">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="13" ASSOCIATE="11">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="11">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="19">
+                <TEXT><![CDATA[Berechnung des aktuellen elektr. Stromverbrauchs des Netzwerkes durch Addition der Verbrauchswerte der einzelnen aktiven Geräte abhängig von der berechneten Auslastung und aktivierten Ports]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="12">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="8" ASSOCIATE="6">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="13">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="26" ASSOCIATE="24">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="14">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="56">
+                <TEXT><![CDATA[Ausgabe von Berechnungserfolgsmeldung]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="15">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="53">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="16">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="21">
+                <TEXT><![CDATA[Addition der Verbrauchswerte der einzelnen Iterationen zu Gesamtstromverbrauch]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="17">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="51">
+                <TEXT><![CDATA[Anzeigen der einzelnen elektr. Stromverbrauchswerte und Summen als Tabelle und Diagramm]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="18">
+              <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
+                <TEXT><![CDATA[Ende]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="5">
+              <FIGURE SUBTYPE="PapComment" FORMAT="1.00" ID="10">
+                <TEXT><![CDATA[Berechnung des elektr. Stromverbrauchs während dieser Iteration nach festlegen der Routingentscheidungen und daraus berechneter Hardwareauslastung]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="7">
+              <FIGURE SUBTYPE="PapComment" FORMAT="1.00" ID="23">
+                <TEXT><![CDATA[Verwendung eines Greedy-Algorithmus (Optimale Penalty je Netzlastprofil-Eintrag, nicht unbedingt das Optimum für das gesamte Netzwerk und alle Lastprofil-Einträge)]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="9">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="35">
+                <TEXT><![CDATA[Ausgabe von Fehlernachricht, da entweder keine Gültige Netzkonfiguration vorliegt, oder die Greedy-Algorithmus-Entscheidungen zu ineffizient waren]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="10">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="49">
+                <TEXT><![CDATA[setzen aller Iterations-Verbrauchswerte auf 0, da ungültiges Ergebnis]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="15">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="46">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+          </ENTRIES>
+        </LAYOUT>
+        <CONNECTIONS>
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="4" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="5" FROM="4" TO="58" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="54" FROM="53" TO="21" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="7" FROM="6" TO="17" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="14" FROM="13" TO="19" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="12" FROM="11" TO="15" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="16" FROM="15" TO="31" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="18" FROM="17" TO="11" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="20" FROM="19" TO="8" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="28" FROM="26" TO="56" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="9" FROM="8" TO="26" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="25" FROM="24" TO="6" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="22" FROM="21" TO="51" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="32" FROM="31" TO="13" TEXT="ja" />
+          <CONNECTION FORMAT="1.00" ID="34" FROM="31" TO="35" TEXT="nein" />
+          <CONNECTION FORMAT="1.00" ID="55" FROM="46" TO="53" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="37" FROM="35" TO="49" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="50" FROM="49" TO="46" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="52" FROM="51" TO="2" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="57" FROM="56" TO="53" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="59" FROM="58" TO="24" TEXT="" />
+        </CONNECTIONS>
+      </DIAGRAM>
+      <DIAGRAM FORMAT="1.00" ID="1" NAME="Routingentscheidung" CREATED="2016.06.20 09:28:30" MODIFIED="2016.06.20 09:28:30">
+        <LAYOUT FORMAT="1.00" COLUMNS="2" ROWS="3">
+          <ENTRIES>
+            <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
+              <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
+                <TEXT><![CDATA[Routingentscheidung]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="1">
+              <FIGURE SUBTYPE="PapStart" FORMAT="1.00" ID="1">
+                <TEXT><![CDATA[Start]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="2">
+              <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
+                <TEXT><![CDATA[Ende]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="1">
+              <FIGURE SUBTYPE="PapComment" FORMAT="1.00" ID="4">
+                <TEXT><![CDATA[Gegeben: Netzlastprofil-ID, statisches Netz ID, Liste der Hardware mit Aktivierungsstatus, Auslastungsstatus der einzelnen Verbindungen innerhalb aktueller Iteration]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+          </ENTRIES>
+        </LAYOUT>
+        <CONNECTIONS>
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="2" TEXT="" />
+        </CONNECTIONS>
+      </DIAGRAM>
+    </DIAGRAMS>
+  </PROJECT>
+</FRAME>
