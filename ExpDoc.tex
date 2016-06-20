@@ -190,6 +190,23 @@ Start Softwareentwicklung
 	- Design
 Implementierung
 \subsubsection{Entwicklung des Routing-Algorithmus}
+Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig. Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics zu berechnen. Über die Dauer eines Zeitabschnittes (einer Iteration) bleiben die Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich. Diese werden je Iteration initial einmal berechnet. Durch die Anpassung der Iterationsdauer und der dazu passenden Anpassung der Netzlast-Daten lässt sich ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
+
+Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration am "besten" ist, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Um eine schnelle praktische Ausführungszeit zu erreichen beinhaltet dieser Algorithmus "Intelligenz" um schlechte Routen frühzeitig zu ignorieren und zum Beispiel Schleifenbildung zu verhindern.
+
+Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektr. Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und diese einzelnen Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
+
+Alles in allem ist ein Regelsatz zur Penaltyberechnung je Iteration notwendig, an Hand welchem die Algorithmus-Implementierung jeweils versucht das lokale Optimum zum Routingproblem als Lösung zu finden.
+Der folgende Regelsatz stellte sich beim logischen durchspielen einer solchen Simulation als Grundlage heraus:
+\begin{itemize}
+\item Zum Anfang jeder neuen Iterations-Zeitphase sind alle Geräte und alle Ports soweit diese dies unterstützten ausgeschaltet
+\item Das Aktivieren eines Devices kostet Penalty (hoch)
+\item Das Aktivieren eines Ports kostet Penalty (niedrig)
+\item Das Ausschalten des Port-Energiesparmodus kostet keine Penalty, um vermeidbares aktivieren anderer Hardware / Ports zu vermeiden. Energiesparmodus-Capability zählt lediglich zur Berechnung des Stromverbrauchs.
+\item Um niedrige Paketlaufzeiten durch das Netz sicherzustellen, kostet jeder Hop / genutzte Verbindung eine weitere Penalty (hoch)
+\end{itemize}
+Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jeweils eine feste Penalty basierend auf Verstärkeranzahl + Länge -> statischer Wert in Datenbank.
+
 
 \subsubsection{Komplexität bei der Entwicklung}
 
