@@ -93,23 +93,20 @@
 Hier muss auch was stehen, oder? 
 In der vorliegenden Arbeit...
 Sollten wir evtl die Unterkapitel-Aufteilung weg lassen?
-
+%TODO Klimalwandel, CO2, 
 %TODO Potential alternativer Energiequellen
-
+% siehe auch Todoist Kommentar
 %TODO Dominik
-
-
-
 
 
 \section{Stand der Forschung} \label{SdF}
 Definition Wirtschaftlichkeit, Carriernetz
-
 Betriebskosten, Wirtschaftlichkeit, etc.
 CAPEX OPEX
 Wirtschaftlichkeit
 Definieren
 Wir betrachten einen Teil der Betriebskosten, nämlich: .....
+% Evtl. die Sachen zu Wirtschaftlichkeit mit einem Hinweis, dass wir uns auf einen Teil, nämlich die Betriebskosten beschränken, in entweder Problemstellung oder Methodik
 
 \subsection{Carrier-Netzwerke} 
 
@@ -144,18 +141,10 @@ Bei den Technologien beschränkt sich diese Arbeit auf optische leitungsvermitte
 
 \section{Problemstellung}
 Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
+%citation needed!
 
 \subsection{Motivation}
-%Steigende Netzlast, steigende Datenvolumen, Industrie 4.0/Internet of Things, steigende Energiekosten, Wirtschaftlichkeit
-%Diagramm Anteil der Telekommunikation am Gesamtenergieverbrauch / Prognose Datenvolumen weltweit
-
-
-%TODO: Verbrauch von Kommunikationsnetzen detaillierter darstellen - VL
-
-
 Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder sogar leicht zurück geht, wachsen die globalen Verbräuche weiter an (vgl. Abbildung \ref{fig:Strom_Sektor}). Dies kann vor allem auf  Schwellenländer zurückgeführt werden, die in kurzer Zeit ein rasantes wirtschaftliches Wachstum erleben.
-
- 
 
 \begin{figure}[!ht]
 	\centering
@@ -164,7 +153,6 @@ Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder s
 	\label{fig:Strom_Sektor}
 \end{figure}
 Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
-
 
 Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite{vanHeggedhem} S.9). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ICT_Strom}) 
 
@@ -175,35 +163,27 @@ Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Ne
 	\label{fig:ICT_Strom}
 \end{figure}
 
- Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
-
-
-
+Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
+%evtl. nach oben ziehen als 1. Absatz für Problemstellung
 
 \subsection{Ziele}
 Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Kosten  durch Verwendung energieeffizienter Technologien eingespart werden können.
 
 Zur Erreichung dieses Ziels ist zum einen eine Literaturrecherche zu den bestehenden Technologien nötig, die es ermöglichen, den Energieverbrauch von Netzen zu senken. Die Ergebnisse dieser Literaturrecherche befinden sich in Kapitel \ref{SdF}.
 
-Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{EBD}.
+Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{Ergebnisse}.
 
 Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
 
 Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. Das genaue Vorgehen in der Softwareentwicklung wird im folgenden Kapitel erläutert.
 
-
-\section{Methoden/Vorgehen}
-
-
-
+\section{Vorgehen}
 
 \subsection{Modellierung}
 Zwei Netze modelliert (Quellen), um sie gegenüberstellen zu können. Techniken aus Kapitel "Energieeffiziente Technologien" eingesetzt.
 Aufgrund der Recherche ist Simulation nötig.
 
-\subsection{Simulationsansatz}
-%Brauchen wir hier subsubsections oder machen wir das als subsections (gleichwertig zu modellierung)?
-\subsubsection{Softwareentwicklung}
+\subsection{Softwareentwicklung}
 
 Anforderungen an eine mögliche Simulationssoftware erarbeitet
 Entscheidung/Festlegung Entwicklungmodell / Technologiestack / Systemlandschaft, weil....
@@ -212,7 +192,7 @@ Start Softwareentwicklung
 	- Spezifikation
 	- Design
 Implementierung
-\subsubsection{Entwicklung des Routing-Algorithmus}
+\subsection{Entwicklung des Routing-Algorithmus}
 Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig. Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics zu berechnen. Über die Dauer eines Zeitabschnittes (einer Iteration) bleiben die Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich. Diese werden je Iteration initial einmal berechnet. Durch die Anpassung der Iterationsdauer und der dazu passenden Anpassung der Netzlast-Daten lässt sich ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
 \begin{figure}[!h]
 	\centering
@@ -251,26 +231,48 @@ Der folgende Regelsatz stellte sich beim logischen durchspielen einer solchen Si
 Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jeweils eine feste Penalty basierend auf Verstärkeranzahl + Länge -> statischer Wert in Datenbank.
 
 
-\subsubsection{Komplexität bei der Entwicklung}
+\subsection{Komplexität bei der Entwicklung}
 
-\section{Ergebnisse, Beitrag, Diskussion} \label{EBD}
+\section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
 \subsection{Algorithmus}
-Das Ziel des teilweise entwickelten Algorithmus ist das effiziente und realitätsnahe abschätzen der zu erwartenden Energieverbrauchswerte von Backbone-Netzwerken sowohl mit als auch ohne Einsetzen der Energieeinspartechnologien. Es stellte sich während der genaueren Analyse und zu Anfang der Implementierungsphase der Software allerdings heraus, dass der gewählte generische Ansatz einerseits sehr komplex ist und andererseits auf vielen Annahmen und Verallgemeinerungen beruht, die im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der in Entwicklung befindlichen Softwarelösung fast unmöglich machen. 
+% Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
+% Diskussion des Ergebnisses und der Schwierigkeiten bei der Implementierung werden im nächsten Kapitel berücksichtigt
+
 %TODO: getroffene Annahmen und Verallgemeinerungen erläutern
-%TODO: Problem der Routingentscheidungen kurz und knapp erläutern
-Um die Schwächen des entwickelten Algorithmus auszugleichen oder abzuschwächen ist deutlich mehr Bearbeitungszeit notwendig als für diese wissenschaftliche Arbeit zur Verfügung steht.
-Weiterhin zeigt eine Begutachtung der Aufgabenstellung dieser Arbeit, dass die detaillierte Ausarbeitung eines solchen Algorithmus nicht Teil des geforderten oder erwartbarem Umfangs ist.
-Aufgrund der genannten Probleme entschieden wir uns dazu, auf die Dokumentation der geleisteten Entwicklung und die Erfüllung der Aufgabenstellung dieser Arbeit den Schwerpunkt zu setzen. 
+
 \subsection{Software}
 \subsection{Abschätzung des Energieverbrauchs}
 %Für die zwei Beispiel-Szenarien
+% Ausgehend von Kapitel Modellierung
+%TODO Verwenden der Werte, die als Dummy Werte in der Software verwendet werden.
+% Einbinden auch als Grafik
 
+\section{Diskussion und Erkenntnisse}
+%TODO Veronika
+% Enthusiasmus und Forschergeist --> Sachlich richtige Simulation entwickeln, um valides Ergebnis zu erreichen
+% Algorithmus Entwicklung --> Komplexität und Herausforderungen
+% Erkenntnis: Aufgrund der Komplexität (verschiedene Layer, realistische Netzlast (nur "Stream" pro Stunde, keine Berücksichtung von Burst-Traffic, QoS Parameter, Matching der energieeffizienten Konzepte)
+% Um die Umsetzbarkeit zu gewährleisten, müssen sehr viele Annahmen getroffen werden (...) --> Ziel des Realismus geht zum Teil verloren.
+% Entwicklung des Algorithmus innerhalb der Projektdauer nicht möglich (hier Infos von unten rein nehmen)
+% Daher Grundgerüst implementiert und Algorithmus dokumentiert.
+% Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
 
-\section{Präsentation und Auswertung der Ergebnisse}
+Das Ziel des teilweise entwickelten Algorithmus ist das effiziente und realitätsnahe abschätzen der zu erwartenden Energieverbrauchswerte von Backbone-Netzwerken sowohl mit als auch ohne Einsetzen der Energieeinspartechnologien. Es stellte sich während der genaueren Analyse und zu Anfang der Implementierungsphase der Software allerdings heraus, dass der gewählte generische Ansatz einerseits sehr komplex ist und andererseits auf vielen Annahmen und Verallgemeinerungen beruht, die im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der in Entwicklung befindlichen Softwarelösung fast unmöglich machen. 
+Um die Schwächen des entwickelten Algorithmus auszugleichen oder abzuschwächen ist deutlich mehr Bearbeitungszeit notwendig als für diese wissenschaftliche Arbeit zur Verfügung steht.
+Weiterhin zeigt eine Begutachtung der Aufgabenstellung dieser Arbeit, dass die detaillierte Ausarbeitung eines solchen Algorithmus nicht Teil des geforderten oder erwartbarem Umfangs ist.
+Aufgrund der genannten Probleme entschieden wir uns dazu, auf die Dokumentation der geleisteten Entwicklung und die Erfüllung der Aufgabenstellung dieser Arbeit den Schwerpunkt zu setzen. 
 
-\section{Diskussion}
 
 \section{Ausblick}
+% 
+Die diskutierten Ergebnisse machen deutlich, dass für eine vollständige Betrachtung der Wirtschaftlichkeit energie-effizienter Netzkonzepte weitere Forschung notwendig ist. So konnten im Rahmen der vorliegenden Arbeit nur einige Technologien. Hybrid Optical Switching nicht im Algorithmus berücksichtigt
+
+
+Der durch die Projektgruppe erarbeitete Programmcode kann genutzt werden, um den vorgeschlagenen Algorithmus zur Stromverbrauchs-Berechnung
+
+Um die Wirtschaftlichkeit und damit die Attraktivität energieeffizienter Netzkonzepte für die Netzbetreiber..... Muss CAPEX / Investitionskosten berücksichtigt werden.
+
+Im Sinne der eingangs erwähnten Problemstellung (zurück zu Umweltaspekt).
 
 \newpage
 \printbibliography 
