@@ -102,7 +102,7 @@ Sollten wir evtl die Unterkapitel-Aufteilung weg lassen?
 
 
 
-\section{Stand der Forschung}
+\section{Stand der Forschung} \label{SdF}
 Definition Wirtschaftlichkeit, Carriernetz
 
 Betriebskosten, Wirtschaftlichkeit, etc.
@@ -111,7 +111,7 @@ Wirtschaftlichkeit
 Definieren
 Wir betrachten einen Teil der Betriebskosten, nämlich: .....
 
-\subsection{Carrier-Netzwerke}
+\subsection{Carrier-Netzwerke} 
 
 %Text übernommen aus dem Exposé, muss noch ausformuliert werden - VL
 %
@@ -143,31 +143,54 @@ Das zweite Konzept befasst sich mit der dynamischen Abschaltung unterlasteter Ne
 Bei den Technologien beschränkt sich diese Arbeit auf optische leitungsvermittelnde Switche und das Hybrid Optical Switching (HOS). Optische leitungsvermittelnde Switche basieren auf mikro-elektromechanischen Systemen, die die geringste Menge an Energie benötigen und eine hohe Portanzahl besitzen. Das Hybrid Optical Switching verwendet eine Kombination aus optischen und elektronischen Netzknoten, die optische Leitungen, Bursts, und Pakete effizient Switches können. Durch die Kombination von langsamen und schnellen Switches, können Wellenlängenbereiche dynamisch zwischen zwei Switches geändert werden. Das temporäre Abschalten von ungenutzten Ports des schnellen Switches ermöglicht eine Energieeinsparung.  \cite{aleksic2013}
 
 \section{Problemstellung}
-% Wir haben gezeigt, was schon getan wurde. Hier jetzt beschreiben, was noch zu tun ist (und warum?)
+Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
+
 \subsection{Motivation}
-Steigende Netzlast, steigende Datenvolumen, höherer Energieverbrauch, Industrie 4.0/Internet of Things, Klimawandel, steigende Energiekosten, Wirtschaftlichkeit
+%Steigende Netzlast, steigende Datenvolumen, Industrie 4.0/Internet of Things, steigende Energiekosten, Wirtschaftlichkeit
 %Diagramm Anteil der Telekommunikation am Gesamtenergieverbrauch / Prognose Datenvolumen weltweit
 
-%Text übernommen aus dem Exposé, muss noch ausformuliert werden - VL
-%TODO: Bild in Bezug auf Energieverbrauch einfügen, Verbrauch von Kommunikationsnetzen detaillierter darstellen - VL
-Nach einer Schätzung des ICT-Analysehauses Gartner erzeugte die Informations- und Kommunikationstechnologie im Jahr 2007 rund 2\% des globalen Ausstoßes an CO2, was dem Ausstoß der Flugzeugbranche entspricht \cite{gartner}. Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Es ist also unabdingbar, den CO2-Ausstoß, der durch ICT im Allgemeinen verursacht wird, drastisch zu verringern.
+
+%TODO: Verbrauch von Kommunikationsnetzen detaillierter darstellen - VL
+
+
+Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder sogar leicht zurück geht, wachsen die globalen Verbräuche weiter an (vgl. Abbildung \ref{fig:Strom_Sektor}). Dies kann vor allem auf  Schwellenländer zurückgeführt werden, die in kurzer Zeit ein rasantes wirtschaftliches Wachstum erleben.
+
+ 
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.8\textwidth]{statista}
-	\caption{Verteilung der weltweiten Energieerzeugung nach Energieträger im Jahr 2013 (Quelle: statista)}
-	\label{fig:statista}
+	\includegraphics[width=0.8\textwidth]{Anteil_Strom_Sektor}
+	\caption{Weltweiter Stromverbrauch nach Sektoren, basierend auf \cite{bibid}}
+	\label{fig:Strom_Sektor}
+\end{figure}
+Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
+
+
+Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite{vanHeggedhem} S.9). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ICT_Strom}) 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Anteil_ICT_Strom}
+	\caption{Anteil von ICT am weltweiten Stromverbrauch, basierend auf \cite{bibid} und \cite{bibid}}
+	\label{fig:ICT_Strom}
 \end{figure}
 
-Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista}, ist die Reduktion des Energieverbrauchs von ICT-Infrastruktur ein wichtiger Ansatz, um den CO2-Ausstoß zu verringern. Natürlich sind neben dem Bemühen, ICT grüner zu gestalten, wirtschaftliche Bedenken ein weiterer wichtiger Treiber für das Streben nach mehr Energieeffizienz. Langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) sind ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
+ Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
 
-Die vorliegende Arbeit beschränkt sich auf die ökonomischen Zwänge, die sich aus ineffizienten Netzen ergeben. Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des berechneten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben.
+
 
 
 \subsection{Ziele}
-Wie viel Energie/Kosten kann durch Verwendung energieeffizienter Technologien eingespart werden? 
+Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Kosten  durch Verwendung energieeffizienter Technologien eingespart werden können.
 
-Zu diesem Zweck soll eine Software erstellt werden, die unterstützt.
+Zur Erreichung dieses Ziels ist zum einen eine Literaturrecherche zu den bestehenden Technologien nötig, die es ermöglichen, den Energieverbrauch von Netzen zu senken. Die Ergebnisse dieser Literaturrecherche befinden sich in Kapitel \ref{SdF}.
+
+Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{EBD}.
+
+Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
+
+Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. Das genaue Vorgehen in der Softwareentwicklung wird im folgenden Kapitel erläutert.
+
 
 \section{Methoden/Vorgehen}
 
@@ -230,7 +253,7 @@ Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jewe
 
 \subsubsection{Komplexität bei der Entwicklung}
 
-\section{Ergebnisse, Beitrag, Diskussion}
+\section{Ergebnisse, Beitrag, Diskussion} \label{EBD}
 \subsection{Algorithmus}
 Das Ziel des teilweise entwickelten Algorithmus ist das effiziente und realitätsnahe abschätzen der zu erwartenden Energieverbrauchswerte von Backbone-Netzwerken sowohl mit als auch ohne Einsetzen der Energieeinspartechnologien. Es stellte sich während der genaueren Analyse und zu Anfang der Implementierungsphase der Software allerdings heraus, dass der gewählte generische Ansatz einerseits sehr komplex ist und andererseits auf vielen Annahmen und Verallgemeinerungen beruht, die im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der in Entwicklung befindlichen Softwarelösung fast unmöglich machen. 
 %TODO: getroffene Annahmen und Verallgemeinerungen erläutern
