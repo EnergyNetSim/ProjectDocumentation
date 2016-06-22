@@ -191,6 +191,38 @@ Start Softwareentwicklung
 	- Requirements
 	- Spezifikation
 	- Design
+
+Entsprechend dem Ziel der Software zur Simulation von Carrier-Netzwerken wurden der folgende Anforderungskatalog entwickelt:
+Funktionale Anforderungen:
+R1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden.
+R2: Ein Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich.
+R3: Eine Veränderung von Geräteparametern ist über die Datenbank möglich.
+R3a: Ein Austausch von Gerätetypen ist über die Datenbank möglich
+(R3b: Ein Austausch von Gerätetypen pro Schicht ist über eine GUI möglich) --> nicht in diesem Release
+R4: Das System berechnet anhand des modellierten Netzes, der eingestellten Gerätekonfigurationen, der gewählten Energiespartechnologien und des vorliegenden Lastprofils den Stromverbrauch.
+R5: Das System ist in der Lage, aus dem Stromverbrauch anhand eines vorgegebenen Umrechnungsfaktors dessen Stromkosten zu berechnen.
+R: Zur Vereinfachung von Berechnungen müssen Annahmen getroffen werden. Diese müssen in der DB hinterlegt werden.
+R: Es werden generische Geräte basierend auf dem Dokument "<Dokumentname einfügen>" verwendet.
+R: Als Algorithmus zur Abschaltung von Switches/Ports dient der "Exhaustive Greedy Algorithm"
+R: Der simulierte Stromverbrauch im Laufe eines Tages pro Stunde soll graphisch ausgegeben werden.
+R: Die resultierende Lastkurve wird graphisch als Histogramm dargestellt.
+
+Anforderungen an das Modell:
+
+DR: Für Verbindungen kann eine Länge vergeben werden.
+DR: Für Gerätetypen können relevante Leistungs- und Verbrauchsparameter hinterlegt werden
+DR: Ein Netz entsteht durch Verbinden von Geräteinstanzen und Zuordnung zu einer NetzID
+DR: Annahmen werden durch einen eindeutigen Namen und einen Wert abgebildet
+DR: Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
+
+Nichtfunktionale Anforderungen:
+NFR1: Das System soll als Client-only Applikation vorliegen.
+NFR2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
+
+Da die Anforderungen und das genau Ziel des Softwareentwicklungsprojektes bereits früh im Projektverlauf bekannt waren, wurde das Wasserfallmodell als lineares Vorgehensmodell gewählt. Die Stärken eines agilen Entwicklungsansatzes gegenüber diesem linearen Vorgehen wurden als in diesem Projekt nicht von Vorteil erachtet.
+Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
+
+
 Implementierung
 \subsection{Entwicklung des Routing-Algorithmus}
 Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig. Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics zu berechnen. Über die Dauer eines Zeitabschnittes (einer Iteration) bleiben die Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich. Diese werden je Iteration initial einmal berechnet. Durch die Anpassung der Iterationsdauer und der dazu passenden Anpassung der Netzlast-Daten lässt sich ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
@@ -201,7 +233,7 @@ Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverb
 	\label{fig:1Berechnung_elektr_Stromverbrauch}
 \end{figure}
 
-Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration am "besten" ist, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Um eine schnelle praktische Ausführungszeit zu erreichen beinhaltet dieser Algorithmus "Intelligenz" um schlechte Routen frühzeitig zu ignorieren und zum Beispiel Schleifenbildung zu verhindern.
+Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration am \glqq besten\grqq ist, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Um eine schnelle praktische Ausführungszeit zu erreichen beinhaltet dieser Algorithmus "Intelligenz" um schlechte Routen frühzeitig zu ignorieren und zum Beispiel Schleifenbildung zu verhindern.
 
 \begin{figure}[!h]
 	\centering
