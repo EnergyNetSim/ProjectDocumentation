@@ -21,11 +21,11 @@
     style=numeric-comp,%alphabetic-verb,
     sortlocale=de_DE,
     natbib=true,
-    url=true, 
+    url=true,
     doi=true,
     eprint=false]{biblatex}%NC: replaced bibtex by biber
 \addbibresource{literatur.bib}%Dateiname für Quellen einfügen
-\usepackage{ragged2e} %für bessere URL formatierung bei printbibliography 
+\usepackage{ragged2e} %für bessere URL formatierung bei printbibliography
 
 %Bilder einbinden und auf der gleichen seite ein
 %Fußnotenzitat einzufügen
@@ -82,18 +82,18 @@
 
 
 \begin{document}
-\title{\huge{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \\ \large{Projektbericht}} 
-\author{Veronika Lawrence, Carmen Scheer, Nicholas Cariss, Maximilian Junker,\\ Christian Keck, Stefan Ludowicy, Dominik Schneider} 
+\title{\huge{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \\ \large{Projektbericht}}
+\author{Veronika Lawrence, Carmen Scheer, Nicholas Cariss, Maximilian Junker,\\ Christian Keck, Stefan Ludowicy, Dominik Schneider}
 \maketitle
 \firstpages
 %\twocolumn
 
 %START HERE
 \section{Einleitung}
-Hier muss auch was stehen, oder? 
+Hier muss auch was stehen, oder?
 In der vorliegenden Arbeit...
 Sollten wir evtl die Unterkapitel-Aufteilung weg lassen?
-%TODO Klimalwandel, CO2, 
+%TODO Klimalwandel, CO2,
 %TODO Potential alternativer Energiequellen
 % siehe auch Todoist Kommentar
 %TODO Dominik
@@ -108,7 +108,7 @@ Definieren
 Wir betrachten einen Teil der Betriebskosten, nämlich: .....
 % Evtl. die Sachen zu Wirtschaftlichkeit mit einem Hinweis, dass wir uns auf einen Teil, nämlich die Betriebskosten beschränken, in entweder Problemstellung oder Methodik
 
-\subsection{Carrier-Netzwerke} 
+\subsection{Carrier-Netzwerke}
 
 %Text übernommen aus dem Exposé, muss noch ausformuliert werden - VL
 %
@@ -123,7 +123,7 @@ Somit umfasst ein Carrier-Netzwerk nicht nur das physikalische Backbone-Netz, so
 \subsection{Möglichkeiten der Energieeinsparung in Netzwerken}
 %Evtl mit dem nächsten Subchapter zusammenlegen? Hier nicht schreiben über unsere Simulation. Es geht nur darum, was andere schon erforscht haben.
 Um den Energieverbrauch im Carrier-Netzwerk berechnen zu können, bedarf es an Werten der im Backbone verwendeten Netzkomponenten. Innerhalb der Simulation wird für die Berechnung des Gesamtverbrauchs auf die definierten Werte zurückgegriffen, die in einer Datenbank gespeichert sind. Ziel dieser Arbeit ist die Simulation und Berechnung des gesamtheitlichen Energieverbrauchs. Deshalb verwendet die Berechnung die von den beiden Wissenschaftler Ward Van Heddeghem und Filip Idzikowski in ihrer Veröffentlichung \cite{vanhedde} zusammengetragenen Werte. Die Quelle beinhaltet zum einen das analytische Model der Berechnung und zum anderen ein Datenblatt \cite{vanhsheet} des Energieverbrauchs der unterschiedlichen Hersteller. Das Datenblatt gliedert die Geräte nach den Unterschiedlichen Layer IP/MPLS, Ethernet, OTN, WDM - (OSI-Layer: 3-2-1-1). Zu beachten ist beim Verwenden der Werte, dass es sich um Werte unter typischen Lastbedingungen handelt, die sich nach der Kapazität der Komponente richtet und nicht nach dem aktuellen Durchsatz. Des Weiteren geben die Werte nur dein Stromverbrauch für den Betrieb an, ein Verbrauch für Kühlung o.Ä. ist nicht enthalten.
-Der Gesamtverbrauch des Core-Networks ergibt sich aus der Summe alle Verbrauche der einzelnen Schichten. 
+Der Gesamtverbrauch des Core-Networks ergibt sich aus der Summe alle Verbrauche der einzelnen Schichten.
 
 \begin{equation}
 P_{core} = P_{ip} + P_{ethernet} + P_{otn} + P_{wdm}
@@ -131,7 +131,7 @@ P_{core} = P_{ip} + P_{ethernet} + P_{otn} + P_{wdm}
 
 
 \subsection{Energie-effiziente Technologien}
-Der aktuelle Stand der Forschung bietet verschiedene Konzepte und Technologien für das Einsparen von Energie in Carrier-Netzen. In dieser Arbeit sollen ausgewählte Konzepte und Technologien genutzt werden, um die Wirtschaftlichkeit von energieeffizienten Netzen zu analysieren. Betrachtet wurden im Rahmen der Literaturrecherche die folgenden Konzepte und Technologien: 
+Der aktuelle Stand der Forschung bietet verschiedene Konzepte und Technologien für das Einsparen von Energie in Carrier-Netzen. In dieser Arbeit sollen ausgewählte Konzepte und Technologien genutzt werden, um die Wirtschaftlichkeit von energieeffizienten Netzen zu analysieren. Betrachtet wurden im Rahmen der Literaturrecherche die folgenden Konzepte und Technologien:
 
 Das erste Konzept sieht eine Vereinfachung des Netzes vor, welche durch eine geographische Aufteilung des Netzes in Submodale (Global - Kontinental - National - Regional - Zugang) erfolgen kann \cite{aleksic2014}.
 
@@ -154,7 +154,7 @@ Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder s
 \end{figure}
 Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
 
-Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite[9]{vanhedde}). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ProbStromICT}) 
+Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite[9]{vanhedde}). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ProbStromICT})
 
 \begin{figure}[!ht]
 	\centering
@@ -190,27 +190,79 @@ Entscheidung/Festlegung Entwicklungmodell / Technologiestack / Systemlandschaft,
 Start Softwareentwicklung
 	- Requirements
 	- Spezifikation
-	
+
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=0.8\textwidth]{MethSoftwareER}
 \caption{ER-Diagramm} %TODO Bezeichnung anpassen
 \label{fig:MethSoftwareER}
 \end{figure}
-	
+
 	- Design
+
+Entsprechend dem Ziel der Software zur Simulation von Carrier-Netzwerken wurden der folgende Anforderungskatalog entwickelt:
+Funktionale Anforderungen:
+R1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden.
+R2: Ein Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich.
+R3: Eine Veränderung von Geräteparametern ist über die Datenbank möglich.
+R3a: Ein Austausch von Gerätetypen ist über die Datenbank möglich
+(R3b: Ein Austausch von Gerätetypen pro Schicht ist über eine GUI möglich) --> nicht in diesem Release
+R4: Das System berechnet anhand des modellierten Netzes, der eingestellten Gerätekonfigurationen, der gewählten Energiespartechnologien und des vorliegenden Lastprofils den Stromverbrauch.
+R5: Das System ist in der Lage, aus dem Stromverbrauch anhand eines vorgegebenen Umrechnungsfaktors dessen Stromkosten zu berechnen.
+R: Zur Vereinfachung von Berechnungen müssen Annahmen getroffen werden. Diese müssen in der DB hinterlegt werden.
+R: Es werden generische Geräte basierend auf dem Dokument "<Dokumentname einfügen>" verwendet.
+R: Als Algorithmus zur Abschaltung von Switches/Ports dient der "Exhaustive Greedy Algorithm"
+R: Der simulierte Stromverbrauch im Laufe eines Tages pro Stunde soll graphisch ausgegeben werden.
+R: Die resultierende Lastkurve wird graphisch als Histogramm dargestellt.
+
+Anforderungen an das Modell:
+
+DR: Für Verbindungen kann eine Länge vergeben werden.
+DR: Für Gerätetypen können relevante Leistungs- und Verbrauchsparameter hinterlegt werden
+DR: Ein Netz entsteht durch Verbinden von Geräteinstanzen und Zuordnung zu einer NetzID
+DR: Annahmen werden durch einen eindeutigen Namen und einen Wert abgebildet
+DR: Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
+
+Nichtfunktionale Anforderungen:
+NFR1: Das System soll als Client-only Applikation vorliegen.
+NFR2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
+
+Da die Anforderungen und das genau Ziel des Softwareentwicklungsprojektes bereits früh im Projektverlauf bekannt waren, wurde das Wasserfallmodell als lineares Vorgehensmodell gewählt. Die Stärken eines agilen Entwicklungsansatzes gegenüber diesem linearen Vorgehen wurden als in diesem Projekt nicht von Vorteil erachtet.
+Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung im Team mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
+Die Entscheidung bezüglich der zu verwendenden Architektur viel auf eine 2-Tier Kombination aus einer relationalen MySQL/MariaDB Datenbank und einer Fat-Client Anwendung entschieden. Die Datenbank wird dabei zur Speicherung der Hardware-, Topologie- und Netzwerkkonfiguration verwendet. Die Anwendung hingegen wird zur Parameterkonfiguration, Berechnung der Zielwerte und Ausgabe der Resultate verwendet.
+Die Wahl dieser Architektur begründet sich aus der guten Portabilität der resultierenden Lösung und der Ermöglichung einer einfachen und schnellen Entwicklung ohne dass dafür weitere Anwendungsserverkomponenten je Entwickungsumgebung installiert und konfiguriert werden müssen. Die SQL-Datenbank verwendet eine übliche Datenbank-Standardsoftware und kann per SQL-Script vollautomatisch konfiguriert werden ohne dass vom Endanwender der Softwarelösung ein spezifisches Fachwissen vorausgesetzt wird.
+
 Implementierung
-\subsection{Entwicklung des Routing-Algorithmus} \label{subsec:MethAlg}
-Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig. Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics zu berechnen. Über die Dauer eines Zeitabschnittes (einer Iteration) bleiben die Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich. Diese werden je Iteration initial einmal berechnet. Durch die Anpassung der Iterationsdauer und der dazu passenden Anpassung der Netzlast-Daten lässt sich ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
-\begin{figure}[!h]
+
+\subsection{Entwicklung des Routing-Algorithmus}\label{subsec:MethAlg}
+Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig.
+
+Es stehen zur Berechnung des Stromverbrauchs je Zeitabschnitt generell mehrere Ansätze zur Verfügung. Der einfachste Ansatz wäre je Uhrzeit von einer bestimmten zuvor als Datenbankeintrag festgelegten Nutzungsauslastung je Verbindung auszugehen. Dies würde ein einfaches bestimmen der einzelnen Geräteauslastungen und anschließendem addieren der Werte zu einem Gesamtstromverbrauch pro Zeiteinheit ermöglichen. Diese Ergebnisse könnten dann als Tabelle und Histogramm dargestellt werden.
+
+Dieser Lösungsweg setzt allerdings eines sehr detaillierte und statische Modellierung eines Beispielnetzes und allen dazugehörigen Auslastungs- und Verbrauchswerten je Zeitabschnitt voraus. Aufgrund diesem hohen Konfigurationsaufwand wird ein Anwender folglich einen großen Zeitraum je Iteration auswählen, was zu einer sehr groben und realitätsfremden Simulation führen würde.
+
+Ein weiterer Lösungsweg
+
+
+\subsection{Komplexität bei der Entwicklung}
+
+\section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
+\subsection{Algorithmus} \label{subsec:ErgAlg}
+% Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
+Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffic von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass Über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffene Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Diese werden je Iteration initial einmal neu berechnet. Durch die Verkürzung der Iterationsdauer und der dazu passenden Netzlast-Daten lässt sich bei geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
+
+Je durch den Anwender in der Datenbank hinterlegtem statischen Netz wird eine Datenreihe bestehend aus einem Stromverbrauchswert je Iterationszeitraum berechnet.
+Um diese Einzelwerte zu berechnen, werden zuerst die Lasten aus jedem Netzlastprofil-Eintrag auf möglichst effizient auf die Netzwerkhardware und Verbindungen projiziert, und danach abschließend abhängig von den berechneten Geräteauslastungen die Teil-Stromverbrauchswerte addiert.
+
+Mit dieser groben Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetzwerk inklusive dem zeitlichen Verlauf errechnen. Allerdings fehlt dazu noch die Antwort auf die Frage, wie die effizienten Routing-Entscheidungen getroffen werden können. Der folgende Teil des Algorithmus beschreibt eine möglichen Lösung:
+
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{1Berechnung_elektr_Stromverbrauch}
 	\caption{Programmablaufplan zur Anwendungslogik}
 	\label{fig:1Berechnung_elektr_Stromverbrauch}
 \end{figure}
-
-Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration am "besten" ist, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Um eine schnelle praktische Ausführungszeit zu erreichen beinhaltet dieser Algorithmus "Intelligenz" um schlechte Routen frühzeitig zu ignorieren und zum Beispiel Schleifenbildung zu verhindern.
-
+Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Diese Kategorie von lokalen Lösungsverfahren nennt man Greedy Algorithmus. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen beinhaltet dieser Algorithmus intelligente Entscheidungsfunktionen um schlechte Routen frühzeitig zu ignorieren und nicht zielführende Berechnungen, wie diese beispielsweise bei Schleifenbildung auftreten, zu verhindern.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{2Routingentscheidung}
@@ -219,7 +271,6 @@ Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge j
 \end{figure}
 
 Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektr. Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und diese einzelnen Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
-
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{3Rekursives_Routing}
@@ -227,23 +278,18 @@ Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz,
 	\label{fig:3Rekursives_Routing}
 \end{figure}
 
+
 Alles in allem ist ein Regelsatz zur Penaltyberechnung je Iteration notwendig, an Hand welchem die Algorithmus-Implementierung jeweils versucht das lokale Optimum zum Routingproblem als Lösung zu finden.
 Der folgende Regelsatz stellte sich beim logischen durchspielen einer solchen Simulation als Grundlage heraus:
 \begin{itemize}
-\item Zum Anfang jeder neuen Iterations-Zeitphase sind alle Geräte und alle Ports soweit diese dies unterstützten ausgeschaltet
-\item Das Aktivieren eines Devices kostet Penalty (hoch)
-\item Das Aktivieren eines Ports kostet Penalty (niedrig)
-\item Das Ausschalten des Port-Energiesparmodus kostet keine Penalty, um vermeidbares aktivieren anderer Hardware / Ports zu vermeiden. Energiesparmodus-Capability zählt lediglich zur Berechnung des Stromverbrauchs.
-\item Um niedrige Paketlaufzeiten durch das Netz sicherzustellen, kostet jeder Hop / genutzte Verbindung eine weitere Penalty (hoch)
+	\item Zum Anfang jeder neuen Iterations-Zeitphase sind alle Geräte und alle Ports soweit diese dies unterstützten ausgeschaltet
+	\item Das Aktivieren eines Devices kostet Penalty (hoch)
+	\item Das Aktivieren eines Ports kostet Penalty (niedrig)
+	\item Das Ausschalten des Port-Energiesparmodus kostet keine Penalty, um vermeidbares aktivieren anderer Hardware / Ports zu vermeiden. Energiesparmodus-Capability zählt lediglich zur Berechnung des Stromverbrauchs.
+	\item Um niedrige Paketlaufzeiten durch das Netz sicherzustellen, kostet jeder Hop / genutzte Verbindung eine weitere Penalty (hoch)
 \end{itemize}
 Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jeweils eine feste Penalty basierend auf Verstärkeranzahl + Länge -> statischer Wert in Datenbank.
 
-
-\subsection{Komplexität bei der Entwicklung}
-
-\section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
-\subsection{Algorithmus} \label{subsec:ErgAlg}
-% Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
 % Diskussion des Ergebnisses und der Schwierigkeiten bei der Implementierung werden im nächsten Kapitel berücksichtigt
 
 %TODO: getroffene Annahmen und Verallgemeinerungen erläutern
@@ -252,8 +298,8 @@ Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jewe
 Im Rahmen der Software-Entwicklung wurde das Java-Programm „EnergyNetSim“ mitsamt Anbindung an eine MySQL-Datenbank realisiert. Die folgenden Unterkapitel beschreiben die erzielten Resultate und geben Hinweise auf Installation und Benutzung der Software für Endanwender.
 
 \subsubsection{Ergebnisse der Software-Entwicklung}
-Die erstellte Software „EnergyNetSim“ stellt ein Rahmenwerk zur Verfügung, in das die in den Kapiteln 
-\ref{subsec:MethAlg} und \ref{subsec:ErgAlg} beschriebenen Algorithmen zur Simulation von Netzauslastung, Datenverkehr zwischen zwei Netzknoten, dynamischem Routing und effizienzsteigernden Energiesparmechanismen eingefügt werden können. Im Programmcode und in der Dokumentation sind die dazu notwendigen Methoden bereits angelegt und gekennzeichnet. Das Kapitel \ref{sec:ErgSoftwErweiterung} gibt dazu detailliertere Hinweise. 
+Die erstellte Software „EnergyNetSim“ stellt ein Rahmenwerk zur Verfügung, in das die in den Kapiteln
+\ref{subsec:MethAlg} und \ref{subsec:ErgAlg} beschriebenen Algorithmen zur Simulation von Netzauslastung, Datenverkehr zwischen zwei Netzknoten, dynamischem Routing und effizienzsteigernden Energiesparmechanismen eingefügt werden können. Im Programmcode und in der Dokumentation sind die dazu notwendigen Methoden bereits angelegt und gekennzeichnet. Das Kapitel \ref{sec:ErgSoftwErweiterung} gibt dazu detailliertere Hinweise.
 Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von Parametern zur Simulation, die persistente Speicherung der Konfigurationen und Netzstrukturen und die graphische Ausgabe der errechneten Ergebnisse übernimmt der aktuelle Softwarestand bereits. Die Grundlage dafür bietet die Einbindung der frei verfügbaren Java-Bibliothek „jFreeChart“\footnote{„JFreeChart is a free 100\% Java chart library that makes it easy for developers to display professional quality charts in their applications. JFreeChart's extensive feature set includes, a consistent and well-documented API, supporting a wide range of chart types; a flexible design that is easy to extend,[…] support for many output types, including Swing and JavaFX components, image files (including PNG and JPEG).[…] JFreeChart is open source or, more specifically, free software. It is distributed under the terms of the GNU Lesser General Public Licence (LGPL), which permits use in proprietary applications.“ \cite{jdbc}} und des offiziellen JDBC-Treibers\footnote{Frei verfügbar unter https://dev.mysql.com/downloads/connector/j/5.1.html} zur Verbindung mit der MySQL-Datenbank.
 \begin{figure}[!ht]
 	\centering
@@ -261,8 +307,8 @@ Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von
 	\caption{Schichtenarchitektur des EnergyNetSim (eigene Darstellung)}
 	\label{fig:ErgSoftwareMVC}
 \end{figure}
-Das Zusammenspiel zwischen Java-Anwendung und der MySQL-Datenbank zeigt 
-Abbildung \ref{fig:ErgSoftwareMVC}. Bei der Entwicklung wurde ein „Model-View-Controller“ (kurz: MVC)-Entwurfsmuster gewählt, das die Trennung der Programmstruktur in die logischen Schichten „Datenhaltung“, „Programmlogik“ und „Präsentation“ ermöglicht. 
+Das Zusammenspiel zwischen Java-Anwendung und der MySQL-Datenbank zeigt
+Abbildung \ref{fig:ErgSoftwareMVC}. Bei der Entwicklung wurde ein „Model-View-Controller“ (kurz: MVC)-Entwurfsmuster gewählt, das die Trennung der Programmstruktur in die logischen Schichten „Datenhaltung“, „Programmlogik“ und „Präsentation“ ermöglicht.
 Das Programm wird mitsamt den Datenbank-Skripten zur Erstellung der Datenbankstrukturen auf zwei Arten zur Verfügung gestellt:
 \begin{itemize}
 \item Als offenes Repository „EnergyNetSim/Simulator.git" über den Versionsverwaltungsdienst GitHub: https://github.com/EnergyNetSim/Simulator.git
@@ -272,7 +318,7 @@ Auf die notwendigen Schritte zur Installation der erstellten Software wird im na
 
 \subsubsection{Installation der Software}
 Von den zwei vorgestellten möglichen Wegen, über die Simulationssoftware zu beziehen ist, wird im Anschluss die Inbetriebnahme mittels JAR-Datei beschrieben. Das Kapitel richtet sich somit vornehmlich an Endanwender.
-Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git, einer zusätzlichen Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts sprengen. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/ 
+Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git, einer zusätzlichen Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts sprengen. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/
 Ebenso bietet Oracle eine ausführliche Java-Dokumentation: http://www.oracle.com/technetwork/java/javase/downloads/index.html} zur Verwendung der beschriebenen Programme, sodass aus einer erneuten Schilderung kein wissenschaftlicher Mehrwehrt entstünde.
 Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abbildung \ref{fig:ErgSoftwareInst1} abgebildeten Schritte erforderlich.
 \begin{figure}[!ht]
@@ -296,9 +342,9 @@ Durch Klick auf „starten“ wird der SQL-Server hochgefahren und der Status ä
 \end{figure}
 \item [Anlegen einer neuen Verbindung zum Server:]
 Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in Tabelle \ref{tab:mysql} aufgeführten Daten hergestellt.
-\begin{table}[htp!] 
+\begin{table}[htp!]
 \centering
-	 \begin{tabular}{|l|l|l|} 
+	 \begin{tabular}{|l|l|l|}
 	 \hline
 	Parameter & Wert\\
 	\hline
@@ -391,14 +437,14 @@ Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Date
 % Daher Grundgerüst implementiert und Algorithmus dokumentiert.
 % Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
 
-Das Ziel des teilweise entwickelten Algorithmus ist das effiziente und realitätsnahe abschätzen der zu erwartenden Energieverbrauchswerte von Backbone-Netzwerken sowohl mit als auch ohne Einsetzen der Energieeinspartechnologien. Es stellte sich während der genaueren Analyse und zu Anfang der Implementierungsphase der Software allerdings heraus, dass der gewählte generische Ansatz einerseits sehr komplex ist und andererseits auf vielen Annahmen und Verallgemeinerungen beruht, die im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der in Entwicklung befindlichen Softwarelösung fast unmöglich machen. 
+Das Ziel des teilweise entwickelten Algorithmus ist das effiziente und realitätsnahe abschätzen der zu erwartenden Energieverbrauchswerte von Backbone-Netzwerken sowohl mit als auch ohne Einsetzen der Energieeinspartechnologien. Es stellte sich während der genaueren Analyse und zu Anfang der Implementierungsphase der Software allerdings heraus, dass der gewählte generische Ansatz einerseits sehr komplex ist und andererseits auf vielen Annahmen und Verallgemeinerungen beruht, die im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der in Entwicklung befindlichen Softwarelösung fast unmöglich machen.
 Um die Schwächen des entwickelten Algorithmus auszugleichen oder abzuschwächen ist deutlich mehr Bearbeitungszeit notwendig als für diese wissenschaftliche Arbeit zur Verfügung steht.
 Weiterhin zeigt eine Begutachtung der Aufgabenstellung dieser Arbeit, dass die detaillierte Ausarbeitung eines solchen Algorithmus nicht Teil des geforderten oder erwartbarem Umfangs ist.
-Aufgrund der genannten Probleme entschieden wir uns dazu, auf die Dokumentation der geleisteten Entwicklung und die Erfüllung der Aufgabenstellung dieser Arbeit den Schwerpunkt zu setzen. 
+Aufgrund der genannten Probleme entschieden wir uns dazu, auf die Dokumentation der geleisteten Entwicklung und die Erfüllung der Aufgabenstellung dieser Arbeit den Schwerpunkt zu setzen.
 
 
 \section{Ausblick}
-% 
+%
 Die diskutierten Ergebnisse machen deutlich, dass für eine vollständige Betrachtung der Wirtschaftlichkeit energie-effizienter Netzkonzepte weitere Forschung notwendig ist. So konnten im Rahmen der vorliegenden Arbeit nur einige Technologien. Hybrid Optical Switching nicht im Algorithmus berücksichtigt
 
 
@@ -409,6 +455,6 @@ Um die Wirtschaftlichkeit und damit die Attraktivität energieeffizienter Netzko
 Im Sinne der eingangs erwähnten Problemstellung (zurück zu Umweltaspekt).
 
 \newpage
-\printbibliography 
+\printbibliography
 
 \end{document}
