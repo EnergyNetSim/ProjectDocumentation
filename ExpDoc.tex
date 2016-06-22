@@ -215,37 +215,58 @@ Start Softwareentwicklung
 
 	- Design
 
-Entsprechend dem Ziel der Software zur Simulation von Carrier-Netzwerken wurden der folgende Anforderungskatalog entwickelt:
-Funktionale Anforderungen:
-R1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden.
-R2: Ein Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich.
-R3: Eine Veränderung von Geräteparametern ist über die Datenbank möglich.
-R3a: Ein Austausch von Gerätetypen ist über die Datenbank möglich
-(R3b: Ein Austausch von Gerätetypen pro Schicht ist über eine GUI möglich) --> nicht in diesem Release
-R4: Das System berechnet anhand des modellierten Netzes, der eingestellten Gerätekonfigurationen, der gewählten Energiespartechnologien und des vorliegenden Lastprofils den Stromverbrauch.
-R5: Das System ist in der Lage, aus dem Stromverbrauch anhand eines vorgegebenen Umrechnungsfaktors dessen Stromkosten zu berechnen.
-R: Zur Vereinfachung von Berechnungen müssen Annahmen getroffen werden. Diese müssen in der DB hinterlegt werden.
-R: Es werden generische Geräte basierend auf dem Dokument "<Dokumentname einfügen>" verwendet.
-R: Als Algorithmus zur Abschaltung von Switches/Ports dient der "Exhaustive Greedy Algorithm"
-R: Der simulierte Stromverbrauch im Laufe eines Tages pro Stunde soll graphisch ausgegeben werden.
-R: Die resultierende Lastkurve wird graphisch als Histogramm dargestellt.
+Die zuvor beschriebene Modellierung zur Kalkulation und Simulation von energieeffizierten Netzen soll im nächsten Schritt softwaretechnisch umgesetzt werden. Als Vorgehensmodell hat sich das Projektteam an dem Wasserfallmodell mit den folgenden Entwicklungsstufen:
+\begin{itemize}
+\item Anforderungsanalyse
+\item Spezifikation
+\item Systemdesign
+\item Programmierung / Implementierung
+\item Test
+\end{itemize}
+Die Analyse der Anforderungen an die Simulationssoftware erfordert eine zielgerichtete Recherche über bereits Vorhandene Technologien und Methoden sowie einer Definition von Funktionen, die das Simulationstool bereitstellen soll. 
+Nach einer detaillierten Recherche konnten einige Anforderungen an das System gestellt werden.  Das System soll ein statisches Netz mit einer festgelegten Anzahl an Verbindungen darstellen. Alle Daten zu Geräten, Netzen, Verbindungen und Netzprofilen sollen in einer MySQL-Datenbank gespeichert werden. Die Verwendeten Geräte sowie neue Netzprofile sollen über die Datenbank eingepflegt werden können. Für das Netzprofil sollen Traffic-Daten (Netzprofil, Last, Quelle, Senke, Uhrzeit) verwendet werden. Aus den Daten entsteht eine gleichbleibende Auslastungskurve, anhand der die Verbindungen für die jeweilige Uhrzeit berechnet werden kann. Um das Netz möglichst realistisch zu realisieren bekommen die einzelnen Verbindungen eine Länge zugeordnet. Anhand dieser Länge (mehr als 80 km) wird definiert, ob ein Verstärker hinzugefügt werden muss, um die Verbindung zu verbessern. Das definierte, statische Netz soll die Verwendung verschiedener Technologien und Methoden zur Senkung des Energieverbrauchs möglich machen. Zur Abschaltung Switches und Ports soll ein Agorithmus entwickelt werden, der auf der Basis des „Exhaustive Greedy Algorithm“(QUELLE!!!) aufbaut.
+Im Zuge der Anforderungsanalyse und der Spezifikation der Software wurden die folgenden „functional“, „non-functional“ und „data“ Requirements erstellt:
+Functional Requirements:
 
-Anforderungen an das Modell:
+\begin{itemize}
+	\item R1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden.
+	\item R2: Ein Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich.
+	\item R3: Eine Veränderung von Geräteparametern ist über die Datenbank möglich.
+	\item R3a: Ein Austausch von Gerätetypen ist über die Datenbank möglich
+	\item (R3b: Ein Austausch von Gerätetypen pro Schicht ist über eine GUI möglich) —> nicht in diesem Release
+	\item R4: Das System berechnet anhand des modellierten Netzes, der eingestellten     Gerätekonfigurationen, der gewählten Energiespartechnologien und des vorliegenden Lastprofils den Stromverbrauch.
+	\item R5: Das System ist in der Lage, aus dem Stromverbrauch anhand eines vorgegebenen Umrechnungsfaktors dessen Stromkosten zu berechnen.
+	\item R6: Zur Vereinfachung von Berechnungen müssen Annahmen getroffen werden. Diese müssen in der DB hinterlegt werden.
+	\item R7: Es werden generische Geräte basierend auf dem Dokument "<Dokumentname einfügen>" verwendet.
+	\item R8: Als Algorithmus zur Abschaltung von Switches/Ports dient der "Exhaustive Greedy Algorithm"
+	\item R9: Der simulierte Stromverbrauch im Laufe eines Tages pro Stunde soll graphisch ausgegeben werden.
+	\item R10: Die Lastkurve wird graphisch dargestellt.
+\end{itemize}
 
-DR: Für Verbindungen kann eine Länge vergeben werden.
-DR: Für Gerätetypen können relevante Leistungs- und Verbrauchsparameter hinterlegt werden
-DR: Ein Netz entsteht durch Verbinden von Geräteinstanzen und Zuordnung zu einer NetzID
-DR: Annahmen werden durch einen eindeutigen Namen und einen Wert abgebildet
-DR: Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
 
-Nichtfunktionale Anforderungen:
-NFR1: Das System soll als Client-only Applikation vorliegen.
-NFR2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
+Non-functional Requirements:
 
-Da die Anforderungen und das genau Ziel des Softwareentwicklungsprojektes bereits früh im Projektverlauf bekannt waren, wurde das Wasserfallmodell als lineares Vorgehensmodell gewählt. Die Stärken eines agilen Entwicklungsansatzes gegenüber diesem linearen Vorgehen wurden als in diesem Projekt nicht von Vorteil erachtet.
-Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung im Team mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
-Die Entscheidung bezüglich der zu verwendenden Architektur viel auf eine 2-Tier Kombination aus einer relationalen MySQL/MariaDB Datenbank und einer Fat-Client Anwendung entschieden. Die Datenbank wird dabei zur Speicherung der Hardware-, Topologie- und Netzwerkkonfiguration verwendet. Die Anwendung hingegen wird zur Parameterkonfiguration, Berechnung der Zielwerte und Ausgabe der Resultate verwendet.
-Die Wahl dieser Architektur begründet sich aus der guten Portabilität der resultierenden Lösung und der Ermöglichung einer einfachen und schnellen Entwicklung ohne dass dafür weitere Anwendungsserverkomponenten je Entwickungsumgebung installiert und konfiguriert werden müssen. Die SQL-Datenbank verwendet eine übliche Datenbank-Standardsoftware und kann per SQL-Script vollautomatisch konfiguriert werden ohne dass vom Endanwender der Softwarelösung ein spezifisches Fachwissen vorausgesetzt wird.
+\begin{itemize}
+	\item NFR1: Das System soll als Client-only Applikation vorliegen.
+	\item NFR2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
+\end{itemize}
+
+
+Data Requirements:
+
+\begin{itemize}
+	\item DR1: Für Verbindungen kann eine Länge vergeben werden.
+	\item DR2: Für Gerätetypen können relevante Leistungs- und Verbrauchsparameter hinterlegt werden
+	\item DR3: Ein Netz entsteht durch Verbinden von Geräteinstanzen und Zuordnung zu einer NetzID
+	\item DR4: Annahmen werden durch einen eindeutigen Namen und einen Wert abgebildet
+	\item DR5:  Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
+\end{itemize}
+
+Während der Phase des Systemdesigns wurden einige Entscheidungen bezüglich der Softwareentwicklung getroffen. Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung im Team mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
+
+Die Architektur besteht aus einer 2-Tier Kombination aus einer relationalen MySQL/MariaDB Datenbank und einer Fat-Client Anwendung. Die Datenbank wird dabei zur Speicherung der zur Erstellung eines Netzes notwendigen Daten, sowie Hardware-, Topologie- und Netzwerkkonfiguration verwendet. Die Anwendung hingegen wird zur Parameterkonfiguration, Berechnung der Zielwerte und Ausgabe der Resultate verwendet.
+
+Die Vorteile dieser Architektur sind die gute Portabilität der resultierenden Lösung und die Ermöglichung einer einfachen und schnellen Entwicklung. Es müssen keine weiteren Anwendungsserverkomponenten je Entwicklungsumgebung installiert und konfiguriert werden. Die SQL-Datenbank verwendet eine übliche Datenbank-Standardsoftware und kann per SQL-Script vollautomatisch konfiguriert werden.
 
 Implementierung
 
@@ -254,9 +275,10 @@ Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverb
 
 Es stehen zur Berechnung des Stromverbrauchs je Zeitabschnitt generell mehrere Ansätze zur Verfügung. Der einfachste Ansatz wäre je Uhrzeit von einer bestimmten zuvor als Datenbankeintrag festgelegten Nutzungsauslastung je Verbindung auszugehen. Dies würde ein einfaches bestimmen der einzelnen Geräteauslastungen und anschließendem addieren der Werte zu einem Gesamtstromverbrauch pro Zeiteinheit ermöglichen. Diese Ergebnisse könnten dann als Tabelle und Histogramm dargestellt werden.
 
-Dieser Lösungsweg setzt allerdings eines sehr detaillierte und statische Modellierung eines Beispielnetzes und allen dazugehörigen Auslastungs- und Verbrauchswerten je Zeitabschnitt voraus. Aufgrund diesem hohen Konfigurationsaufwand wird ein Anwender folglich einen großen Zeitraum je Iteration auswählen, was zu einer sehr groben und realitätsfremden Simulation führen würde.
+Dieser Lösungsweg setzt allerdings eine sehr detaillierte und statische Modellierung eines Beispielnetzes und allen dazugehörigen Auslastungs- und Verbrauchswerten je Zeitabschnitt voraus. Aufgrund diesem hohen Konfigurationsaufwand wird ein Anwender folglich einen großen Zeitraum je Iteration auswählen, was zu einer sehr groben und realitätsfernen Simulation führen würde. Energiespartechniken wie das dynamische Abschalten von einzelnen Verbindungen und umrouten der Netzlast auf andere noch nicht optimal ausgelastete Verbindungen muss der Anwender in diesem Verfahren selbstständig je Iteration umsetzen.
 
-Ein weiterer Lösungsweg
+Eine weitere Möglichkeit zur Berechnung der optimalen Stromverbrauchswerte bietet das automatisierte, in einem Algorithmus implementierte Berechnen der einzelnen Netzlast-Routing-Möglichkeiten und anschließend der Wahl des nach zuvor definiertem Regelsatz besten routings. Dieser Algorithmus bietet den Vorteil, dass der Anwender nur die Netzlast mit Iterationszeitraum, Quelle, Senke und Menge spezifizieren muss und die Software daraus selbstständig die beste oder eine gute Lösung errechnet.
+Dies erlaubt allerdings keine Anpassung des zu berechnenden N  
 
 
 \subsection{Komplexität bei der Entwicklung}
@@ -266,19 +288,24 @@ Ein weiterer Lösungsweg
 % Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
 Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffic von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass Über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffene Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Diese werden je Iteration initial einmal neu berechnet. Durch die Verkürzung der Iterationsdauer und der dazu passenden Netzlast-Daten lässt sich bei geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
 
-Je durch den Anwender in der Datenbank hinterlegtem statischen Netz wird eine Datenreihe bestehend aus einem Stromverbrauchswert je Iterationszeitraum berechnet.
-Um diese Einzelwerte zu berechnen, werden zuerst die Lasten aus jedem Netzlastprofil-Eintrag auf möglichst effizient auf die Netzwerkhardware und Verbindungen projiziert, und danach abschließend abhängig von den berechneten Geräteauslastungen die Teil-Stromverbrauchswerte addiert.
 
-Mit dieser groben Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetzwerk inklusive dem zeitlichen Verlauf errechnen. Allerdings fehlt dazu noch die Antwort auf die Frage, wie die effizienten Routing-Entscheidungen getroffen werden können. Der folgende Teil des Algorithmus beschreibt eine möglichen Lösung:
-
-\begin{figure}[htbp]
+\begin{figure}[!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{1Berechnung_elektr_Stromverbrauch}
 	\caption{Programmablaufplan zur Anwendungslogik}
 	\label{fig:1Berechnung_elektr_Stromverbrauch}
 \end{figure}
-Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Diese Kategorie von lokalen Lösungsverfahren nennt man Greedy Algorithmus. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen beinhaltet dieser Algorithmus intelligente Entscheidungsfunktionen um schlechte Routen frühzeitig zu ignorieren und nicht zielführende Berechnungen, wie diese beispielsweise bei Schleifenbildung auftreten, zu verhindern.
-\begin{figure}[!h]
+
+
+Je durch den Anwender in der Datenbank hinterlegtem statischen Netz wird eine Datenreihe bestehend aus einem Stromverbrauchswert je Iterationszeitraum berechnet.
+Um diese Einzelwerte zu berechnen, werden zuerst die Lasten aus jedem Netzlastprofil-Eintrag auf möglichst effizient auf die Netzwerkhardware und Verbindungen projiziert, und danach abschließend abhängig von den berechneten Geräteauslastungen die Teil-Stromverbrauchswerte addiert.
+
+
+Mit dieser groben Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetzwerk inklusive dem zeitlichen Verlauf errechnen. Allerdings fehlt dazu noch die Antwort auf die Frage, wie die effizienten Routing-Entscheidungen getroffen werden können. Der folgende Teil des Algorithmus beschreibt eine möglichen Lösung:
+
+
+Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Diese Kategorie von lokalen Lösungsverfahren nennt man Greedy Algorithmus. Dieser liefert nicht unbedingt das insgesamt beste Ergebnis, sondern berechnet nur das lokale Optimum für das betrachtete Teilproblem. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen beinhaltet dieser Algorithmus intelligente Entscheidungsfunktionen um schlechte Routen frühzeitig zu ignorieren und nicht zielführende Berechnungen wie sie beispielsweise bei Schleifenbildung auftreten zu verhindern.
+\begin{figure}[!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{2Routingentscheidung}
 	\caption{Programmablaufplan zum übergreifenden Anteil des Routing-Algorithmus}
