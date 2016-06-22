@@ -220,21 +220,36 @@ NFR1: Das System soll als Client-only Applikation vorliegen.
 NFR2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
 
 Da die Anforderungen und das genau Ziel des Softwareentwicklungsprojektes bereits früh im Projektverlauf bekannt waren, wurde das Wasserfallmodell als lineares Vorgehensmodell gewählt. Die Stärken eines agilen Entwicklungsansatzes gegenüber diesem linearen Vorgehen wurden als in diesem Projekt nicht von Vorteil erachtet.
-Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
-
+Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung im Team mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
+Die Entscheidung bezüglich der zu verwendenden Architektur viel auf eine 2-Tier Kombination aus einer relationalen MySQL/MariaDB Datenbank und einer Fat-Client Anwendung entschieden. Die Datenbank wird dabei zur Speicherung der Hardware-, Topologie- und Netzwerkkonfiguration verwendet. Die Anwendung hingegen wird zur Parameterkonfiguration, Berechnung der Zielwerte und Ausgabe der Resultate verwendet.
+Die Wahl dieser Architektur begründet sich aus der guten Portabilität der resultierenden Lösung und der Ermöglichung einer einfachen und schnellen Entwicklung ohne dass dafür weitere Anwendungsserverkomponenten je Entwickungsumgebung installiert und konfiguriert werden müssen. Die SQL-Datenbank verwendet eine übliche Datenbank-Standardsoftware und kann per SQL-Script vollautomatisch konfiguriert werden ohne dass vom Endanwender der Softwarelösung ein spezifisches Fachwissen vorausgesetzt wird. 
 
 Implementierung
 \subsection{Entwicklung des Routing-Algorithmus}
-Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig. Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics zu berechnen. Über die Dauer eines Zeitabschnittes (einer Iteration) bleiben die Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich. Diese werden je Iteration initial einmal berechnet. Durch die Anpassung der Iterationsdauer und der dazu passenden Anpassung der Netzlast-Daten lässt sich ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
-\begin{figure}[!h]
+Zur Simulation des Netzwerkes, der Lastverteilung und des elektrischen Stromverbrauches des Netzwerkes ist ein iteratives Berechnen für einzelne Zeitabschnitte abhängig von der Netzlast, des Traffic-Ursprungs und des Traffic-Ziels notwendig.
+
+Es stehen zur Berechnung des Stromverbrauchs je Zeitabschnitt generell mehrere Ansätze zur Verfügung. Der einfachste Ansatz wäre je Uhrzeit von einer bestimmten zuvor als Datenbankeintrag festgelegten Nutzungsauslastung je Verbindung auszugehen. Dies würde ein einfaches bestimmen der einzelnen Geräteauslastungen und anschließendem addieren der Werte zu einem Gesamtstromverbrauch pro Zeiteinheit ermöglichen. Diese Ergebnisse könnten dann als Tabelle und Histogramm dargestellt werden.
+
+Dieser Lösungsweg setzt allerdings eines sehr detaillierte und statische Modellierung eines Beispielnetzes und allen dazugehörigen Auslastungs- und Verbrauchswerten je Zeitabschnitt voraus. Aufgrund diesem hohen Konfigurationsaufwand wird ein Anwender folglich einen großen Zeitraum je Iteration auswählen, was zu einer sehr groben und realitätsfremden Simulation führen würde.
+
+Ein weiterer Lösungsweg  
+
+
+\subsection{Komplexität bei der Entwicklung}
+
+\section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
+\subsection{Algorithmus}
+% Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
+Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics zu berechnen. Über die Dauer eines Zeitabschnittes (einer Iteration) bleiben die Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich. Diese werden je Iteration initial einmal berechnet. Durch die Anpassung der Iterationsdauer und der dazu passenden Anpassung der Netzlast-Daten lässt sich ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
+
+
+\begin{figure}[!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{1Berechnung_elektr_Stromverbrauch}
 	\caption{Programmablaufplan zur Anwendungslogik}
 	\label{fig:1Berechnung_elektr_Stromverbrauch}
 \end{figure}
-
 Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration am \glqq besten\grqq ist, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Um eine schnelle praktische Ausführungszeit zu erreichen beinhaltet dieser Algorithmus "Intelligenz" um schlechte Routen frühzeitig zu ignorieren und zum Beispiel Schleifenbildung zu verhindern.
-
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{2Routingentscheidung}
@@ -243,7 +258,6 @@ Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge j
 \end{figure}
 
 Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektr. Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und diese einzelnen Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
-
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{3Rekursives_Routing}
@@ -251,23 +265,17 @@ Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz,
 	\label{fig:3Rekursives_Routing}
 \end{figure}
 
+
 Alles in allem ist ein Regelsatz zur Penaltyberechnung je Iteration notwendig, an Hand welchem die Algorithmus-Implementierung jeweils versucht das lokale Optimum zum Routingproblem als Lösung zu finden.
 Der folgende Regelsatz stellte sich beim logischen durchspielen einer solchen Simulation als Grundlage heraus:
 \begin{itemize}
-\item Zum Anfang jeder neuen Iterations-Zeitphase sind alle Geräte und alle Ports soweit diese dies unterstützten ausgeschaltet
-\item Das Aktivieren eines Devices kostet Penalty (hoch)
-\item Das Aktivieren eines Ports kostet Penalty (niedrig)
-\item Das Ausschalten des Port-Energiesparmodus kostet keine Penalty, um vermeidbares aktivieren anderer Hardware / Ports zu vermeiden. Energiesparmodus-Capability zählt lediglich zur Berechnung des Stromverbrauchs.
-\item Um niedrige Paketlaufzeiten durch das Netz sicherzustellen, kostet jeder Hop / genutzte Verbindung eine weitere Penalty (hoch)
+	\item Zum Anfang jeder neuen Iterations-Zeitphase sind alle Geräte und alle Ports soweit diese dies unterstützten ausgeschaltet
+	\item Das Aktivieren eines Devices kostet Penalty (hoch)
+	\item Das Aktivieren eines Ports kostet Penalty (niedrig)
+	\item Das Ausschalten des Port-Energiesparmodus kostet keine Penalty, um vermeidbares aktivieren anderer Hardware / Ports zu vermeiden. Energiesparmodus-Capability zählt lediglich zur Berechnung des Stromverbrauchs.
+	\item Um niedrige Paketlaufzeiten durch das Netz sicherzustellen, kostet jeder Hop / genutzte Verbindung eine weitere Penalty (hoch)
 \end{itemize}
 Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jeweils eine feste Penalty basierend auf Verstärkeranzahl + Länge -> statischer Wert in Datenbank.
-
-
-\subsection{Komplexität bei der Entwicklung}
-
-\section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
-\subsection{Algorithmus}
-% Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
 % Diskussion des Ergebnisses und der Schwierigkeiten bei der Implementierung werden im nächsten Kapitel berücksichtigt
 
 %TODO: getroffene Annahmen und Verallgemeinerungen erläutern
