@@ -123,36 +123,38 @@ Definieren
 Wir betrachten einen Teil der Betriebskosten, nämlich: .....
 % Evtl. die Sachen zu Wirtschaftlichkeit mit einem Hinweis, dass wir uns auf einen Teil, nämlich die Betriebskosten beschränken, in entweder Problemstellung oder Methodik
 
-\subsection{Carrier-Netzwerke}
-
-%Text übernommen aus dem Exposé, muss noch ausformuliert werden - VL
-%
-%TODO: Mehr beschreiben, was schon getan wurde
-%TODO: Verschiedene Methoden gegenüberstellen
-
+\subsection{Begrifflichkeiten}
 Wirtschaftlichkeit
 Bei der Betrachtung von Energieeinsparpotentialen in Netzwerken ist der Begriff der Wirtschaftlichkeit von Bedeutung. Allgemein bedeutet Wirtschaftlichkeit den sinnvollen und sparsamen Einsatz vorhandener Mittel. Wirtschaftlich handelt, wer eine gegebene Leistung mit einem minimalen Ressourceneinsatz erreicht. Das Prinzip des minimalen Einsatzes von Ressourcen zum Erbringen einer Leistung wird Minimalprinzip genannt []. Bezogen auf Einsparpotentiale in Netzwerken bedeutet Wirtschaftlichkeit den minimalen Einsatz von Energie in Form von Strom zum Betreiben eines Netzwerks.
+
 
 Carrier-Netzwerke
 Gegenstand der Projektarbeit bildet ein hinsichtlich der Energieeffizienz und Wirtschaftlichkeit zu optimierendes Carrier-Netzwerk.
 Unter einem Carrier versteht man […] eine Gesellschaft, die mindestens drei Übertra\-gungs\-wege betreibt, die über eine Vermittlungsstelle miteinander verbunden sein müssen"' (aus: \cite{carrier}). Ein Carrier-Netzwerk stellt somit physikalische Transportwege und -verfahren zur Verfügung und bildet die Grundlage für sogenannte Value Added Services von Providern, welche auf den Carrier-Diensten aufsetzen \cite{fassnacht}. "`Bei den TK-Transportwegen unterscheidet man leitergebundene Verbindungen auf der Basis von Kupferkabeln oder Lichtwellenleitern sowie Funkverbindungen wie Satellitenverbindungen, Richtfunkstrecken und Rundfunkverbindungen"' (Aus: Ebd.).%TODO: Zitat korrigieren
+
 Somit umfasst ein Carrier-Netzwerk nicht nur das physikalische Backbone-Netz, sondern auch das Zugangs- und Aggregationsnetzwerk. Im Rahmen des Projektes entfällt die Betrachtung der Optimierungspotentiale des Zugangsnetzes zugunsten einer aus\-führ\-lich\-eren Simulation von wirtschaftlichen und energieeffizienten Netzkonzepten im Backbone- und Aggregationsnetzwerk. So bildet der Broadband Network Gateway (BNG) die niedrigste Netzelementebene. Multi-Service Access Nodes (MSAN), Digital Subscriber Line Access Multiplexer (DSLAM), enhanced NodeBs (eNodeB) und weitere Netzelemente der nächsttieferen Hierarchiestufe fallen somit aus der Betrachtung.
+
 
 Betriebskosten (OpEx – operating expenditures) 
 Für die Wirtschaftlichkeitsbetrachtung des Netzwerks werden die Ausgaben für die Anschaffung der Netzwerkkomponenten (Capex –Capital Expenditures) nicht berücksichtigt. Die für den operativen Geschäftsbetrieb anfallenden Aufwendungen werden „Operating Expenditures“ (kurz Opex) genannt. Zu den laufenden Ausgaben für den Geschäftsbetrieb gehören u.a. Mieten, Personal- und Energiekosten, Aufwendungen für Wartung und Support, Verbrauchsmaterialien und Betriebsstoffe. 
 Die Betrachtung der Wirtschaftlichkeit beschränkt sich auf einen Teil der Kosten für den operativen Betrieb, nämlich auf die Kosten für Energie zum Betrieb der Netzelemente.
-In der Arbeit wird allerdings nur der operative Kostenanteil behandelt.
 
 
-\subsection{Möglichkeiten der Energieeinsparung in Netzwerken}
+\subsection{Möglichkeiten und Konzepte zur Reduzierung des Energieverbrauchs}
 %Evtl mit dem nächsten Subchapter zusammenlegen? Hier nicht schreiben über unsere Simulation. Es geht nur darum, was andere schon erforscht haben.
-
 Aufgrund des prognostizierten Datenverkehrs, den öffentlichen Diskussionen zur Nachhaltigkeit und Klimawandel, sowie den steigenden Energiekosten für Netzbetreiber, kommt dem Thema Energieverbrauch in Telekommunikationsnetzen immer mehr Aufmerksamkeit zu. Laut der ETH Zürich liegt die zukünftige Wachstumsrate des Internetstromverbrauchs zwischen 4 und 7 Prozent jährlich. [QUELLE]. Damit liegt die Steigerung des Energieverbrauchs für den Betrieb des Internets über dem Wachstum des weltweiten Gesamtstromverbrauchs (jährlich circa 3,5 Prozent in den letzten Jahren.  Die Entwicklung und Anwendung von Energieeinspartechnologien können demnach den stetig wachsenden Kosten für Betrieb der Netzelemente entgegenwirken. 
-Die gesamtheitlichen Kosten der Telekommunikationsnetze der Carrier lassen sich in OpEx (Aufwendungen für Stromverbrauchskosten) und CapEx (Aufwendungen für Anschaffung der Netzkomponenten, Investitionen für unterbrechungsfreie Stromversorgungen usw.) einteilen. In typischen Betriebsstellen beträgt der Energiebedarf für den Betrieb unterbrechungsfreier Stromversorgungen und Kühlung der Netzwerkelemente etwa 50\% des Gesamtenergiebedarfs [QUELLE]. Damit besteht hier ein großes Einsparpotenzial. Bezüglich des reinen Telekommunikationsnetzes können Möglichkeiten zur Steigerung der Energieeffizienz bzw. Reduzierung des Energieverbrauchs wie folgt unterteilt werden:
+Die gesamtheitlichen Kosten der Telekommunikationsnetze der Carrier lassen sich in OpEx (Aufwendungen für Stromverbrauchskosten) und CapEx (Aufwendungen für Anschaffung der Netzkomponenten, Investitionen für unterbrechungsfreie Stromversorgungen usw.) einteilen. In typischen Betriebsstellen beträgt der Energiebedarf für den Betrieb unterbrechungsfreier Stromversorgungen und Kühlung der Netzwerkelemente etwa 50 Prozent des Gesamtenergiebedarfs [QUELLE]. Damit besteht hier ein großes Einsparpotenzial. Bezüglich des reinen Telekommunikationsnetzes können Möglichkeiten zur Steigerung der Energieeffizienz bzw. Reduzierung des Energieverbrauchs wie folgt unterteilt werden:
 \begin{itemize}
 	\item Energieeffiziente Netzelemente: Durch den technologischen Fortschritt können Netzwerkkomponenten energieeffizienter gestaltet werden wie z.B. durch zunehmende Integration einzelner Module. Somit können mehrere Module in einer Einheit zusammengefasst werden ohne die Netzwerkarchitektur zu verändern. 
 	\item Energieeffiziente Netzarchitektur: Beim Entwerfen von Netzarchitekturen kann durch das Einbeziehen des Energieverbrauchs eine Reduzierung des Gesamtenergieverbrauchs bewirkt werden.  Die Verwendung unterschiedlicher Netzzugangsarchitekturen hat verschiedene Energieverbräuche zur Folge (z.B. Fiber to the Home gegenüber Fiber to the Building).
-	\item Verkehrslastadaptiver Netzbetrieb: Bei dem zuvor erwähnten zunehmenden Datenverkehr und dem entsprechenden Netzausbau, führt eine nahezu konstante Leistungsaufnahme der Netzelemente zu einem Anstieg des Netzenergiebedarfs. Da jedoch die Verkehrslast des Netzes zeitlich variiert [Quelle], können in Phasen geringerer Last einzelne Systeme in einem Modus mit niedrigerer Leistungsaufnahme betrieben werden, ohne dass eine Beeinträchtigung für die Nutzer entsteht. Heutige Telekommunikationsnetze werden auf Basis einer Spitzenlast zuzüglich einer Reserve dimensioniert. Für die Dimensionierung der Netze stellt eine dynamische Anpassung der Netzkapazität an die Verkehrslast eine attraktive Lösung dar.
+	\item Verkehrslastadaptiver Netzbetrieb: Bei dem zuvor erwähnten zunehmenden Datenverkehr und dem entsprechenden Netzausbau, führt eine nahezu konstante Leistungsaufnahme der Netzelemente zu einem Anstieg des Netzenergiebedarfs. Da jedoch die Verkehrslast des Netzes zeitlich variiert [Quelle], können in Phasen geringerer Last einzelne Systeme in einem Modus mit niedrigerer Leistungsaufnahme betrieben werden, ohne dass eine Beeinträchtigung für die Nutzer entsteht. Heutige Telekommunikationsnetze werden auf Basis einer Spitzenlast zuzüglich einer Reserve dimensioniert. Für die Dimensionierung der Netze stellt eine dynamische Anpassung der Netzkapazität an die Verkehrslast eine attraktive Lösung dar. [QUELLE]
+\begin{figure}[!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Netzdimensionierung}
+	\caption{Prinzipien der Netzdimensionierung}
+	\label{fig:Netzdimensionierung}
+\end{figure}
+Der linke Teil dieser Abbildung zeigt den Netzbetrieb, dessen Kapazität aufgrund einer Spitzenlast zuzüglich einer Reserve dimensioniert wurde. Es ist erkennbar, dass die reale Netzkapazität auf einen Tag verteilt nur einmal annähernd erreicht wird. Je geringer der Abstand zwischen der Funktion der realen Netzkapazität und dem Graphen ist, desto effizienter ist das Netz. Durch die statische Netzkapazität ist ein konstanter Energieaufwand notwendig, um das Netz zu betreiben. Im rechten Teil der Abbildung ist dargestellt, wie durch den lastadaptiven Netzbetrieb ein effizienteres Netz gestaltet werden kann. Die reale Netzkapazität passt sich dem realen Verkehrsvolumen an und dessen Verläufe sind bis auf eine vorgehaltene Reserve gleich. Betrachtet man beide Teile der Grafik ist zu erkennen, dass der Abstand der Gerade und dem Graphen beim lastadaptiven Netzbetrieb um einige Vielfache geringer ist als bei dem statisch dimensionierten Netz. Somit ist das Netz um einige Vielfache effizienter. 
 \end{itemize}
 
 
@@ -163,13 +165,11 @@ P_{core} = P_{ip} + P_{ethernet} + P_{otn} + P_{wdm}
 
 
 \subsection{Energie-effiziente Technologien}
-Der aktuelle Stand der Forschung bietet verschiedene Konzepte und Technologien für das Einsparen von Energie in Carrier-Netzen. In dieser Arbeit sollen ausgewählte Konzepte und Technologien genutzt werden, um die Wirtschaftlichkeit von energieeffizienten Netzen zu analysieren. Betrachtet wurden im Rahmen der Literaturrecherche die folgenden Konzepte und Technologien:
+Das zweite Konzept befasst sich mit der dynamischen Abschaltung von temporär nicht verwendeten Netzwerkkomponenten und setzt das Konzept des lastadaptiven Netzbetriebs um.  Tageszeitabhängige Schwankungen der Netzauslastung ermöglichen eine unabhängige und dynamische Abschaltung von Ports und Links unter der Berücksichtigung der Quality of Service-Bedingungen [2]. Dabei werden Algorithmen zur Identifikation von individuell abschaltbaren Links verwendet [10]. Die Verfasser W. Fisher, M. Suchara und J. Rexford schreiben in ihrer Veröffentlichung „Greening Backbone Networks: [...]“, dass die durchschnittliche Verbindungsauslastung der Backbone-Netzwerke vieler großer Internet Service Provider geschätzt 30-40\% beträgt. Durch die Abschaltung einzelner Ports kann laut der Deutschen Telekom AG der Energiebedarf einiger Elemente um ein Drittel gesenkt werden [Energieverbrauch in Tele.... C.Lange ...]. Demnach verbrauchen Ports die, keinen Verkehr leiten signifikant weniger Energie als solche unter Last. Weiterhin wird beschrieben, dass durch die Deaktivierung ganzer Line Cards und Port Groups per Management Systems nahezu 100\% Einsparung erreicht werden kann. In dem Text von 2010 wird beschrieben, dass das Deaktivieren der Line Cards nur per manuellen Eingriff mit einem Network Management System erfolgen kann [.... C.Lange]. Der Aufwand für das dynamische, temporäre Abschalten steht nicht im Verhältnis zur Einsparung. Die Hersteller der Backbone-Netzwerk-Komponenten implementieren derzeit Funktionen, die das manuelle Eingreifen durch eine automatische Kapazitätsanpassung ersetzen. Die Herausforderung in den nächsten Jahren wird zum einen sein die Deaktivierungs- und Aktivierungszeiten der Elemente zu reduzieren. Weiterhin ist es notwendig die Betriebssysteme großer Router Systeme für die genannte Dynamik kompatibel zu machen, da aktuelle Softwarelösungen eine temporäre Aus- und Abschaltung nicht vorsehen.
 
-Das erste Konzept sieht eine Vereinfachung des Netzes vor, welche durch eine geographische Aufteilung des Netzes in Submodale (Global - Kontinental - National - Regional - Zugang) erfolgen kann \cite{aleksic2014}.
 
-Das zweite Konzept befasst sich mit der dynamischen Abschaltung unterlasteter Netzkomponenten. Tageszeitabhängige Schwankungen des Traffics in Netzen ermöglichen eine individuelle und dynamische Abschaltung von Switches und Links unter der Be\-rück\-sich\-ti\-gung der QoS-Bedingungen \cite{aleksic2013}. Dabei werden Algorithmen zur Identifikation von individuell abschaltbaren Links verwendet \cite{fisher}.
+Bei den Technologien beschränkt sich die Arbeit auf optische Vermittlungstechniken. Optische leitungsvermittelnde Switche basieren auf mikro-elektromechanischen Systemen, die eine geringe Menge an Energie benötigen und eine hohe Portanzahl besitzen. Das sog. Hybrid Optical Switching (HOS) verwendet eine Kombination aus optischen und elektronischen Netzknoten. Zum einen verwendet HOS das „Optical Circuit Switching“ (OCS), das laut C. Xin, C. Qiao, Y. Ye und S. Dixit in der Veröffentlichung „A Hybrid Optical Switching Approach“ als fortgeschrittene und viel verwendete Technologie zur Übermittlung in optischen Netzwerken eingesetzt wird. OCS ist gut geeignet für langanhaltende und kontinuierliche Datenströme, jedoch kommt die Technik bei stoßweisen Anstieg des Durchsatzes an ihre Grenzen. Eine alternative Technologie stellt „Optical Burst Switching“ (OBS) dar. Wie der Name darlegt ist die Technologie optimiert für kurzzeitig ansteigende Datendurchsätze. Ein Nachteil der Technik ist die abnehme Leistung bei lang andauernden, kontinuierlichen Strömen. Weiterhin stellt OBS eine hohe Bandbreitennutzung her, benötigt hierfür aber große optische Pufferspeicher. Um effektiv beide Varianten der Datenströme zu übertragen, können mit der Kombination von OCS und OBS die Vorteile beider Technologien kombiniert werden. Die beiden Technologien sind als komplementäre Ansätze anzusehen. [Xin, C. Qiao, Y. Ye und S. Dixit]. In einem HOS-Netzwerk werden große Datenströme durch vorgehalten Leitungen oder mit langen Durchsatzstöße übertragen und kleinere Ströme durch einzelne Datenpakete und kurze Durchsatzstöße übermittelt.
 
-Bei den Technologien beschränkt sich diese Arbeit auf optische leitungsvermittelnde Switche und das Hybrid Optical Switching (HOS). Optische leitungsvermittelnde Switche basieren auf mikro-elektromechanischen Systemen, die die geringste Menge an Energie benötigen und eine hohe Portanzahl besitzen. Das Hybrid Optical Switching verwendet eine Kombination aus optischen und elektronischen Netzknoten, die optische Leitungen, Bursts, und Pakete effizient Switches können. Durch die Kombination von langsamen und schnellen Switches, können Wellenlängenbereiche dynamisch zwischen zwei Switches geändert werden. Das temporäre Abschalten von ungenutzten Ports des schnellen Switches ermöglicht eine Energieeinsparung.  \cite{aleksic2013}
 
 \section{Problemstellung}
 Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
@@ -216,23 +216,7 @@ Zwei Netze modelliert (Quellen), um sie gegenüberstellen zu können. Techniken 
 Aufgrund der Recherche ist Simulation nötig.
 
 \subsection{Softwareentwicklung}
-
-Anforderungen an eine mögliche Simulationssoftware erarbeitet
-Entscheidung/Festlegung Entwicklungmodell / Technologiestack / Systemlandschaft, weil....
-Start Softwareentwicklung
-	- Requirements
-	- Spezifikation
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.8\textwidth]{MethSoftwareER}
-\caption{ER-Diagramm} %TODO Bezeichnung anpassen
-\label{fig:MethSoftwareER}
-\end{figure}
-
-	- Design
-
-Die zuvor beschriebene Modellierung zur Kalkulation und Simulation von energieeffizierten Netzen soll im nächsten Schritt softwaretechnisch umgesetzt werden. Als Vorgehensmodell hat sich das Projektteam an dem Wasserfallmodell mit den folgenden Entwicklungsstufen:
+Die zuvor beschriebene Modellierung zur Kalkulation und Simulation von energieeffizierten Netzen soll im nächsten Schritt softwaretechnisch umgesetzt werden. Als Vorgehensmodell hat sich das Projektteam an dem Wasserfallmodell mit den folgenden Entwicklungsstufen orientiert:
 \begin{itemize}
 \item Anforderungsanalyse
 \item Spezifikation
@@ -240,54 +224,71 @@ Die zuvor beschriebene Modellierung zur Kalkulation und Simulation von energieef
 \item Programmierung / Implementierung
 \item Test
 \end{itemize}
-Die Analyse der Anforderungen an die Simulationssoftware erfordert eine zielgerichtete Recherche über bereits Vorhandene Technologien und Methoden sowie einer Definition von Funktionen, die das Simulationstool bereitstellen soll. 
-Nach einer detaillierten Recherche konnten einige Anforderungen an das System gestellt werden.  Das System soll ein statisches Netz mit einer festgelegten Anzahl an Verbindungen darstellen. Alle Daten zu Geräten, Netzen, Verbindungen und Netzprofilen sollen in einer MySQL-Datenbank gespeichert werden. Die Verwendeten Geräte sowie neue Netzprofile sollen über die Datenbank eingepflegt werden können. Für das Netzprofil sollen Traffic-Daten (Netzprofil, Last, Quelle, Senke, Uhrzeit) verwendet werden. Aus den Daten entsteht eine gleichbleibende Auslastungskurve, anhand der die Verbindungen für die jeweilige Uhrzeit berechnet werden kann. Um das Netz möglichst realistisch zu realisieren bekommen die einzelnen Verbindungen eine Länge zugeordnet. Anhand dieser Länge (mehr als 80 km) wird definiert, ob ein Verstärker hinzugefügt werden muss, um die Verbindung zu verbessern. Das definierte, statische Netz soll die Verwendung verschiedener Technologien und Methoden zur Senkung des Energieverbrauchs möglich machen. Zur Abschaltung Switches und Ports soll ein Agorithmus entwickelt werden, der auf der Basis des „Exhaustive Greedy Algorithm“(QUELLE!!!) aufbaut.
-Im Zuge der Anforderungsanalyse und der Spezifikation der Software wurden die folgenden „functional“, „non-functional“ und „data“ Requirements erstellt:
-Functional Requirements:
+Die Analyse der Anforderungen an die Simulationssoftware erfordert eine zielgerichtete Recherche über bereits vorhandene Technologien und Methoden. Ebenfalls müssen die Funktionalitäten, die das Simulationstool bereitstellen soll, abgegrenzt werden. Die Anforderungen werden zunächst als Ideen und Möglichkeiten gesammelt und dann in Form von Anforderungsspezifikationen definiert. 
+Das System soll ein statisches Netz mit einer festgelegten Anzahl an Verbindungen abbilden. Alle Daten zu Geräten, Netzen, Verbindungen und Netzprofilen sollen in einer MySQL-Datenbank gespeichert werden. Die Verwendeten Geräte sowie neue Netzprofile sollen über die Datenbank eingepflegt werden können. Für das Netzprofil sollen Traffic-Daten (Netzprofil, Last, Quelle, Senke, Uhrzeit) verwendet werden. Aus den Daten entsteht eine gleichbleibende Auslastungskurve, anhand dessen die Verbindungen für die jeweilige Uhrzeit definiert werden können. Um das Netz möglichst realistisch zu simulieren bekommen die einzelnen Verbindungen eine Länge zugeordnet. Anhand dieser Länge (mehr als 80 km) wird definiert, ob ein Verstärker hinzugefügt werden muss, um die Verbindung zu verbessern. Das definierte, statische Netz soll die Verwendung verschiedener Technologien und Methoden zur Senkung des Energieverbrauchs möglich machen. Zur Abschaltung von Switches und Ports soll ein Algorithmus entwickelt werden, der auf dem „Exhaustive Greedy Algorithm“(QUELLE!!!) aufbaut.
+Im Zuge der Anforderungsanalyse und der Spezifikation der Software wurden die folgenden funktionalen, nicht funktionalen und datenbezogenen Anforderungen erstellt:
 
+
+
+Funktionale Anforderungen:
 \begin{itemize}
-	\item R1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden.
-	\item R2: Ein Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich.
-	\item R3: Eine Veränderung von Geräteparametern ist über die Datenbank möglich.
-	\item R3a: Ein Austausch von Gerätetypen ist über die Datenbank möglich
-	\item (R3b: Ein Austausch von Gerätetypen pro Schicht ist über eine GUI möglich) —> nicht in diesem Release
-	\item R4: Das System berechnet anhand des modellierten Netzes, der eingestellten     Gerätekonfigurationen, der gewählten Energiespartechnologien und des vorliegenden Lastprofils den Stromverbrauch.
-	\item R5: Das System ist in der Lage, aus dem Stromverbrauch anhand eines vorgegebenen Umrechnungsfaktors dessen Stromkosten zu berechnen.
-	\item R6: Zur Vereinfachung von Berechnungen müssen Annahmen getroffen werden. Diese müssen in der DB hinterlegt werden.
-	\item R7: Es werden generische Geräte basierend auf dem Dokument "<Dokumentname einfügen>" verwendet.
-	\item R8: Als Algorithmus zur Abschaltung von Switches/Ports dient der "Exhaustive Greedy Algorithm"
-	\item R9: Der simulierte Stromverbrauch im Laufe eines Tages pro Stunde soll graphisch ausgegeben werden.
-	\item R10: Die Lastkurve wird graphisch dargestellt.
+	\item A1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden
+	\item A2: Das Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich
+	\item A3: Das Verändern von Geräteparametern ist über die Datenbank möglich
+	\item A3a: Das Austauschen von Gerätetypen ist über die Datenbank möglich
+	\item A3b: Das Austauschen von Gerätetypen pro Schicht ist über eine GUI möglich                       
+	\item A4: Das System berechnet anhand des modellierten Netzes, der eingestellten		 Gerätekonfigurationen, der gewählten Energiespartechnologien und des vorliegenden Lastprofils den Stromverbrauch.
+	\item A5: Das System berechnet die Stromkosten anhand des Stromverbrauches und einem vorgegebenen Umrechnungsfaktor 
+	\item A6: Zur Vereinfachung von Berechnungen müssen Annahmen getroffen werden, die in der DB hinterlegt werden
+	\item A7: Es werden generische Geräte basierend auf dem Dokument "<Dokumentname einfügen>" verwendet
+	\item A8: Zur Abschaltung von Switches/Ports dient der "Exhaustive Greedy Algorithm"
+	\item A9: Der simulierte Stromverbrauch im Laufe eines Tages soll pro Stunde graphisch ausgegeben werden
+	\item A10: Die Lastkurve wird graphisch dargestellt
 \end{itemize}
 
 
-Non-functional Requirements:
-
+Nicht funktionale Anforderungen:
 \begin{itemize}
-	\item NFR1: Das System soll als Client-only Applikation vorliegen.
-	\item NFR2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
+	\item NFA1: Das System soll als Client-only Applikation vorliegen
+	\item NFA2: Das System verwendet eine MySQL-Datenbank als Persistenzschicht
 \end{itemize}
 
 
-Data Requirements:
-
+Datenbezogene Anforderungen:
 \begin{itemize}
-	\item DR1: Für Verbindungen kann eine Länge vergeben werden.
-	\item DR2: Für Gerätetypen können relevante Leistungs- und Verbrauchsparameter hinterlegt werden
-	\item DR3: Ein Netz entsteht durch Verbinden von Geräteinstanzen und Zuordnung zu einer NetzID
-	\item DR4: Annahmen werden durch einen eindeutigen Namen und einen Wert abgebildet
-	\item DR5:  Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
+	\item DA1: Verbindungen wird eine Länge zugewiesen
+	\item DA2: Für Gerätetypen können relevante Leistungs- und Verbrauchsparameter hinterlegt werden
+	\item DA3: Ein Netz entsteht durch das Verbinden von Geräteinstanzen und der Zuordnung zu einer NetzID
+	\item DA4: Annahmen werden durch einen eindeutigen Namen und einen Wert abgebildet
+	\item DA5:  Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
 \end{itemize}
 
-Während der Phase des Systemdesigns wurden einige Entscheidungen bezüglich der Softwareentwicklung getroffen. Als Programmiersprache für das Projekt wurde objektorientiertes Java aufgrund der bereits vorhandenen Entwicklungserfahrung im Team mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken ausgewählt.
 
+In der Systemdesign-Phase werden einige Entscheidungen bezüglich der Softwareentwicklung getroffen. Als Programmiersprache für das Projekt wurde objektorientiertes Java ausgewählt. Die bereits vorhandene Entwicklungserfahrung im Team mit dieser Sprache und der sehr ausgeprägten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken waren für die Entscheidung ausschlaggebend.
 Die Architektur besteht aus einer 2-Tier Kombination aus einer relationalen MySQL/MariaDB Datenbank und einer Fat-Client Anwendung. Die Datenbank wird dabei zur Speicherung der zur Erstellung eines Netzes notwendigen Daten, sowie Hardware-, Topologie- und Netzwerkkonfiguration verwendet. Die Anwendung hingegen wird zur Parameterkonfiguration, Berechnung der Zielwerte und Ausgabe der Resultate verwendet.
-
 Die Vorteile dieser Architektur sind die gute Portabilität der resultierenden Lösung und die Ermöglichung einer einfachen und schnellen Entwicklung. Es müssen keine weiteren Anwendungsserverkomponenten je Entwicklungsumgebung installiert und konfiguriert werden. Die SQL-Datenbank verwendet eine übliche Datenbank-Standardsoftware und kann per SQL-Script vollautomatisch konfiguriert werden.
+Das Datenbank-Konzept ist entscheidend für die Softwareentwicklung. Es werden alle relevanten Daten für Berechnungen, Konfigurationen und Darstellungen gespeichert. Auf der Basis der Datenbankstruktur kann die Entwicklung der Softwarelösung weitergeführt werden.
+
+
+\begin{figure}[!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{MethSoftwareER}
+	\caption{ER-Diagramm} %TODO Bezeichnung anpassen
+	\label{fig:MethSoftwareER}
+\end{figure}
+
+
+%----> Erklärung ER-Diagramm <----
+Zur Vorbereitung der Programmierung wurde der Algorithmus für das Routing in der Systemdesign-Phase entwickelt.  Dieser Algorithmus wird in den nächsten Kapiteln (4.3 \& 5.1) detailliert erklärt.
+In der Programmierungsphase wurde ein Grundgerüst für die weitere Entwicklung der Software geschaffen. Die Datenbank wurde auf der Basis des zuvor erstellten Konzeptes eingebunden. Im Rahmen der Weiterentwicklung kann der Routing-Algorithmus und die definierten Anforderungen implementiert werden. Der Algorithmus koordiniert das Routing des Traffics durch das definierte Netz. Mit der Hilfe von weiteren Annahmen und Algorithmen kann die Software zu einem System entwickelt werden, das verschiedene Technologien und Methoden zur Energiereduzierung einsetzt. Das Programm könnte die verschiedenen Methoden möglichst realitätsgetreu anwenden und die dadurch gesparte Energie graphisch darstellen. Über die GUI könnte eine Konfiguration möglich sein.  Darüber könnten verschiedene Technologien aktiviert und Geräte ausgetauscht werden. 
+Die beschriebene Software konnte innerhalb dieses Projektes nicht fertigstellt werden. Gründe dafür waren die Begrenzung der Bearbeitungszeit auf drei Monate und vermehrt auftretende komplexe Problemstellungen. Die einzelnen Faktoren der Komplexität werden in Kapitel 4.4 erläutert.
+Eine ausgereifte Testphase ist erst nach der Fertigstellung der Software sinnvoll. Die implementierten Module und Teilfunktionalitäten werden vom jeweiligen Entwickler direkt getestet. Ein abschließender Test der bis zum Ende der Bearbeitungszeit programmierten Funktionalitäten, wird durchgeführt.
+
 
 Implementierung
 
-%TODO wohin mit dem folgenden Abschnitt?
+%TODO
+TODO wohin mit dem folgenden Abschnitt?
 Um den Energieverbrauch im Carrier-Netzwerk berechnen zu können, bedarf es an Werten der im Backbone verwendeten Netzkomponenten. Innerhalb der Simulation wird für die Berechnung des Gesamtverbrauchs auf die definierten Werte zurückgegriffen, die in einer Datenbank gespeichert sind. Ziel dieser Arbeit ist die Simulation und Berechnung des gesamtheitlichen Energieverbrauchs. Deshalb verwendet die Berechnung die von den beiden Wissenschaftler Ward Van Heddeghem und Filip Idzikowski in ihrer Veröffentlichung \cite{vanhedde} zusammengetragenen Werte. Die Quelle beinhaltet zum einen das analytische Model der Berechnung und zum anderen ein Datenblatt \cite{vanhsheet} des Energieverbrauchs der unterschiedlichen Hersteller. Das Datenblatt gliedert die Geräte nach den Unterschiedlichen Layer IP/MPLS, Ethernet, OTN, WDM - (OSI-Layer: 3-2-1-1). Zu beachten ist beim Verwenden der Werte, dass es sich um Werte unter typischen Lastbedingungen handelt, die sich nach der Kapazität der Komponente richtet und nicht nach dem aktuellen Durchsatz. Des Weiteren geben die Werte nur dein Stromverbrauch für den Betrieb an, ein Verbrauch für Kühlung o.Ä. ist nicht enthalten.
 Der Gesamtverbrauch des Core-Networks ergibt sich aus der Summe alle Verbrauche der einzelnen Schichten.
 
@@ -303,6 +304,14 @@ Dies erlaubt allerdings keine Anpassung des zu berechnenden N
 
 
 \subsection{Komplexität bei der Entwicklung}
+Die Komplexität, die Unterschätzung der Einflussfaktoren und deren Beziehung zueinander werden häufig zu Problemen der Softwareentwicklung. In diesem Projekt konnte die Komplexität der Umsetzung der Aufgabenstellung erst in der Realisierungs- / Programmierungsphase erkannt werden. Im Zuge der Anforderungsanalyse und Spezifikation wurden Anforderungen definiert, die ein automatisiertes und konfigurierbares System zur Berechnung und Darstellung von energieeffizienten Netzen beschreiben. Während der Umsetzung der Anforderungen wurden komplexe Problemstellungen entdeckt, die erfasst und nach der Auswirkung auf das Projekt bewertet wurden. Bei dem Versuch diese Probleme zu lösen oder zu umgehen, sind weitere komplexe Schwierigkeiten aufgetaucht. Aufgrund von zwei Faktoren wurde die Entwicklung der Software bei einem Grundgerüst belassen. Ein Mangel an Ressourcen machte es nicht möglich, die auftauchenden komplexen Problemstellungen genau im System abzubilden. Daher mussten Annahmen getroffen werden, die die Genauigkeit der vom System erwarteten Ergebnisse stark reduzierte. Da ungenaue Ergebnisse in diesem Forschungsgebiet nicht zielführend und akzeptabel sind, wurde die Software nicht entsprechend der zuvor definierten Anforderungen weiter entwickelt. Die Komplexität der Entwicklung soll im Folgenden detailliert beschrieben werden.  
+
+
+Die Implementierung eines Netzes bedarf einem Lastprofil, mehreren Geräten und der jeweiligen Verbindung zwischen zwei Geräten. Der in Kapitel 4.3 beschriebene Algorithmus soll das Routing durch das Netz pro Zeitintervall berechnen. Ein Zeitintervall soll unterschiedlich einstellbar sein. Es muss sichergestellt werden, dass keine Verbindungen überlastet sind. Dafür muss der Algorithmus zunächst die optimale Route berechnen und diese dann mit allen bereits definierten Verbindungen vergleichen. Wurde die gleiche Verbindung bereits gewählt muss geprüft werden, ob die Geräte der Verbindung voll ausgelastet sind. Ist die maximale Auslastung erreicht, muss entschieden werden, welche Verbindung bestehen bleibt und für welche Verbindung eine alternative Route gefunden werden muss. Dies kann nur über eine komplizierte Berechnung und einen Vergleich durch den Algorithmus durchgeführt werden. Ein weiteres Problem beim Routing ist die Blockierung der Ports. In der Realität werden Ports nur eine bestimmt Zeit belastet. Diese Zeit ist abhängig von der Datenmenge und Geschwindigkeit des Ports. Die Berechnung der Zeit, die ein Port von einem Datenpaket blockiert wird, macht  die Verwendung von festen Zeitintervallen fast unmöglich. Es müsste  definiert werden, wie lange der Port mit welchem Volumen belegt ist. Dadurch würden die Zeitschlitze zur kleinsten Einheit. Um diese Komplexität zu minimieren wurde die Annahme getroffen, dass ein Datenpaket einen Port für die gesamte Zeiteinheit belegt.
+
+ 
+Eine weitere Annahme musste bei der Berechnung des Stromverbrauchs getroffen werden. Jedes Gerät besitzt einen vom Hersteller vorgegebenen Stromverbrauch pro Port. Der Stromverbrauch für das gesamte Gerät ergibt sich nicht aus der Multiplikation von Stromverbrauch pro Port und der Anzahl an Ports. Der Grund dafür ist, dass das Gerät auch Strom verbraucht, wenn kein Datenpaket über die Leitung geht. Daher ist der genaue Stromverbrauch bei heruntergefahrenen Ports nur ungefähr abschätzbar. Des Weiteren muss der Stromverbrauch für Geräte, die sich im Energiesparmodus befinden, geschätzt werden. Zu dieser Problematik kommt noch die Komplexität der Berechnung des Stromverbrauchs des gesamten Netzes dazu. Mit heruntergefahrenen und in der Geschwindigkeit reduzierten Ports und Geräten, muss zu jedem Zeitpunkt der Status des jeweiligen Ports und Geräts bekannt sein.  
+
 
 \section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
 \subsection{Algorithmus} \label{subsec:ErgAlg}
