@@ -501,18 +501,24 @@ Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Date
 
 \section{Diskussion und Erkenntnisse}
 %TODO Veronika
-% Enthusiasmus und Forschergeist --> Sachlich richtige Simulation entwickeln, um valides Ergebnis zu erreichen
-% Algorithmus Entwicklung --> Komplexität und Herausforderungen
-% Erkenntnis: Aufgrund der Komplexität (verschiedene Layer, realistische Netzlast (nur "Stream" pro Stunde, keine Berücksichtung von Burst-Traffic, QoS Parameter, Matching der energieeffizienten Konzepte)
-% Um die Umsetzbarkeit zu gewährleisten, müssen sehr viele Annahmen getroffen werden (...) --> Ziel des Realismus geht zum Teil verloren.
-% Entwicklung des Algorithmus innerhalb der Projektdauer nicht möglich (hier Infos von unten rein nehmen)
-% Daher Grundgerüst implementiert und Algorithmus dokumentiert.
-% Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
+Zu Beginn dieser Arbeit setzte sich die Projektgruppe zum Ziel, eine sachlich möglichst richtige Simulation der Netzlast zu entwickeln, um den Energieverbrauch der beiden Netze so realistisch wie möglich abschätzen zu können. Auf diese Art und Weise sollte ein valides Ergebnis entstehen.
 
-Das Ziel des teilweise entwickelten Algorithmus ist das effiziente und realitätsnahe abschätzen der zu erwartenden Energieverbrauchswerte von Backbone-Netzwerken sowohl mit als auch ohne Einsetzen der Energieeinspartechnologien. Es stellte sich während der genaueren Analyse und zu Anfang der Implementierungsphase der Software allerdings heraus, dass der gewählte generische Ansatz einerseits sehr komplex ist und andererseits auf vielen Annahmen und Verallgemeinerungen beruht, die im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der in Entwicklung befindlichen Softwarelösung fast unmöglich machen.
-Um die Schwächen des entwickelten Algorithmus auszugleichen oder abzuschwächen ist deutlich mehr Bearbeitungszeit notwendig als für diese wissenschaftliche Arbeit zur Verfügung steht.
-Weiterhin zeigt eine Begutachtung der Aufgabenstellung dieser Arbeit, dass die detaillierte Ausarbeitung eines solchen Algorithmus nicht Teil des geforderten oder erwartbarem Umfangs ist.
-Aufgrund der genannten Probleme entschieden wir uns dazu, auf die Dokumentation der geleisteten Entwicklung und die Erfüllung der Aufgabenstellung dieser Arbeit den Schwerpunkt zu setzen.
+Schon während der Literaturrecherche war überraschend, dass vorhandene Arbeiten auf dem Gebiet sich immer mit einem kleinen Untergebiet des Themas beschäftigen -- die eine große Überblicksarbeit zum Stand der Forschung unter Kombination aller vorhandenen Technologien gab es nicht.
+
+Sobald dann mit der Entwicklung des Algorithmus angefangen worden war, stellte sich heraus, dass für ein valides Ergebnis die Simulation sehr komplex werden musste. Hierbei stellten sich folgende Herausforderungen:
+\begin{itemize}
+	\item In den Nodes sind jeweils Geräte verschiedener Layer nötig, um das weitere Routing zu gewährleisten. 
+	\item Für eine realistische Berechnung der Netzlast reicht eine stundenweise Iteration nicht aus. Diese Annahme bedeutet, dass von jeder Quelle pro Stunde ein konstanter Datenstrom ausgeht, was in der Realität so nicht der Fall ist.
+	\item Die Einhaltung der QoS Parameter konnten mit dem gewählten Ansatz nicht gewähr-leistet werden.
+	\item Es ist unklar, welche Konzepte zur Erhöhung der Energieeffizienz miteinander kompatibel sind.
+\end{itemize}
+
+Um eine Umsetzung des Algorithmus zu ermöglichen, mussten also sehr viele Annahmen getroffen werden. Hierdurch geht das eigentliche Ziel, eine sachlich richtige Simulation durchzuführen, weitgehend verloren, da im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der Simulation nicht gegeben ist.
+
+Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer dieser Arbeit nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer dieser Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vlg Kapitel \ref{Ergebnisse}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
+
+%MISSING Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
+
 
 
 \section{Ausblick}
