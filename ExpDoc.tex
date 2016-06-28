@@ -90,28 +90,26 @@
 
 %START HERE
 \section{Einleitung}
-Hier muss auch was stehen, oder?
-In der vorliegenden Arbeit...
-Sollten wir evtl die Unterkapitel-Aufteilung weg lassen?
-%TODO Klimalwandel, CO2,
-%TODO Potential alternativer Energiequellen
-% siehe auch Todoist Kommentar
-%TODO Dominik
+Die Weltbevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs_der_weltbevölkerung}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{ welt:strompreise_steigen_bis_2025_um_70_prozent}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{ bmwi:europäische_energiepolitik }. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
+
+
+Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen\cite{ fraunhof-er:informationstechnologien_verbrauchen_mehr_und_mehr_Strom }. Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
+
+
+Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte \cite{ cisco:das_internet_der_dinge } mit Internetzugang ausgestattet. Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden \cite{ cisco:das_internet_der_dinge }  erhöhen soll. 
+
+
+Die rasant steigende Nachfrage nach Bandbreite entsteht durch die Konvergenz von Medien- und Telekommunikationstechnologie. Orts- und zeitunabhängige TV-Nutzung, Video on Demand, Pay TV und HD sind beispielsweise treibende Faktoren für den Bedarf an Bandbreite.
+
+ 
+Bedingt durch diese Entwicklungen gewinnen Energieverbrauch und Energieeffizienz von Kommunikationssystemen und -netzen immer mehr an Bedeutung. Denn „Green IT“ kann dieser Entwicklung gegensteuern. Im Rahmen des Hochschulmoduls „Wissenschaftlich angeleitete Berufspraxis 3 (Technik)“ wurde daher eine Simulationssoftware zur Dimensionierung des Energiebedarfs für ein fiktives effizientes Netz anhand von aktuellen Übertragungstechnologien entwickelt werden. 
+
+
+In diesem Bericht gilt es, die Forschungsergebnisse und wichtigen Erkenntnisse dieser Arbeit zu dokumentieren. Dazu soll zunächst die Problemstellung detailliert beschrieben und die Ziele der Simulationssoftware erklärt werden. Im darauf folgenden Kapitel wird der Stand der Forschung ausführlich betrachtet und im Rahmen dessen auf Carrier-Netzwerke, Möglichkeiten der Energieeinsparung und energieeffiziente Technologien eingegangen. Für weitere Forschungsprojekte in diesem Themengebiet ist insbesondere das Vorgehen der Projektgruppe von Interesse. Wesentliche Inhalte sind daher die Modellierung der Netze, die Softwareentwicklung, die Erstellung eines geeigneten Routingalgorithmus und dabei auftretende Komplexität. Die Ergebnisse der Projektarbeit werden darauf folgend im Zuge der Auswertung dokumentiert und beschrieben. Aufbauend darauf werden im Ausblick weitere zu erforschende Problemstellungen aufgezeigt. 
+
 
 Früher waren Geräte überwiegend fest verbunden, weshalb nur stationäres Handeln für Nutzer möglich war. Doch die Technik entwickelte sich hin zu mobilen Geräten. Nutzer konnten bald Geräte mit sich führen und unterwegs nutzen. Ein weiterer technischer Fortschritt war das Internet. Bereits 2003 waren circa 500 Millionen Geräte  mit Internetzugang ausgestattet. 
 Im Laufe der technischen Entwicklung wurde das vernetzte Handeln immer weiter vorangetrieben. Durch die Einführung des Internets der Dinge kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Das Internet der Dinge bezeichnet „die Idee eines erweiterten Internets, welches neben klassischen Rechnern und mobilen Endgeräten auch beliebige physische Gegenstände […] in seine Infrastruktur einbindet […]“ . Durch die Erwartung dieser Entwicklungsstufe, „Informationen aus Gegenständen abzurufen und aufzubereiten“ , waren 2010 bereits 12,5 Milliarden Geräte  mit Internetzugang versehen. 
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Entwicklung_Anzahl_vernetzte_Geraete}
-	\caption{Die Entwicklung der Anzahl vernetzter Geräte}
-	\label{fig:Entwicklung_Anzahl_vernetzte_Geraete}
-\end{figure} 
-
-Zunehmend werden immer mehr physikalische Objekte mit Mikrokontrollern, Sendeempfängern und geeigneten Protokollen für digitale Kommunikation ausgestattet. Dadurch steigt die Anzahl der mit dem Internet verbundenen Geräte, was Abbildung 1 illustriert. Prognostiziert ist, dass sich die Anzahl der mit dem Internet verbundenen Geräte bis zum Jahr 2020 auf 50 Milliarden erhöhen wird. Auf die Weltbevölkerung umgerechnet bedeutet das, dass jeder Mensch 6,6 vernetzte Geräte besitzen wird (siehe Abbildung 1). Mit diesem Durchbruch auf dem ITK-Markt entstehen neue Datenmengen, die früher noch nicht vorhanden waren. Diese Datenmengen müssen über Telekommunikationsnetze übertragen werden. Dadurch werden die Zugangsnetze und insbesondere die Kernnetze der Telekommunikationsanbieter stärker denn je belastet.  
-Ein zweiter Trend der heutigen Informationsgesellschaft ist die rasant wachsende Nachfrage nach Bandbreite. Diese entsteht durch die Konvergenz von Medien und Telekommunikation. Orts- und zeitunabhängige TV-Nutzung, Video on Demand, Pay TV und HD sind beispielsweise treibende Faktoren für den Konsum von Bandbreite. 
-Telekommunikationsnetze sind buchstäblich die Basis des täglichen Lebens und müssen mit immer mehr Datenverkehr umgehen können. In der logischen Konsequenz werden in Zukunft mehr Netzkomponenten verwendet, um den Anforderungen der vielen vernetzten Geräte und der Breitbandnachfrage gerecht zu werden. Das bedeutet auch einen Anstieg des Energieverbrauchs für die Betreibung der Telekommunikationsnetze. Bereits 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland jährlich über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen stehen somit im starken Zielkonflikt. Eine Herausforderung ist es daher, die Telekommunikationsnetze umwelt- und ressourcenschonend zu gestalten. 
-
 
 
 \section{Stand der Forschung} \label{SdF}
