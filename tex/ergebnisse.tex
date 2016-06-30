@@ -1,6 +1,6 @@
 
 \section{Präsentation und Auswertung der Ergebnisse} \label{sec:Erg}
-Für die Darstellung der Ergebnisse des Projekts soll zunächst der entwickelte Algorithmus zur Berechnung des Stromverbrauchs im optimierten Netz beschrieben werden. Anschließend wird in \ref{subsec:ErgSoftware} ausführlich auf die erstellte Software „EnergyNetSim“ und deren Benutzung eingegangen, bevor in \ref{subsec:ErgDiskussion} eine Diskussion der Ergebnisse und Erkenntnisse folgt.
+Für die Darstellung der Ergebnisse des Projekts soll zunächst der entwickelte Algorithmus zur Berechnung des Stromverbrauchs im optimierten Netz beschrieben werden. Anschließend wird in \ref{subsec:ErgSoftware} ausführlich auf die erstellte Software \textquote{EnergyNetSim} und deren Benutzung eingegangen, bevor in \ref{subsec:ErgDiskussion} eine Diskussion der Ergebnisse und Erkenntnisse folgt.
 
 \subsection{Algorithmus} \label{subsec:ErgAlg}
 Wie in Kapitel \ref{subsec:MethAlg} dargestellt, wurde ein Algorithmus entwickelt, der es erlaubt, Netzlast (Traffic) dynamisch durch ein definiertes Netz zu routen und anschließend nicht benötigte Geräte und Verbindungen abzuschalten.
@@ -55,12 +55,12 @@ Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jewe
 %TODO: getroffene Annahmen und Verallgemeinerungen erläutern
 
 \subsection{Die erstellte Software aus Ergebnissicht}\label{subsec:ErgSoftware}
-Im Rahmen der Software-Entwicklung wurde das Java-Programm „EnergyNetSim“ mitsamt Anbindung an eine MySQL-Datenbank realisiert. Die folgenden Unterkapitel beschreiben die erzielten Resultate und geben Hinweise auf Installation und Benutzung der Software für Endanwender.
+Im Rahmen der Software-Entwicklung wurde das Java-Programm \textquote{EnergyNetSim} mitsamt Anbindung an eine MySQL-Datenbank realisiert. Die folgenden Unterkapitel beschreiben die erzielten Resultate und geben Hinweise auf Installation und Benutzung der Software für Endanwender.
 
 \subsubsection{Ergebnisse der Software-Entwicklung}
-Die erstellte Software „EnergyNetSim“ stellt ein Rahmenwerk zur Verfügung, in das die in den Kapiteln
+Die erstellte Software \textquote{EnergyNetSim} stellt ein Rahmenwerk zur Verfügung, in das die in den Kapiteln
 \ref{subsec:MethAlg} und \ref{subsec:ErgAlg} beschriebenen Algorithmen zur Simulation von Netzauslastung, Datenverkehr zwischen zwei Netzknoten, dynamischem Routing und effizienzsteigernden Energiesparmechanismen eingefügt werden können. Im Programmcode und in der Dokumentation sind die dazu notwendigen Methoden bereits angelegt und gekennzeichnet. Das Kapitel \ref{subsubsec:ErgSoftwErweiterung} gibt dazu detailliertere Hinweise.
-Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von Parametern zur Simulation, die persistente Speicherung der Konfigurationen und Netzstrukturen und die graphische Ausgabe der errechneten Ergebnisse übernimmt der aktuelle Softwarestand bereits. Die Grundlage dafür bietet die Einbindung der frei verfügbaren Java-Bibliothek „jFreeChart“\footnote{„JFreeChart is a free 100\% Java chart library that makes it easy for developers to display professional quality charts in their applications. JFreeChart's extensive feature set includes, a consistent and well-documented API, supporting a wide range of chart types; a flexible design that is easy to extend,[…] support for many output types, including Swing and JavaFX components, image files (including PNG and JPEG).[…] JFreeChart is open source or, more specifically, free software. It is distributed under the terms of the GNU Lesser General Public Licence (LGPL), which permits use in proprietary applications.“ \cite{jdbc}} und des offiziellen JDBC-Treibers\footnote{Frei verfügbar unter https://dev.mysql.com/downloads/connector/j/5.1.html} zur Verbindung mit der MySQL-Datenbank.
+Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von Parametern zur Simulation, die persistente Speicherung der Konfigurationen und Netzstrukturen und die graphische Ausgabe der errechneten Ergebnisse übernimmt der aktuelle Softwarestand bereits. Die Grundlage dafür bietet die Einbindung der frei verfügbaren Java-Bibliothek \textquote{jFreeChart}\footnote{\textquote{JFreeChart is a free 100\% Java chart library that makes it easy for developers to display professional quality charts in their applications. JFreeChart's extensive feature set includes, a consistent and well-documented API, supporting a wide range of chart types; a flexible design that is easy to extend,[…] support for many output types, including Swing and JavaFX components, image files (including PNG and JPEG).[…] JFreeChart is open source or, more specifically, free software. It is distributed under the terms of the GNU Lesser General Public Licence (LGPL), which permits use in proprietary applications.} \cite{jdbc}} und des offiziellen JDBC-Treibers\footnote{Frei verfügbar unter https://dev.mysql.com/downloads/connector/j/5.1.html} zur Verbindung mit der MySQL-Datenbank.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{ErgSoftwareMVC}
@@ -68,10 +68,10 @@ Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von
 	\label{fig:ErgSoftwareMVC}
 \end{figure}
 Das Zusammenspiel zwischen Java-Anwendung und der MySQL-Datenbank zeigt
-Abbildung \ref{fig:ErgSoftwareMVC}. Bei der Entwicklung wurde ein „Model-View-Controller“ (kurz: MVC)-Entwurfsmuster gewählt, das die Trennung der Programmstruktur in die logischen Schichten „Datenhaltung“, „Programmlogik“ und „Präsentation“ ermöglicht.
+Abbildung \ref{fig:ErgSoftwareMVC}. Bei der Entwicklung wurde ein \textquote{Model-View-Controller} (kurz: MVC)-Entwurfsmuster gewählt, das die Trennung der Programmstruktur in die logischen Schichten \textquote{Datenhaltung}, \textquote{Programmlogik} und \textquote{Präsentation} ermöglicht.
 Das Programm wird mitsamt den Datenbank-Skripten zur Erstellung der Datenbankstrukturen auf zwei Arten zur Verfügung gestellt:
 \begin{itemize}
-\item Als offenes Repository „EnergyNetSim/Simulator.git" über den Versionsverwaltungsdienst GitHub: https://github.com/EnergyNetSim/Simulator.git
+\item Als offenes Repository \textquote{EnergyNetSim/Simulator.git} über den Versionsverwaltungsdienst GitHub: https://github.com/EnergyNetSim/Simulator.git
 \item Als ausführbares Java-Archiv (JAR), das in der Anlage zum vorliegenden Bericht enthalten ist.
 Auf die notwendigen Schritte zur Installation der erstellten Software wird im nachfolgenden Kapitel eingegangen.
 \end{itemize}
@@ -87,13 +87,13 @@ Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abb
 	\caption{Schritte der Installation}
 	\label{fig:ErgSoftwareInst1}
 \end{figure}
-Voraussetzung ist das Vorhandensein der aktuellsten Version der Java-Laufzeitumgebung, kurz „JRE“. Innerhalb dieser Umgebung kann die Anwendung betriebssystemunabhängig in der Java-Virtual-Maschine (kurz: „JVM“) ausgeführt werden. Das Java Runtime Environment ist über die Webseite der Firma ORACLE\footnote{Zum Zeitpunkt der Abgabe des Berichtes ist der Download über folgenden Link möglich: http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html} zu beziehen und zu installieren.
-Weil die Java-Anwendung auf eine MySQL-Datenbank als Persistenzschicht zugreifen soll, wird zusätzlich ein lokaler MySQL-Server benötigt, der über die IP-Adresse 127.0.0.1 / „localhost“ und den Port 3306 erreichbar ist. Das Entwicklerteam empfiehlt den Einsatz des Open-Source-Datenbankservers „MySQL Community Server“, der ebenfalls von ORACLE\footnote{Zum Zeitpunkt der Abgabe des Berichtes ist der Download über folgenden Link möglich: http://dev.mysql.com/downloads/mysql/} unter der GNU General Public License kostenlos angeboten wird. Ebenfalls empfehlenswert ist die Verwendung des Datenbank-Modellierungs- und Manipulationswerkzeugs „MySQL Workbench“, das über denselben Weg bezogen werden kann.
+Voraussetzung ist das Vorhandensein der aktuellsten Version der Java-Laufzeitumgebung, kurz \textquote{JRE}. Innerhalb dieser Umgebung kann die Anwendung betriebssystemunabhängig in der Java-Virtual-Maschine (kurz: \textquote{JVM}) ausgeführt werden. Das Java Runtime Environment ist über die Webseite der Firma ORACLE\footnote{Zum Zeitpunkt der Abgabe des Berichtes ist der Download über folgenden Link möglich: http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html} zu beziehen und zu installieren.
+Weil die Java-Anwendung auf eine MySQL-Datenbank als Persistenzschicht zugreifen soll, wird zusätzlich ein lokaler MySQL-Server benötigt, der über die IP-Adresse 127.0.0.1 / \textquote{localhost} und den Port 3306 erreichbar ist. Das Entwicklerteam empfiehlt den Einsatz des Open-Source-Datenbankservers \textquote{MySQL Community Server}, der ebenfalls von ORACLE\footnote{Zum Zeitpunkt der Abgabe des Berichtes ist der Download über folgenden Link möglich: http://dev.mysql.com/downloads/mysql/} unter der GNU General Public License kostenlos angeboten wird. Ebenfalls empfehlenswert ist die Verwendung des Datenbank-Modellierungs- und Manipulationswerkzeugs \textquote{MySQL Workbench}, das über denselben Weg bezogen werden kann.
 Nach der erfolgreichen Installation der beschriebenen Komponenten muss der SQL-Server gestartet werden, um die Datenbank anzulegen. Für Nutzer eines Windows-Betriebssystems sind dazu folgende Schritte erforderlich:
 
 \begin{description}
 \item [Starten des MySQL-Server-Dienstes:]
-Durch Klick auf „starten“ wird der SQL-Server hochgefahren und der Status ändert sich in „Gestartet“.
+Durch Klick auf \textquote{starten} wird der SQL-Server hochgefahren und der Status ändert sich in \textquote{Gestartet}.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst2}
@@ -129,14 +129,14 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 	\caption{Konfigurieren einer neuen Verbindung zum MySQL-Server}
 	\label{fig:ErgSoftwareInst3}
 \end{figure}
-\item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts angehängt ist, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema „energynetsimdb“.
+\item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts angehängt ist, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema \textquote{energynetsimdb}.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{ErgSoftwareInst4}
-	\caption{Das importierte Datenbankschema „energynetsimdb“}
+	\caption{Das importierte Datenbankschema \textquote{energynetsimdb}}
 	\label{fig:ErgSoftwareInst4}
 \end{figure}
-\item [Ausführen der JAR-Datei:] Durch Doppelklick auf die Datei „EnergyNetSim.jar“ wird das Programm gestartet. Im weiteren Verlauf wird die Verwendung des Programmes aus Endanwender-Sicht geschildert.
+\item [Ausführen der JAR-Datei:] Durch Doppelklick auf die Datei \textquote{EnergyNetSim.jar} wird das Programm gestartet. Im weiteren Verlauf wird die Verwendung des Programmes aus Endanwender-Sicht geschildert.
 \end{description}
 
 \subsubsection{Benutzung der Software zum aktuellem Stand}
@@ -147,17 +147,17 @@ Da momentan nur das Rahmenwerk für eine spätere Implementierung von Simulation
 	\caption{Hauptfenster nach dem Starten der Software}
 	\label{fig:ErgSoftwareUse1}
 \end{figure}
-Sofern eine Verbindung mit der Datenbank aufgebaut werden konnte, erhält der Benutzer nach Start der Anwendung das Hauptfenster wie in Abbildung 6 angezeigt. Es besteht die Möglichkeit zur Auswahl verschiedener Netze, die in der Datenbank angelegt wurden, über den Menüpunkt „Network selection“ und zur Änderung von Parametern wie beispielsweise dem Strompreis oder dem Netzlastprofil über die Schaltfläche „Settings“.
+Sofern eine Verbindung mit der Datenbank aufgebaut werden konnte, erhält der Benutzer nach Start der Anwendung das Hauptfenster wie in Abbildung 6 angezeigt. Es besteht die Möglichkeit zur Auswahl verschiedener Netze, die in der Datenbank angelegt wurden, über den Menüpunkt \textquote{Network selection} und zur Änderung von Parametern wie beispielsweise dem Strompreis oder dem Netzlastprofil über die Schaltfläche \textquote{Settings}.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ErgSoftwareUse2}
-	\caption{Dialoge „Select networks“ und „Settings“}
+	\caption{Dialoge \textquote{Select networks} und \textquote{Settings}}
 	\label{fig:ErgSoftwareUse2}
 \end{figure}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{ErgSoftwareUse3}
-	\caption{Dialoge „Select networks“ und „Settings“}
+	\caption{Dialoge \textquote{Select networks} und \textquote{Settings}}
 	\label{fig:ErgSoftwareUse3}
 \end{figure}
 Die geänderten Werte werden in der Datenbank hinterlegt, momentan jedoch von der Kalkulationsmethode nicht weiterverwendet. Stattdessen sind in ihr Werte für den Stromverbrauch, die Netzlast und Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:MethSch} beschrieben wird.
@@ -167,23 +167,23 @@ Die geänderten Werte werden in der Datenbank hinterlegt, momentan jedoch von de
 	\caption{Ausgabe der Ergebnisse in Diagrammform}
 	\label{fig:ErgSoftwareUse4}
 \end{figure}
-Durch Klick auf die Schaltfläche „Calculate“ werden die Werte in Form von Histogrammen visualisiert.
+Durch Klick auf die Schaltfläche \textquote{Calculate} werden die Werte in Form von Histogrammen visualisiert.
 
 \subsubsection{Erweiterungsmöglichkeiten} \label{subsubsec:ErgSoftwErweiterung}
 Die beschriebene Software stellt freilich keine abgeschlossene Lösung zur Wirtschaftlichkeitsbetrachtung von energieeffizienten Konzepten in simulierten Netzen dar. Wie schon zu Beginn des Kapitels erwähnt, konnte die Entwicklung nicht in der zur Verfügung gestellten Zeit abgeschlossen werden. Vielmehr war die Zielsetzung der Arbeit, eine Anwendung zu erstellen, die es zukünftigen tiefergreifenden Forschungsvorhaben ermöglicht, die fehlenden Algorithmen zu implementieren, welche in Kapitel \ref{subsec:ErgAlg} beschrieben sind, ohne auf Aspekte der grafischen Ausgabe sowie der Anbindung an eine externe Datenbank achten zu müssen.
 Das vorliegende Java-Programm erfüllt diese Anforderungen, indem es folgende vordefinierte Methoden und Datenbankstrukturen enthält, die eine Erweiterung um Simulationsalgorithmen zulassen.
 
 \begin{description}
-\item [Die Funktion „calculate()“ in der Klasse „MainModel“.] Bei Klick auf die Schaltfläche „Calculate“ wird über den Controller in der Classe „MainModel“ die Funktion „public void calculate()“ aufgerufen. Von dort können der komplette Simulationsalgorithmus gestartet, neue Instanzen von anderen Model-Classen erzeugt und die erhaltenen Ergebnisse in Form einer Liste gespeichert werden.
-\item [Das Package „models“.] Das Java-Package „models“ bietet Platz für weitere Klassendefinitionen, die von der „calculate()“-Methode der Klasse „MainModel“ aufgerufen werden und ihrerseits auf die MySQL-Datenbank über die vorhandene Klasse „DatabaseQueries“ zugreifen können. Beispielhaft wurden für die Gerätehardware und die physisch vorhandenen Verbindungen zwischen Knoten die Model-Klassen „HardwareDevices“ und „Link“ angelegt, in denen zukünftig Programmlogik implementiert werden kann.
-\item [Das Datenbankschema „energynetsimdb“.] Im Rahmen des Software-Engineering-Prozesses wurde ein Datenbankschema entwickelt, das die Datenstruktur für spätere Simulationsalgorithmen abbilden kann. Das zugehörige Entity-Relationship-Diagramm wurde bereits in Kapitel \ref{subsec:MethSoftwareEng} vorgestellt und ermöglicht die Generierung der SQL-Create-Befehle für die noch nicht angelegten Relationen.
+\item [Die Funktion \textquote{calculate()} in der Klasse \textquote{MainModel}.] Bei Klick auf die Schaltfläche \textquote{Calculate} wird über den Controller in der Klasse \textquote{MainModel} die Funktion \textquote{public void calculate()} aufgerufen. Von dort können der komplette Simulationsalgorithmus gestartet, neue Instanzen von anderen Model-Klassen erzeugt und die erhaltenen Ergebnisse in Form einer Liste gespeichert werden.
+\item [Das Package \textquote{models}.] Das Java-Package \textquote{models} bietet Platz für weitere Klassendefinitionen, die von der \textquote{calculate()}-Methode der Klasse \textquote{MainModel} aufgerufen werden und ihrerseits auf die MySQL-Datenbank über die vorhandene Klasse \textquote{DatabaseQueries} zugreifen können. Beispielhaft wurden für die Gerätehardware und die physisch vorhandenen Verbindungen zwischen Knoten die Model-Klassen \textquote{HardwareDevices} und \textquote{Link} angelegt, in denen zukünftig Programmlogik implementiert werden kann.
+\item [Das Datenbankschema \textquote{energynetsimdb}.] Im Rahmen des Software-Engineering-Prozesses wurde ein Datenbankschema entwickelt, das die Datenstruktur für spätere Simulationsalgorithmen abbilden kann. Das zugehörige Entity-Relationship-Diagramm wurde bereits in Kapitel \ref{subsec:MethSoftwareEng} vorgestellt und ermöglicht die Generierung der SQL-Create-Befehle für die noch nicht angelegten Relationen.
 \end{description}
 
 Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Daten- und Logikschicht innerhalb der bereits vorgegebenen Strukturen durchgeführt werden müssen, um den noch nicht kodierten Simulationsalgorithmus einzubinden. Dazu liegt die vollständige Dokumentation der Software dem Anhang bei.
 
 
 \subsection{Diskussion und Erkenntnisse} \label{subsec:ErgDiskussion}
-%TODO Veronika
+
 Zu Beginn dieser Arbeit setzte sich die Projektgruppe zum Ziel, eine sachlich möglichst richtige Simulation der Netzlast zu entwickeln, um den Energieverbrauch der beiden Netze so realistisch wie möglich abschätzen zu können. Auf diese Art und Weise sollte ein valides Ergebnis entstehen.
 
 Schon während der Literaturrecherche war überraschend, dass vorhandene Arbeiten auf dem Gebiet sich immer mit einem kleinen Untergebiet des Themas beschäftigen -- die eine große Überblicksarbeit zum Stand der Forschung unter Kombination aller vorhandenen Technologien gab es nicht.
@@ -200,6 +200,4 @@ Um eine Umsetzung des Algorithmus zu ermöglichen, mussten also sehr viele Annah
 
 Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer dieser Arbeit nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer dieser Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vgl. Kapitel \ref{sec:Erg}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
 
-%MISSING Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
-%TODO 
-Bei Betrachtung des Gesamtverbrauchs resultiert ein Energieeinsparpotenzial von 23,5 \% pro Jahr  \cite[5]{Chiaraviglio2009}, in Geldeinheiten\cite{Proteus2016} bewertet, 91.500 €. 
+Bei Betrachtung des Gesamtverbrauchs resultiert ein Energieeinsparpotenzial von 23,5 \% pro Jahr  \cite[5]{Chiaraviglio2009}, in Geldeinheiten\cite{Proteus2016} bewertet, 91.500 €. Die Modellierung des Netzes orientierte sich an \cite{Chiaraviglio2009}, worin ein Netz ähnlich dem eines großen italienischen Carriers definiert wird. Skaliert man das Einsparpotenzial auf einen großen europäischen Telekommunikationskonzern wie die Deutsche Telekom, ergeben sich weit größere Summen, die gespart werden können. Hierbei ist zu beachten, dass weitere Einsparungen durch die Integration weiterer energiesparender Technologien wie Hybrid Optical Switching erreicht werden können.
