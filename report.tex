@@ -1,0 +1,42 @@
+\documentclass[12pt,titlepage]{article}
+
+\usepackage{import}
+\usepackage{wab} %import the custom style file ./wab.sty
+
+\title{\huge{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \\ \large{Projektbericht}}
+\author{Veronika Lawrence, Carmen Scheer, Nicholas Cariss, Maximilian Junker,\\ Christian Keck, Stefan Ludowicy, Dominik Schneider}
+
+%% ##############
+%% # Begin document
+%% ##############
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents{}
+\addtocontents{toc}{~\hfill\textbf{Seite}\par}
+\newpage
+\listoffigures
+\listoftables
+\newpage
+
+%---------------
+% Import contents
+%---------------
+
+\import{tex/}{einleitung.tex}
+
+\import{tex/}{problemstellung.tex}
+
+\import{tex/}{stand-der-forschung.tex}
+
+\import{tex/}{vorgehen.tex}
+
+\import{tex/}{ergebnisse.tex}
+
+\import{tex/}{ausblick.tex}
+
+\newpage
+\printbibliography[heading=bibintoc]
+
+\end{document}

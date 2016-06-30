@@ -1,0 +1,41 @@
+
+\section{Problemstellung}
+
+IT ist aus dem Alltag schon seit den 80er Jahren nicht mehr wegzudenken. Wie oben bereits angedeutet, hat der Gewinn an Produktivität und Bequemlichkeit, den die Welt durch den Einsatz von IT erreicht hat, einen Preis: Jeder Computer und jedes Datenpaket, das über das Internet versendet wird, benötigt Strom. In diesem Kapitel wird erläutert, inwiefern dieser Fakt ein Problem darstellt, das sich in Zukunft deutlich verschärfen wird, und wie daraus die Ziele dieser Arbeit abgeleitet werden.
+
+\subsection{Motivation}
+Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder sogar leicht zurück geht, wachsen die globalen Verbräuche weiter an (vgl. Abbildung \ref{fig:ProbStromSektor}). Dies kann vor allem auf  Schwellenländer zurückgeführt werden, die in kurzer Zeit ein rasantes wirtschaftliches Wachstum erleben.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ProbStromSektor}
+	\caption{Weltweiter Stromverbrauch nach Sektoren, basierend auf \cite{eia2016}}
+	\label{fig:ProbStromSektor}
+\end{figure}
+Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
+
+Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite[9]{vanhedde}). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ProbStromICT})
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ProbStromICT}
+	\caption{Anteil von ICT am weltweiten Stromverbrauch, basierend auf \cite{eia2016} und \cite{vanhsheet}}
+	\label{fig:ProbStromICT}
+\end{figure}
+
+Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
+
+
+\subsection{Ziele}
+Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Kosten  durch Verwendung energieeffizienter Technologien eingespart werden können.
+
+Zur Erreichung dieses Ziels ist zum einen eine Literaturrecherche zu den bestehenden Technologien nötig, die es ermöglichen, den Energieverbrauch von Netzen zu senken. Die Ergebnisse dieser Literaturrecherche befinden sich in Kapitel \ref{SdF}.
+
+Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{sec:Erg}.
+
+Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
+
+Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. 
+
+Doch bevor eine Software entwickelt werden kann, wird im folgenden auf Begriffe, die in dieser Arbeit verwendet werden, eingegangen und der Stand der Forschung in Bezug auf energieeffiziente Netzkonzepte und -technologien erläutert.
+

@@ -1,0 +1,84 @@
+%% wab.sty
+%% Custom WAB3 style definition
+%% Nicholas Cariss
+
+% ------------
+% Packages
+% ------------
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[autostyle=true,german=quotes]{csquotes}%NC: needed for babel
+\usepackage[a4paper , lmargin = {2.5cm} , rmargin = {2.5cm} , tmargin = {2.5cm} , bmargin = {2.5cm}]{geometry}
+\usepackage[hyphens]{url}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage{tabularx}
+\usepackage{amsmath}
+%\numberwithin{equation}{section}
+% Euro Symbol without special Latex code
+\usepackage{marvosym}
+\DeclareUnicodeCharacter{20AC}{\EUR{}}
+
+
+% ------------
+% Header & Footer
+% ------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\rhead{\thepage} \lhead{\fancyplain{}{\rightmark }} %\chead{} 
+\lfoot{} \cfoot{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \rfoot{} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ------------
+% Bibliographical Stuff
+% Use \textcite{} and \parencite{} with biblatex!
+% ------------
+\usepackage[backend=biber,
+    style=numeric-comp,%footnote-dw,%alphabetic-verb,
+    sortlocale=de_DE,
+    natbib=true,
+    url=true,
+    doi=true,
+    eprint=false]{biblatex}%NC: replaced bibtex by biber
+\bibliography{literatur.bib}%Dateiname für Quellen einfügen
+\usepackage{ragged2e} %für bessere URL formatierung bei printbibliography
+
+%Bilder einbinden und auf der gleichen seite ein
+%Fußnotenzitat einzufügen
+%https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} %order of preference
+\graphicspath{ {./images/} } %NC: Additional path to look for images in
+%\usepackage{float} %NC: Causes problems. deactivate this and the next
+%\usepackage{afterpage} %need to use with: \af­ter­page{\clearpage} https://www.ctan.org/pkg/afterpage?lang=de
+
+\interfootnotelinepenalty=99999 %Seitenumbruch einer Fußzeile verhindern
+
+\usepackage{moreverb} %tabulator formatierung in verbatim umgebung
+
+%Tables:
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+\newcommand{\bildcite}[6]{
+     \begin{figure}[H]
+         \includegraphics[width=\textwidth]{Bilder/#1}
+         \caption[#2]{#2\footnotemark}
+         \label{#3}
+     \end{figure}
+     \footnotetext{\cite[#6][#5]{#4}}
+}
+
+\newcommand{\bild}[3]{
+     \begin{figure}[H]
+         \includegraphics[width=\textwidth]{Bilder/#1}
+         \caption{#2}
+         \label{#3}
+     \end{figure}
+}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic {enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
