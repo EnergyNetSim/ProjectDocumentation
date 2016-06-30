@@ -179,7 +179,7 @@ Die gesamtheitlichen Kosten der Telekommunikationsnetze der Carrier lassen sich 
 	\item Energieeffiziente Netzelemente: Durch den technologischen Fortschritt können Netzwerkkomponenten energieeffizienter gestaltet werden wie z.B. durch zunehmende Integration einzelner Module. Somit können mehrere Module in einer Einheit zusammengefasst werden ohne die Netzwerkarchitektur zu verändern. 
 	\item Energieeffiziente Netzarchitektur: Beim Entwerfen von Netzarchitekturen kann durch das Einbeziehen des Energieverbrauchs eine Reduzierung des Gesamtenergieverbrauchs bewirkt werden.  Die Verwendung unterschiedlicher Netzzugangsarchitekturen hat verschiedene Energieverbräuche zur Folge (z.B. Fiber to the Home gegenüber Fiber to the Building).
 	\item Verkehrslastadaptiver Netzbetrieb: Bei dem zuvor erwähnten zunehmenden Datenverkehr und dem entsprechenden Netzausbau, führt eine nahezu konstante Leistungsaufnahme der Netzelemente zu einem Anstieg des Netzenergiebedarfs. Da jedoch die Verkehrslast des Netzes zeitlich variiert [Quelle], können in Phasen geringerer Last einzelne Systeme in einem Modus mit niedrigerer Leistungsaufnahme betrieben werden, ohne dass eine Beeinträchtigung für die Nutzer entsteht. Heutige Telekommunikationsnetze werden auf Basis einer Spitzenlast zuzüglich einer Reserve dimensioniert. Für die Dimensionierung der Netze stellt eine dynamische Anpassung der Netzkapazität an die Verkehrslast eine attraktive Lösung dar. [QUELLE]
-\begin{figure}[!]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Netzdimensionierung}
 	\caption{Prinzipien der Netzdimensionierung}
@@ -271,7 +271,7 @@ Die Vorteile dieser Architektur sind die gute Portabilität der resultierenden L
 Das Datenbank-Konzept ist entscheident für die Softwareentwicklung. Es werden alle relevanten Daten für Berechnungen, Konfigurationen und Darstellungen gespeichert. Auf der Basis der Datenbankstruktur kann die Entwicklung der Softwarelösung weitergeführt werden.
 
 
-\begin{figure}[!]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{MethSoftwareER}
 	\caption{ER-Diagramm} %TODO Bezeichnung anpassen
@@ -319,14 +319,13 @@ Die Implementierung eines Netzes bedarf einem Lastprofil, mehreren Geräten und 
 
 Eine weitere Annahme musste bei der Berechnung des Stromverbrauchs getroffen werden. Jedes Gerät besitzt einen vom Hersteller vorgegebenen Stromverbrauch pro Port. Der Stromverbrauch für das gesamte Gerät ergibt sich nicht aus der Multiplikation von Stromverbrauch pro Port und der Anzahl an Ports. Der Grund dafür ist, dass das Gerät auch Strom verbraucht, wenn kein Datenpaket über die Leitung geht. Daher ist der genaue Stromverbrauch bei heruntergefahrenen Ports nur ungefähr abschätzbar. Des Weiteren  muss der Stromverbrauch für Geräte, die sich im Energiesparmodus befinden, geschätzt werden. Zu dieser Problematik kommt noch die Komplexität der Berechnung des Stromverbrauchs des gesamten Netzes dazu. Mit heruntergefahrenen und in der Geschwindigkeit reduzierten Ports und Geräten, muss zu jedem Zeitpunkt der Status des jeweiligen Ports und Geräts bekannt sein.  
 
-\newpage
 \section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
 \subsection{Algorithmus} \label{subsec:ErgAlg}
 % Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
 Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffic von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass Über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffene Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Diese werden je Iteration initial einmal neu berechnet. Durch die Verkürzung der Iterationsdauer und der dazu passenden Netzlast-Daten lässt sich bei geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
 
 
-\begin{figure}[!]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{1Berechnung_elektr_Stromverbrauch}
 	\caption{Programmablaufplan zur Anwendungslogik}
@@ -342,7 +341,7 @@ Mit dieser groben Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetz
 
 
 Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Diese Kategorie von lokalen Lösungsverfahren nennt man Greedy Algorithmus. Dieser liefert nicht unbedingt das insgesamt beste Ergebnis, sondern berechnet nur das lokale Optimum für das betrachtete Teilproblem. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen beinhaltet dieser Algorithmus intelligente Entscheidungsfunktionen um schlechte Routen frühzeitig zu ignorieren und nicht zielführende Berechnungen wie sie beispielsweise bei Schleifenbildung auftreten zu verhindern.
-\begin{figure}[!]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{2Routingentscheidung}
 	\caption{Programmablaufplan zum übergreifenden Anteil des Routing-Algorithmus}
@@ -350,7 +349,7 @@ Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge j
 \end{figure}
 
 Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektr. Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und diese einzelnen Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{3Rekursives_Routing}
 	\caption{Rekursiver Anteil des Routing-Algorithmus}
