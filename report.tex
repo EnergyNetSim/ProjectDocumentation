@@ -91,11 +91,13 @@ eprint=false]{biblatex}%NC: replaced bibtex by biber
 %% # Begin document
 %% ##############
 
+\pagenumbering{roman}
+
 \begin{document}
 \maketitle
 \newpage
 \tableofcontents{}
-\addtocontents{toc}{~\hfill\textbf{Seite}\par}
+%\addtocontents{toc}{~\hfill\textbf{Seite}\par}
 \newpage
 \listoffigures
 \listoftables
@@ -105,6 +107,7 @@ eprint=false]{biblatex}%NC: replaced bibtex by biber
 % Import contents
 %---------------
 
+\pagenumbering{arabic}%Reset page counter
 \import{tex/}{einleitung.tex}
 
 \import{tex/}{problemstellung.tex}
