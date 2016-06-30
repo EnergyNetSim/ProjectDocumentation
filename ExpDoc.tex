@@ -24,7 +24,7 @@
     url=true,
     doi=true,
     eprint=false]{biblatex}%NC: replaced bibtex by biber
-\addbibresource{literatur.bib}%Dateiname für Quellen einfügen
+\bibliography{literatur.bib}%Dateiname für Quellen einfügen
 \usepackage{ragged2e} %für bessere URL formatierung bei printbibliography
 
 %Bilder einbinden und auf der gleichen seite ein
@@ -66,7 +66,7 @@
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
 
 \newcommand{\firstpages}{
-    % \input{0_Deckblatt.tex}
+  
 
      \newpage
      \tableofcontents{}
@@ -86,40 +86,33 @@
 \author{Veronika Lawrence, Carmen Scheer, Nicholas Cariss, Maximilian Junker,\\ Christian Keck, Stefan Ludowicy, Dominik Schneider}
 \maketitle
 \firstpages
-%\twocolumn
 
 %START HERE
 \section{Einleitung}
-Die Weltbevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs_der_weltbevölkerung}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{ welt:strompreise_steigen_bis_2025_um_70_prozent}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{ bmwi:europäische_energiepolitik }. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
+Die Weltbevölkerung wächst täglich um circa 229.000 Menschen (Vgl. \cite{statista:weltbev}). Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen (Vgl.\cite{welt}). Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{bmwi}. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
 
 
-Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen\cite{ fraunhof-er:informationstechnologien_verbrauchen_mehr_und_mehr_Strom }. Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
+Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen (vgl. \cite{fraunhofer}). Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
 
 
-Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte \cite{ cisco:das_internet_der_dinge } mit Internetzugang ausgestattet. Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden \cite{ cisco:das_internet_der_dinge }  erhöhen soll. 
+Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte  mit Internetzugang ausgestattet (vgl. \cite{cisco}). Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden  erhöhen soll (vgl. \cite{cisco}). 
 
 
 Die rasant steigende Nachfrage nach Bandbreite entsteht durch die Konvergenz von Medien- und Telekommunikationstechnologie. Orts- und zeitunabhängige TV-Nutzung, Video on Demand, Pay TV und HD sind beispielsweise treibende Faktoren für den Bedarf an Bandbreite.
 
  
-Bedingt durch diese Entwicklungen gewinnen Energieverbrauch und Energieeffizienz von Kommunikationssystemen und -netzen immer mehr an Bedeutung. Denn „Green IT“ kann dieser Entwicklung gegensteuern. Im Rahmen des Hochschulmoduls „Wissenschaftlich angeleitete Berufspraxis 3 (Technik)“ wurde daher eine Simulationssoftware zur Dimensionierung des Energiebedarfs für ein fiktives effizientes Netz anhand von aktuellen Übertragungstechnologien entwickelt werden. 
+Bedingt durch diese Entwicklungen gewinnen Energieverbrauch und Energieeffizienz von Kommunikationssystemen und -netzen immer mehr an Bedeutung. Denn „Green IT“ kann dieser Entwicklung gegensteuern. Im Rahmen des Hochschulmoduls „Wissenschaftlich angeleitete Berufspraxis 3 (Technik)“ sollte daher eine Simulationssoftware zur Dimensionierung des Energiebedarfs für ein fiktives effizientes Netz anhand von aktuellen Übertragungstechnologien entwickelt werden. 
 
 
 In diesem Bericht gilt es, die Forschungsergebnisse und wichtigen Erkenntnisse dieser Arbeit zu dokumentieren. Dazu soll zunächst die Problemstellung detailliert beschrieben und die Ziele der Simulationssoftware erklärt werden. Im darauf folgenden Kapitel wird der Stand der Forschung ausführlich betrachtet und im Rahmen dessen auf Carrier-Netzwerke, Möglichkeiten der Energieeinsparung und energieeffiziente Technologien eingegangen. Für weitere Forschungsprojekte in diesem Themengebiet ist insbesondere das Vorgehen der Projektgruppe von Interesse. Wesentliche Inhalte sind daher die Modellierung der Netze, die Softwareentwicklung, die Erstellung eines geeigneten Routingalgorithmus und dabei auftretende Komplexität. Die Ergebnisse der Projektarbeit werden darauf folgend im Zuge der Auswertung dokumentiert und beschrieben. Aufbauend darauf werden im Ausblick weitere zu erforschende Problemstellungen aufgezeigt. 
 
 
-Früher waren Geräte überwiegend fest verbunden, weshalb nur stationäres Handeln für Nutzer möglich war. Doch die Technik entwickelte sich hin zu mobilen Geräten. Nutzer konnten bald Geräte mit sich führen und unterwegs nutzen. Ein weiterer technischer Fortschritt war das Internet. Bereits 2003 waren circa 500 Millionen Geräte  mit Internetzugang ausgestattet. 
-Im Laufe der technischen Entwicklung wurde das vernetzte Handeln immer weiter vorangetrieben. Durch die Einführung des Internets der Dinge kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Das Internet der Dinge bezeichnet „die Idee eines erweiterten Internets, welches neben klassischen Rechnern und mobilen Endgeräten auch beliebige physische Gegenstände […] in seine Infrastruktur einbindet […]“ . Durch die Erwartung dieser Entwicklungsstufe, „Informationen aus Gegenständen abzurufen und aufzubereiten“ , waren 2010 bereits 12,5 Milliarden Geräte  mit Internetzugang versehen. 
+%Früher waren Geräte überwiegend fest verbunden, weshalb nur stationäres Handeln für Nutzer möglich war. Doch die Technik entwickelte sich hin zu mobilen Geräten. Nutzer konnten bald Geräte mit sich führen und unterwegs nutzen. Ein weiterer technischer Fortschritt war das Internet. Bereits 2003 waren circa 500 Millionen Geräte  mit Internetzugang ausgestattet. 
+%Im Laufe der technischen Entwicklung wurde das vernetzte Handeln immer weiter vorangetrieben. Durch die Einführung des Internets der Dinge kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Das Internet der Dinge bezeichnet „die Idee eines erweiterten Internets, welches neben klassischen Rechnern und mobilen Endgeräten auch beliebige physische Gegenstände […] in seine Infrastruktur einbindet […]“ . Durch die Erwartung dieser Entwicklungsstufe, „Informationen aus Gegenständen abzurufen und aufzubereiten“ , waren 2010 bereits 12,5 Milliarden Geräte  mit Internetzugang versehen. 
 
-
+\newpage
 \section{Stand der Forschung} \label{SdF}
-Definition Wirtschaftlichkeit, Carriernetz
-Betriebskosten, Wirtschaftlichkeit, etc.
-CAPEX OPEX
-Wirtschaftlichkeit
-Definieren
-Wir betrachten einen Teil der Betriebskosten, nämlich: .....
-% Evtl. die Sachen zu Wirtschaftlichkeit mit einem Hinweis, dass wir uns auf einen Teil, nämlich die Betriebskosten beschränken, in entweder Problemstellung oder Methodik
+
 
 \subsection{Begrifflichkeiten}
 Wirtschaftlichkeit
@@ -168,7 +161,7 @@ Das zweite Konzept befasst sich mit der dynamischen Abschaltung von temporär ni
 
 Bei den Technologien beschränkt sich die Arbeit auf optische Vermittlungstechniken. Optische leitungsvermittelnde Switche basieren auf mikro-elektromechanischen Systemen, die eine geringe Menge an Energie benötigen und eine hohe Portanzahl besitzen. Das sog. Hybrid Optical Switching (HOS) verwendet eine Kombination aus optischen und elektronischen Netzknoten. Zum einen verwendet HOS das „Optical Circuit Switching“ (OCS), das laut C. Xin, C. Qiao, Y. Ye und S. Dixit in der Veröffentlichung „A Hybrid Optical Switching Approach“ als fortgeschrittene und viel verwendete Technologie zur Übermittlung in optischen Netzwerken eingesetzt wird. OCS ist gut geeignet für langanhaltende und kontinuierliche Datenströme, jedoch kommt die Technik bei stoßweisen Anstieg des Durchsatzes an ihre Grenzen. Eine alternative Technologie stellt „Optical Burst Switching“ (OBS) dar. Wie der Name darlegt ist die Technologie optimiert für kurzzeitig ansteigende Datendurchsätze. Ein Nachteil der Technik ist die abnehme Leistung bei lang andauernden, kontinuierlichen Strömen. Weiterhin stellt OBS eine hohe Bandbreitennutzung her, benötigt hierfür aber große optische Pufferspeicher. Um effektiv beide Varianten der Datenströme zu übertragen, können mit der Kombination von OCS und OBS die Vorteile beider Technologien kombiniert werden. Die beiden Technologien sind als komplementäre Ansätze anzusehen. [Xin, C. Qiao, Y. Ye und S. Dixit]. In einem HOS-Netzwerk werden große Datenströme durch vorgehalten Leitungen oder mit langen Durchsatzstöße übertragen und kleinere Ströme durch einzelne Datenpakete und kurze Durchsatzstöße übermittelt.
 
-
+\newpage
 \section{Problemstellung}
 Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
 %citation needed!
@@ -207,6 +200,7 @@ Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer 
 
 Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. Das genaue Vorgehen in der Softwareentwicklung wird im folgenden Kapitel erläutert.
 
+\newpage
 \section{Vorgehen}
 
 \subsection{Modellierung}
@@ -317,7 +311,6 @@ Dies erlaubt allerdings keine Anpassung des zu berechnenden N
 
 
 \subsection{Komplexität bei der Entwicklung}
-\subsection{Komplexität bei der Entwicklung}
 Die Komplexität, die Unterschätzung der Einflussfaktoren und deren Beziehung zueinander werden häufig zu Problemen der Softwareentwicklung. In diesem Projekt konnte die Komplexität der Umsetzung der Aufgabenstellung erst in der Realisierungs- / Programmierungsphase erkannt werden. Im Zuge der Anforderungsanalyse und Spezifikation wurden Anforderungen definiert, die ein automatisiertes und konfigurierbares System zur Berechnung und Darstellung von energieeffizienten Netzen beschreiben. Während der Umsetzung der Anforderungen wurden komplexe Problemstellungen entdeckt, die erfasst und nach der Auswirkung auf das Projekt bewertet wurden. Bei dem Versuch diese Probleme zu lösen oder zu umgehen, sind weitere komplexe Schwierigkeiten aufgetaucht. Aufgrund von zwei Faktoren wurde die Entwicklung der Software bei einem Grundgerüst belassen. Ein Mangel an Ressourcen machte es nicht möglich, die auftauchenden komplexen Problemstellungen genau im System abzubilden. Daher mussten Annahmen getroffen werden, die die Genauigkeit der vom System erwarteten Ergebnisse stark reduzierte. Da ungenaue Ergebnisse in diesem Forschungsgebiet nicht zielführend und akzeptabel sind, wurde die Software nicht entsprechend der zuvor definierten Anforderungen weiter entwickelt. Die Komplexität der Entwicklung soll im Folgenden detailliert beschrieben werden.  
 
 
@@ -326,7 +319,7 @@ Die Implementierung eines Netzes bedarf einem Lastprofil, mehreren Geräten und 
 
 Eine weitere Annahme musste bei der Berechnung des Stromverbrauchs getroffen werden. Jedes Gerät besitzt einen vom Hersteller vorgegebenen Stromverbrauch pro Port. Der Stromverbrauch für das gesamte Gerät ergibt sich nicht aus der Multiplikation von Stromverbrauch pro Port und der Anzahl an Ports. Der Grund dafür ist, dass das Gerät auch Strom verbraucht, wenn kein Datenpaket über die Leitung geht. Daher ist der genaue Stromverbrauch bei heruntergefahrenen Ports nur ungefähr abschätzbar. Des Weiteren  muss der Stromverbrauch für Geräte, die sich im Energiesparmodus befinden, geschätzt werden. Zu dieser Problematik kommt noch die Komplexität der Berechnung des Stromverbrauchs des gesamten Netzes dazu. Mit heruntergefahrenen und in der Geschwindigkeit reduzierten Ports und Geräten, muss zu jedem Zeitpunkt der Status des jeweiligen Ports und Geräts bekannt sein.  
 
-
+\newpage
 \section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
 \subsection{Algorithmus} \label{subsec:ErgAlg}
 % Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
@@ -513,6 +506,7 @@ Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Date
 %TODO Verwenden der Werte, die als Dummy Werte in der Software verwendet werden.
 % Einbinden auch als Grafik
 
+\newpage
 \section{Diskussion und Erkenntnisse}
 %TODO Veronika
 Zu Beginn dieser Arbeit setzte sich die Projektgruppe zum Ziel, eine sachlich möglichst richtige Simulation der Netzlast zu entwickeln, um den Energieverbrauch der beiden Netze so realistisch wie möglich abschätzen zu können. Auf diese Art und Weise sollte ein valides Ergebnis entstehen.
@@ -534,9 +528,9 @@ Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer dieser Ar
 %MISSING Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
 
 
-
+\newpage
 \section{Ausblick}
-%
+
 Die diskutierten Ergebnisse machen deutlich, dass eine vollständige Betrachtung der Wirtschaftlichkeit energieeffizienter Netzkonzepte weiterer Forschung bedarf. So wurden im Rahmen der vorliegenden Arbeit nur diejenigen Technologien näher betrachtet, die sich gut in das vereinfachte Netzschema des entwickelten Algorithmus einfügen ließen, und es wurden an vielen Stellen Näherungswerte verwendet.
 Die durch die Projektgruppe erarbeiteten Ergebnisse können weitere Forschungsvorhaben vereinfachen. So kann der Programmcode	 als Rahmen zur Implementierung des vorgeschlagenen Algorithmus dienen. Ist die Umsetzung in Java-Code erfolgt, können weitere Konzepte zur Energieeinsparung eingefügt werden. Das entwickelte Datenbankschema kann anschließend verfeinert werden, um schrittweise die zur Vereinfachung des Algorithmus getroffenen Annahmen durch reale Werte zu ersetzen. Schließlich müssen, um die Wirtschaftlichkeit und damit die Attraktivität energieeffizienter Netzkonzepte für die Netzbetreiber vollständig erfassen zu können, auch die Investitionskosten in die Berechnung miteinbezogen werden.
 Aufgrund der eingangs erwähnten Entwicklungen hinsichtlich des Wachstums des weltweiten Datenvolumens und der steigenden Energiekosten wird die Betrachtung der Effizienz und Wirtschaftlichkeit energiesparender Netzkonzepte auch in Zukunft ein attraktives Forschungsfeld bleiben.
