@@ -90,10 +90,10 @@
 
 %START HERE
 \section{Einleitung}
-Die Weltbevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs_der_weltbevölkerung}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{ welt:strompreise_steigen_bis_2025_um_70_prozent}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{ bmwi:europäische_energiepolitik }. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
+Die Weltbevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{welt:strompreise}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{bmwi:energiepolitik}. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
 
 
-Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen\cite{ fraunhof-er:informationstechnologien_verbrauchen_mehr_und_mehr_Strom }. Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
+Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen\cite{fraunhofer:energiebedarf}. Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
 
 
 Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte \cite{ cisco:das_internet_der_dinge } mit Internetzugang ausgestattet. Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden \cite{ cisco:das_internet_der_dinge }  erhöhen soll. 
@@ -110,6 +110,45 @@ In diesem Bericht gilt es, die Forschungsergebnisse und wichtigen Erkenntnisse d
 
 Früher waren Geräte überwiegend fest verbunden, weshalb nur stationäres Handeln für Nutzer möglich war. Doch die Technik entwickelte sich hin zu mobilen Geräten. Nutzer konnten bald Geräte mit sich führen und unterwegs nutzen. Ein weiterer technischer Fortschritt war das Internet. Bereits 2003 waren circa 500 Millionen Geräte  mit Internetzugang ausgestattet. 
 Im Laufe der technischen Entwicklung wurde das vernetzte Handeln immer weiter vorangetrieben. Durch die Einführung des Internets der Dinge kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Das Internet der Dinge bezeichnet „die Idee eines erweiterten Internets, welches neben klassischen Rechnern und mobilen Endgeräten auch beliebige physische Gegenstände […] in seine Infrastruktur einbindet […]“ . Durch die Erwartung dieser Entwicklungsstufe, „Informationen aus Gegenständen abzurufen und aufzubereiten“ , waren 2010 bereits 12,5 Milliarden Geräte  mit Internetzugang versehen. 
+
+
+\section{Problemstellung}
+Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
+%citation needed!
+
+\subsection{Motivation}
+Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder sogar leicht zurück geht, wachsen die globalen Verbräuche weiter an (vgl. Abbildung \ref{fig:ProbStromSektor}). Dies kann vor allem auf  Schwellenländer zurückgeführt werden, die in kurzer Zeit ein rasantes wirtschaftliches Wachstum erleben.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ProbStromSektor}
+	\caption{Weltweiter Stromverbrauch nach Sektoren, basierend auf \cite{bibid}}
+	\label{fig:ProbStromSektor}
+\end{figure}
+Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
+
+Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite[9]{vanhedde}). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ProbStromICT})
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ProbStromICT}
+	\caption{Anteil von ICT am weltweiten Stromverbrauch, basierend auf \cite{bibid} und \cite{bibid}}
+	\label{fig:ProbStromICT}
+\end{figure}
+
+Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
+%evtl. nach oben ziehen als 1. Absatz für Problemstellung
+
+\subsection{Ziele}
+Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Kosten  durch Verwendung energieeffizienter Technologien eingespart werden können.
+
+Zur Erreichung dieses Ziels ist zum einen eine Literaturrecherche zu den bestehenden Technologien nötig, die es ermöglichen, den Energieverbrauch von Netzen zu senken. Die Ergebnisse dieser Literaturrecherche befinden sich in Kapitel \ref{SdF}.
+
+Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{Ergebnisse}.
+
+Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
+
+Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. Das genaue Vorgehen in der Softwareentwicklung wird im folgenden Kapitel erläutert.
 
 
 \section{Stand der Forschung} \label{SdF}
@@ -168,44 +207,6 @@ Das zweite Konzept befasst sich mit der dynamischen Abschaltung von temporär ni
 
 Bei den Technologien beschränkt sich die Arbeit auf optische Vermittlungstechniken. Optische leitungsvermittelnde Switche basieren auf mikro-elektromechanischen Systemen, die eine geringe Menge an Energie benötigen und eine hohe Portanzahl besitzen. Das sog. Hybrid Optical Switching (HOS) verwendet eine Kombination aus optischen und elektronischen Netzknoten. Zum einen verwendet HOS das „Optical Circuit Switching“ (OCS), das laut C. Xin, C. Qiao, Y. Ye und S. Dixit in der Veröffentlichung „A Hybrid Optical Switching Approach“ als fortgeschrittene und viel verwendete Technologie zur Übermittlung in optischen Netzwerken eingesetzt wird. OCS ist gut geeignet für langanhaltende und kontinuierliche Datenströme, jedoch kommt die Technik bei stoßweisen Anstieg des Durchsatzes an ihre Grenzen. Eine alternative Technologie stellt „Optical Burst Switching“ (OBS) dar. Wie der Name darlegt ist die Technologie optimiert für kurzzeitig ansteigende Datendurchsätze. Ein Nachteil der Technik ist die abnehme Leistung bei lang andauernden, kontinuierlichen Strömen. Weiterhin stellt OBS eine hohe Bandbreitennutzung her, benötigt hierfür aber große optische Pufferspeicher. Um effektiv beide Varianten der Datenströme zu übertragen, können mit der Kombination von OCS und OBS die Vorteile beider Technologien kombiniert werden. Die beiden Technologien sind als komplementäre Ansätze anzusehen. [Xin, C. Qiao, Y. Ye und S. Dixit]. In einem HOS-Netzwerk werden große Datenströme durch vorgehalten Leitungen oder mit langen Durchsatzstöße übertragen und kleinere Ströme durch einzelne Datenpakete und kurze Durchsatzstöße übermittelt.
 
-
-\section{Problemstellung}
-Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
-%citation needed!
-
-\subsection{Motivation}
-Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder sogar leicht zurück geht, wachsen die globalen Verbräuche weiter an (vgl. Abbildung \ref{fig:ProbStromSektor}). Dies kann vor allem auf  Schwellenländer zurückgeführt werden, die in kurzer Zeit ein rasantes wirtschaftliches Wachstum erleben.
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{ProbStromSektor}
-	\caption{Weltweiter Stromverbrauch nach Sektoren, basierend auf \cite{bibid}}
-	\label{fig:ProbStromSektor}
-\end{figure}
-Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
-
-Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Netze effizienter zu gestalten.  Der Effekt der Kosten wird allerdings potenziert durch den Fakt, dass der Stromverbrauch von ICT von 2007-2012 stärker gewachsen ist als der globale Stromverbrauch (vgl. \cite[9]{vanhedde}). Schon 2012 betrug der Anteil von ICT am globalen Stromverbrauch etwa 5\% (s. Abbildung \ref{fig:ProbStromICT})
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{ProbStromICT}
-	\caption{Anteil von ICT am weltweiten Stromverbrauch, basierend auf \cite{bibid} und \cite{bibid}}
-	\label{fig:ProbStromICT}
-\end{figure}
-
-Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
-%evtl. nach oben ziehen als 1. Absatz für Problemstellung
-
-\subsection{Ziele}
-Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Kosten  durch Verwendung energieeffizienter Technologien eingespart werden können.
-
-Zur Erreichung dieses Ziels ist zum einen eine Literaturrecherche zu den bestehenden Technologien nötig, die es ermöglichen, den Energieverbrauch von Netzen zu senken. Die Ergebnisse dieser Literaturrecherche befinden sich in Kapitel \ref{SdF}.
-
-Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{Ergebnisse}.
-
-Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
-
-Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. Das genaue Vorgehen in der Softwareentwicklung wird im folgenden Kapitel erläutert.
 
 \section{Vorgehen}
 
