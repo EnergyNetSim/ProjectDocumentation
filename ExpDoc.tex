@@ -15,10 +15,24 @@
 \usepackage{amsmath}
 %\numberwithin{equation}{section}
 
-% ### Bibliographical Stuff ###
+% ------------
+% Header & Footer
+% ------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\rhead{\thepage} \lhead{\fancyplain{}{\rightmark }} %\chead{} 
+\lfoot{} \cfoot{} \rfoot{} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ------------
+% Bibliographical Stuff
 % Use \textcite{} and \parencite{} with biblatex!
+% ------------
 \usepackage[backend=biber,
-    style=numeric-comp,%alphabetic-verb,
+    style=numeric-comp,%footnote-dw,%alphabetic-verb,
     sortlocale=de_DE,
     natbib=true,
     url=true,
@@ -65,27 +79,21 @@
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic {enumii}}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
 
-\newcommand{\firstpages}{
-  
-
-     \newpage
-     \tableofcontents{}
-     \addtocontents{toc}{~\hfill\textbf{Seite}\par}
-
-     \newpage
-     \listoffigures
-
-     \newpage
-     \listoftables
-     \newpage
-}
-
-
-\begin{document}
 \title{\huge{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \\ \large{Projektbericht}}
 \author{Veronika Lawrence, Carmen Scheer, Nicholas Cariss, Maximilian Junker,\\ Christian Keck, Stefan Ludowicy, Dominik Schneider}
+
+%%
+%%
+%%
+\begin{document}
 \maketitle
-\firstpages
+\newpage
+\tableofcontents{}
+\addtocontents{toc}{~\hfill\textbf{Seite}\par}
+\newpage
+\listoffigures
+\listoftables
+\newpage
 
 %START HERE
 \section{Einleitung}
@@ -110,7 +118,6 @@ In diesem Bericht gilt es, die Forschungsergebnisse und wichtigen Erkenntnisse d
 
 %Früher waren Geräte überwiegend fest verbunden, weshalb nur stationäres Handeln für Nutzer möglich war. Doch die Technik entwickelte sich hin zu mobilen Geräten. Nutzer konnten bald Geräte mit sich führen und unterwegs nutzen. Ein weiterer technischer Fortschritt war das Internet. Bereits 2003 waren circa 500 Millionen Geräte  mit Internetzugang ausgestattet. 
 %Im Laufe der technischen Entwicklung wurde das vernetzte Handeln immer weiter vorangetrieben. Durch die Einführung des Internets der Dinge kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Das Internet der Dinge bezeichnet „die Idee eines erweiterten Internets, welches neben klassischen Rechnern und mobilen Endgeräten auch beliebige physische Gegenstände […] in seine Infrastruktur einbindet […]“ . Durch die Erwartung dieser Entwicklungsstufe, „Informationen aus Gegenständen abzurufen und aufzubereiten“ , waren 2010 bereits 12,5 Milliarden Geräte  mit Internetzugang versehen. 
-
 
 \section{Problemstellung}
 Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
@@ -138,6 +145,9 @@ Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Ne
 
 Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
 %evtl. nach oben ziehen als 1. Absatz für Problemstellung
+
+
+
 
 \subsection{Ziele}
 Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Kosten  durch Verwendung energieeffizienter Technologien eingespart werden können.
@@ -314,7 +324,7 @@ Dies erlaubt allerdings keine Anpassung des zu berechnenden N
 Die Komplexität, die Unterschätzung der Einflussfaktoren und deren Beziehung zueinander werden häufig zu Problemen der Softwareentwicklung. In diesem Projekt konnte die Komplexität der Umsetzung der Aufgabenstellung erst in der Realisierungs- / Programmierungsphase erkannt werden. Im Zuge der Anforderungsanalyse und Spezifikation wurden Anforderungen definiert, die ein automatisiertes und konfigurierbares System zur Berechnung und Darstellung von energieeffizienten Netzen beschreiben. Während der Umsetzung der Anforderungen wurden komplexe Problemstellungen entdeckt, die erfasst und nach der Auswirkung auf das Projekt bewertet wurden. Bei dem Versuch diese Probleme zu lösen oder zu umgehen, sind weitere komplexe Schwierigkeiten aufgetaucht. Aufgrund von zwei Faktoren wurde die Entwicklung der Software bei einem Grundgerüst belassen. Ein Mangel an Ressourcen machte es nicht möglich, die auftauchenden komplexen Problemstellungen genau im System abzubilden. Daher mussten Annahmen getroffen werden, die die Genauigkeit der vom System erwarteten Ergebnisse stark reduzierte. Da ungenaue Ergebnisse in diesem Forschungsgebiet nicht zielführend und akzeptabel sind, wurde die Software nicht entsprechend der zuvor definierten Anforderungen weiter entwickelt. Die Komplexität der Entwicklung soll im Folgenden detailliert beschrieben werden.  
 
 
-Die Implementierung eines Netzes bedarf einem Lastprofil, mehreren Geräten und der jeweiligen Verbindung zwischen zwei Geräten. Der in Kapitel 4.3 beschriebene Algorithmus soll das Routing durch das Netz pro Zeitintervall berechnen. Ein Zeitintervall soll unterschiedlich einstellbar sein. Es muss sichergestellt werden, dass keine Verbindungen überlastet sind. Dafür muss der Algorithmus zunächst die optimale Route berechnen und diese dann mit allen bereits definierten Verbindungen vergleichen. Wurde die gleiche Verbindung bereits gewählt muss geprüft werden, ob die Geräte der Verbindung voll ausgelastet sind. Ist die maximale Auslastung erreicht, muss entschieden werden, welche Verbindung bestehen bleibt und für welche Verbindung eine alternative Route gefunden werden muss. Dies kann nur über eine komplizierte Berechnung und einen Vergleich durch den Algorithmus durchgeführt werden. Ein weiteres Problem beim Routing ist die Blockierung der Ports. In der Realität werden Ports nur eine bestimmt Zeit belastet. Diese Zeit ist abhängig von der Datenmenge und Geschwindigkeit des Ports. Die Berechnung der Zeit, die ein Port von einem Patenpaket blockiert wird, macht  die Verwendung von festen Zeitintervallen fast unmöglich. Es müsste  definiert werden, wie lange der Port mit welchem Volumen belegt ist. Dadurch würden die Zeitschlitze zur kleinsten Einheit. Um diese Komplexität zu minimieren wurde die Annahme getroffen, dass ein Datenpaket einen Port für die gesamte Zeiteinheit belegt. 
+Die Implementierung eines Netzes bedarf einem Lastprofil, mehreren Geräten und der jeweiligen Verbindung zwischen zwei Geräten. Der in Kapitel 4.3 beschriebene Algorithmus soll das Routing durch das Netz pro Zeitintervall berechnen. Ein Zeitintervall soll unterschiedlich einstellbar sein. Es muss sichergestellt werden, dass keine Verbindungen überlastet sind. Dafür muss der Algorithmus zunächst die optimale Route berechnen und diese dann mit allen bereits definierten Verbindungen vergleichen. Wurde die gleiche Verbindung bereits gewählt muss geprüft werden, ob die Geräte der Verbindung voll ausgelastet sind. Ist die maximale Auslastung erreicht, muss entschieden werden, welche Verbindung bestehen bleibt und für welche Verbindung eine alternative Route gefunden werden muss. Dies kann nur über eine komplizierte Berechnung und einen Vergleich durch den Algorithmus durchgeführt werden. Ein weiteres Problem beim Routing ist die Blockierung der Ports. In der Realität werden Ports nur eine bestimmt Zeit belastet. Diese Zeit ist abhängig von der Datenmenge und Geschwindigkeit des Ports. Die Berechnung der Zeit, die ein Port von einem Datenpaket blockiert wird, macht  die Verwendung von festen Zeitintervallen fast unmöglich. Es müsste  definiert werden, wie lange der Port mit welchem Volumen belegt ist. Dadurch würden die Zeitschlitze zur kleinsten Einheit. Um diese Komplexität zu minimieren wurde die Annahme getroffen, dass ein Datenpaket einen Port für die gesamte Zeiteinheit belegt. 
 
 
 Eine weitere Annahme musste bei der Berechnung des Stromverbrauchs getroffen werden. Jedes Gerät besitzt einen vom Hersteller vorgegebenen Stromverbrauch pro Port. Der Stromverbrauch für das gesamte Gerät ergibt sich nicht aus der Multiplikation von Stromverbrauch pro Port und der Anzahl an Ports. Der Grund dafür ist, dass das Gerät auch Strom verbraucht, wenn kein Datenpaket über die Leitung geht. Daher ist der genaue Stromverbrauch bei heruntergefahrenen Ports nur ungefähr abschätzbar. Des Weiteren  muss der Stromverbrauch für Geräte, die sich im Energiesparmodus befinden, geschätzt werden. Zu dieser Problematik kommt noch die Komplexität der Berechnung des Stromverbrauchs des gesamten Netzes dazu. Mit heruntergefahrenen und in der Geschwindigkeit reduzierten Ports und Geräten, muss zu jedem Zeitpunkt der Status des jeweiligen Ports und Geräts bekannt sein.  
@@ -516,7 +526,7 @@ Sobald dann mit der Entwicklung des Algorithmus angefangen worden war, stellte s
 \begin{itemize}
 	\item In den Nodes sind jeweils Geräte verschiedener Layer nötig, um das weitere Routing zu gewährleisten. 
 	\item Für eine realistische Berechnung der Netzlast reicht eine stundenweise Iteration nicht aus. Diese Annahme bedeutet, dass von jeder Quelle pro Stunde ein konstanter Datenstrom ausgeht, was in der Realität so nicht der Fall ist.
-	\item Die Einhaltung der QoS Parameter konnten mit dem gewählten Ansatz nicht gewähr-leistet werden.
+	\item Die Einhaltung der QoS Parameter konnten mit dem gewählten Ansatz nicht gewährleistet werden.
 	\item Es ist unklar, welche Konzepte zur Erhöhung der Energieeffizienz miteinander kompatibel sind.
 \end{itemize}
 
@@ -525,7 +535,7 @@ Um eine Umsetzung des Algorithmus zu ermöglichen, mussten also sehr viele Annah
 Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer dieser Arbeit nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer dieser Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vlg Kapitel \ref{Ergebnisse}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
 
 %MISSING Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
-
+%TODO 
 
 \newpage
 \section{Ausblick}
