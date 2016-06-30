@@ -5,7 +5,7 @@
 \usepackage[autostyle=true,german=quotes]{csquotes}%NC: needed for babel
 
 \usepackage[a4paper , lmargin = {2.5cm} , rmargin = {2.5cm} , tmargin =
-{2cm} , bmargin = {2cm}]{geometry}
+{2.5cm} , bmargin = {2.5cm}]{geometry}
 
 \usepackage[hyphens]{url}
 \usepackage[linktocpage=true]{hyperref}
@@ -100,7 +100,7 @@
 
 %START HERE
 \section{Einleitung}
-Die Weltbevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{welt}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{bmwi:energiepolitik}. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
+Die Welt\-bevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{welt}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{bmwi:energiepolitik}. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
 Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen\cite{fraunhofer:energiebedarf}. Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
 
 %Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte \cite{cisco} mit Internetzugang ausgestattet. Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden \cite{cisco}  erhöhen soll. 
@@ -145,7 +145,7 @@ Das Ziel der vorliegenden Arbeit ist es, abzuschätzen, wie viel Energie bzw. Ko
 
 Zur Erreichung dieses Ziels ist zum einen eine Literaturrecherche zu den bestehenden Technologien nötig, die es ermöglichen, den Energieverbrauch von Netzen zu senken. Die Ergebnisse dieser Literaturrecherche befinden sich in Kapitel \ref{SdF}.
 
-Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{Ergebnisse}.
+Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische Netze miteinander zu vergleichen, zum einen ein konventionelles Netz, wie es heutzutage Stand der Technik ist, zum anderen ein energieeffizientes Netz, das die vorhandenen Technologien und Konzepte zur Effizienzsteigerung sinnvoll einsetzt. Anhand des abgeschätzten Energieverbrauchs der beiden Netze wird das Energiesparpotenzial sowie die möglichen Kosteneinsparungen durch den Betrieb des energieeffizienten Netzes ausgegeben. Die Ergebnisse der Softwareentwicklung sowie die Abschätzung des Energieverbrauchs befinden sich in Kapitel \ref{sec:Erg}.
 
 Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
 
@@ -160,15 +160,14 @@ Bevor auf den Stand der Forschung mit den Technologien und Konzepten zur Energie
 
 \subsection{Begriffe}
 
-\begin{description}
-  \item [Wirtschaftlichkeit]
+\subsubsection{Wirtschaftlichkeit}
   Bei der Betrachtung von Energieeinsparpotentialen in Netzwerken findet die Wirtschaftlichkeit häufig keine Beachtung. Die Wirtschaftlichkeit drück aus, wie sparsam mit vorhandenen Ressourcen umgegangen wurde.  Vor jeder Investition steht die Frage nach der betriebswirtschaftlichen Sinnhaftigkeit. Im ökonomischen Sinn bedeutet Wirtschaftlichkeit das Verhältnis aus monetären Kosten und Leistung. 
 
 %TODO Hier fehlt noch etwas - Input Max
 
-Für die Wirtschaftlichkeitsbetrachtung des Netzwerks werden die Ausgaben für die Anschaffung der Netzwerkkomponenten (Capex –- Capital Expenditures) nicht berücksichtigt. Die für den operativen Geschäftsbetrieb anfallenden Aufwendungen werden „Operating Expenditures“ (kurz Opex) genannt und stellen die Betriebskosten dar. Zu den laufenden Ausgaben für den Geschäftsbetrieb gehören u.a. Mieten, Personal- und Energiekosten, Aufwendungen für Wartung und Support, Verbrauchsmaterialien und Betriebsstoffe. 
+Für die Wirtschaftlichkeitsbetrachtung des Netzwerks werden die Ausgaben für die Anschaffung der Netzwerkkomponenten (Capex –- Capital Expenditures) nicht berück\-sichtigt. Die für den operativen Geschäftsbetrieb anfallenden Aufwendungen werden „Operating Expenditures“ (kurz Opex) genannt und stellen die Betriebskosten dar. Zu den laufenden Ausgaben für den Geschäfts\-betrieb gehören u.a. Mieten, Personal- und Energiekosten, Aufwendungen für Wartung und Support, Verbrauchsmaterialien und Betriebsstoffe. 
 
-  \item [Effizienz im Bereich von Telekommunikationsnetzen]
+\subsubsection{Effizienz im Bereich von Telekommunikationsnetzen}
 %TODO Hier fehlt noch etwas - Input Max
 
 %Energieverbrauch im Verhältnis zur Datenmenge
@@ -177,24 +176,23 @@ Für die Wirtschaftlichkeitsbetrachtung des Netzwerks werden die Ausgaben für d
 
 
 %S. Aleksic, „Energy-Efficient Communication Networks for Improved Global Energy Productivity”, Telecommunication Systems, Vol. 54, No. 2 , 2013, pp. 183-199.
-  \item [Carrier-Netzwerke]
+\subsubsection{Carrier-Netzwerke}
 Gegenstand der Projektarbeit bildet ein hinsichtlich der Energieeffizienz und Wirtschaftlichkeit zu optimierendes Carrier-Netzwerk.
 
 Unter einem Carrier versteht man […] eine Gesellschaft, die mindestens drei Übertra\-gungs\-wege betreibt, die über eine Vermittlungsstelle miteinander verbunden sein müssen"' (s. \cite{carrier}). Ein Carrier-Netzwerk stellt somit physikalische Transportwege und -verfahren zur Verfügung und bildet die Grundlage für sogenannte Value Added Services von Providern, welche auf den Carrier-Diensten aufsetzen (vgl. \cite{fassnacht}) . "`Bei den TK-Transportwegen unterscheidet man leitergebundene Verbindungen auf der Basis von Kupferkabeln oder Lichtwellenleitern sowie Funkverbindungen wie Satellitenverbindungen, Richtfunkstrecken und Rundfunkverbindungen"' (s. \cite{fassnacht}).
 
 Somit umfasst ein Carrier-Netzwerk neben dem nur das physikalische Backbone-Netz, sondern auch das Zugangs- und Aggregationsnetzwerk. Das Kernnetz eines Carriers kann durch ein vereinfachtes Drei-Schichten-Modell dargestellt werden, das sich nach den Protokollschichten für Glasfaser, Ethernet und Internet richtet. 
 
-\end{description}
 
 
 \subsection{Technologien und Konzepte zur Reduzierung des Energieverbrauchs in Telekommunikationsnetzwerken}
 Der aktuelle Stand der Forschung vermittelt Technologien und Entwicklungen, welche die zuvor genannten Konzepte umsetzen. Die im Folgenden genannten Technologien beziehen sich im Einzelnen auf eines der im vorherigen Kapitel genannten Konzepte. Bezüglich des reinen Telekommunikationsnetzes können Möglichkeiten zur Steigerung der Energieeffizienz bzw. Reduzierung des Energieverbrauchs wie folgt unterteilt werden:
 
 \subsubsection{Energieeffiziente Netzelemente}
-Durch den technologischen Fortschritt können Netzwerkkomponenten energieeffizienter gestaltet werden, beispielsweise durchzunehmende Integration mehrerer einzelner Geräteeinheiten in einem Verbundgerät. Somit können mehrere Module in einer Einheit zusammengefasst werden ohne die Netzwerkarchitektur zu verändern. Betrachtet man einzelne Geräte kann durch den Austausch alter Hardware mit neueren, energieeffizienteren Komponenten eine Einsparung erzielt werden. 
+Durch den technologischen Fortschritt können Netzwerkkomponenten energieeffizienter gestaltet werden, beispielsweise durchzunehmende Integration mehrerer einzelner Geräte\-einheiten in einem Verbundgerät. Somit können mehrere Module in einer Einheit zusammengefasst werden ohne die Netzwerkarchitektur zu verändern. Betrachtet man einzelne Geräte kann durch den Austausch alter Hardware mit neueren, energieeffizienteren Komponenten eine Einsparung erzielt werden. 
 
 \subsubsection{Energieeffiziente Netzarchitektur}
-Ein Ansatz bezieht sich auf das Konzept der energieeffizienten Netzwerkarchitektur und sieht eine Vereinfachung des Netzes vor, welche durch eine geographische Aufteilung des Netzes in Submodale (Global - Kontinental - National - Regional - Zugang) erfolgen kann \cite{aleksic2014}. Durch das Einteilen in Submodale und Einsetzen von adäquaten Übertragungstechnologien innerhalb der Abgrenzungen können die Einsparpotentiale unabhängig voneinander betrachtet werden.
+Ein Ansatz bezieht sich auf das Konzept der energieeffizienten Netzwerkarchitektur und sieht eine Vereinfachung des Netzes vor, welche durch eine geographische Aufteilung des Netzes in Submodale (Global - Kontinental - National - Regional - Zugang) erfolgen kann \cite{aleksic2014}. Durch das Einteilen in Submodale und Einsetzen von adäquaten Übertragungs\-technologien innerhalb der Abgrenzungen können die Einsparpotentiale unabhängig voneinander betrachtet werden.
 
 \subsubsection{Verkehrslastadaptiver Netzbetrieb}
 
@@ -232,7 +230,20 @@ Zur Betrachtung der Wirtschaftlichkeit eines energieeffizienten Netzes muss ein 
 Bild netzwerk mi Eingrenzung
 
 
+
+
+
+%TODO Carmen: Bitte noch die folgende Abbildung miteinbeziehen (Netzlastprofil wurde ja ebenfalls modelliert)
+
+
+
 Damit ein Vergleich möglich ist, müssen beide Netze identisch modelliert werden. Das statische soll in der Simulation nicht  verändert werden. Das zweite Netz soll die im Kapitel „Stand der Forschung“ beschriebenen Technologien anwenden und die Effizienz des Netzes damit zu steigern. Um sowohl das Standard als auch das effiziente Netz möglichst realistisch zu modellieren, sollen die Geräte pro Layer gewählt werden. Die Geräte werden dann in der Datenbank konfiguriert. Die Modellierung des Netzes erfolgt durch die Erstellung von Verbindungen zwischen den Geräten. Zuvor muss eine Anzahl von Knoten im Netz definiert werden. 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{VorgModLast}
+	\caption{Idealtypische Netzlast-Kurve (nach \cite[3]{Chiaraviglio2009})} 
+	\label{fig:VorgModLast}
+\end{figure}
 
 
 \subsection{Entwicklung des Routing-Algorithmus}\label{subsec:MethAlg}
@@ -266,7 +277,7 @@ Im Zuge der Anforderungsanalyse und der Spezifikation der Software wurden die fo
 Funktionale Anforderungen:
 \begin{itemize}
 	\item A1: Über die Datenbank kann ein Netz, bestehend aus Knoten (Geräte) und Kanten (Verbindungen) modelliert werden
-	\item A2: Das Anlegen neuer Geräte und Gerätekonfigurationen ist über die Datenbank möglich
+	\item A2: Das Anlegen neuer Geräte und Geräte\-konfi\-gura\-tionen ist über die Datenbank möglich
 	\item A3: Das Verändern von Geräteparametern ist über die Datenbank möglich
 	\item A3a: Das Austauschen von Gerätetypen ist über die Datenbank möglich
 	\item A3b: Das Austauschen von Gerätetypen pro Schicht ist über eine GUI möglich                       
@@ -302,19 +313,19 @@ Die Architektur besteht aus einer 2-Tier Kombination aus einer relationalen MySQ
 
 
 Die Vorteile dieser Architektur sind die gute Portabilität der resultierenden Lösung und die Ermöglichung einer einfachen und schnellen Entwicklung. Es müssen keine weiteren Anwendungsserverkomponenten je Entwicklungsumgebung installiert und konfiguriert werden. Die SQL-Datenbank verwendet eine übliche Datenbank-Standardsoftware und kann per SQL-Script vollautomatisch konfiguriert werden.
-Das Datenbank-Konzept ist entscheident für die Softwareentwicklung. Es werden alle relevanten Daten für Berechnungen, Konfigurationen und Darstellungen gespeichert. Auf der Basis der Datenbankstruktur kann die Entwicklung der Softwarelösung weitergeführt werden.
+Das Datenbank-Konzept ist entscheidend für die Softwareentwicklung. Es werden alle relevanten Daten für Berechnungen, Konfigurationen und Darstellungen gespeichert. Auf der Basis der Datenbankstruktur kann die Entwicklung der Softwarelösung weitergeführt werden.
 
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.8\textwidth]{MethSoftwareER}
+	\includegraphics[width=\textwidth]{MethSoftwareER}
 	\caption{ER-Diagramm} %TODO Bezeichnung anpassen
 	\label{fig:MethSoftwareER}
 \end{figure}
 
 
 %----> Erklärung ER-Diagramm <----
-Zur Vorbereitung der Programmierung wurde der Algorithmus für das Routing in der Systemdesign-Phase entwickelt.  Dieser Algorithmus wird in den nächsten Kapiteln (4.3 \& 5.1) detailliert erklärt.
+Zur Vorbereitung der Programmierung wurde der Algorithmus für das Routing in der Systemdesign-Phase entwickelt.  Dieser Algorithmus wird in den nächsten Kapiteln (\ref{} \& 5.1) detailliert erklärt.
 
 
 In der Programmierungsphase wurde ein Grundgerüst für die weitere Entwicklung der Software geschaffen. Die Datenbank wurde auf der Basis des zuvor erstellten Konzeptes eingebunden. Im Rahmen der Weiterentwicklung kann der Routing-Algorithmus und die definierten Anforderungen implementiert werden. Der Algorithmus koordiniert das Routing des Traffics durch das definierte Netz. Mit der Hilfe von weiteren Annahmen und Algorithmen kann die Software zu einem System entwickelt werden, das verschiedene Technologien und Methoden zur Energiereduzierung einsetzt. Das Programm könnte die verschiedenen Methoden möglichst realitätsgetreu anwenden und die dadurch gesparte Energie graphisch darstellen. Über die GUI könnte eine Konfiguration möglich sein.  Darüber könnten verschiedene Technologien aktiviert und Geräte ausgetauscht werden. 
@@ -326,10 +337,7 @@ Die beschriebene Software konnte innerhalb dieses Projektes nicht fertigstellt w
 Eine ausgereifte Testphase ist erst nach der Fertigstellung der Software sinnvoll. Die implementierten Module und Teilfunktionalitäten werden vom jeweiligen Entwickler direkt getestet. Ein abschließender Test der bis zum Ende der Bearbeitungszeit programmierten Funktionalitäten, wird durchgeführt.
 
 
-Implementierung
-
-%TODO
-TODO wohin mit dem folgenden Abschnitt?
+%TODO wohin mit dem folgenden Abschnitt?
 Um den Energieverbrauch im Carrier-Netzwerk berechnen zu können, bedarf es an Werten der im Backbone verwendeten Netzkomponenten. Innerhalb der Simulation wird für die Berechnung des Gesamtverbrauchs auf die definierten Werte zurückgegriffen, die in einer Datenbank gespeichert sind. Ziel dieser Arbeit ist die Simulation und Berechnung des gesamtheitlichen Energieverbrauchs. Deshalb verwendet die Berechnung die von den beiden Wissenschaftler Ward Van Heddeghem und Filip Idzikowski in ihrer Veröffentlichung \cite{vanhedde} zusammengetragenen Werte. Die Quelle beinhaltet zum einen das analytische Model der Berechnung und zum anderen ein Datenblatt \cite{vanhsheet} des Energieverbrauchs der unterschiedlichen Hersteller. Das Datenblatt gliedert die Geräte nach den Unterschiedlichen Layer IP/MPLS, Ethernet, OTN, WDM - (OSI-Layer: 3-2-1-1). Zu beachten ist beim Verwenden der Werte, dass es sich um Werte unter typischen Lastbedingungen handelt, die sich nach der Kapazität der Komponente richtet und nicht nach dem aktuellen Durchsatz. Des Weiteren geben die Werte nur dein Stromverbrauch für den Betrieb an, ein Verbrauch für Kühlung o.Ä. ist nicht enthalten.
 Der Gesamtverbrauch des Core-Networks ergibt sich aus der Summe alle Verbrauche der einzelnen Schichten.
 
@@ -347,21 +355,21 @@ Eine weitere Annahme musste bei der Berechnung des Stromverbrauchs getroffen wer
 
 \subsection{Abschätzung des Energieverbrauchs} \label{subsec:MethSch}
 
-Obgleich die Komplexität des vollständigen Simulationsalgorithmus eine Implementierung im Rahmen der Arbeit verhindert, wurde dennoch ein beispielhafter Vergleich des Energieverbrauchs und damit der Stromkosten eines herkömmlichen und eines energieeffizienten Telekommunikationsnetzwerkes durchgeführt, dessen Ergebnisse in der aktuellen Software-Version statisch hinterlegt sind. Als Grundlage wurde die Fallstudie eines italienischen Forscher-Konsortiums aus Turin herangezogen, die die Energieeinsparungspotenziale im realen Netz eines der größten italienischen Internet-Service-Provider analysiert\cite{Chiaraviglio2009}. Das untersuchte Netzwerk gliedert sich in die vier Ebenen "Core", "Backbone", "Metro" und "Feeder", deren Energieverbrauch und Anzahl der Netzelemente in der Tabelle \ref{tab:beispielnetz} aufgelistet sind\cite[2]{Chiaraviglio2009}. Die Energie zur Kühlung der Netzelemente wird in der Fallstudie nicht betrachtet.
+Obgleich die Komplexität des vollständigen Simulationsalgorithmus eine Implementierung im Rahmen der Arbeit verhinderte, wurde dennoch ein beispielhafter Vergleich des Energieverbrauchs und damit der Stromkosten eines herkömmlichen und eines energieeffizienten Telekommunikationsnetzwerkes durchgeführt, dessen Ergebnisse in der aktuellen Software-Version statisch hinterlegt sind. Als Grundlage wurde die Fallstudie eines italienischen Forscher-Konsortiums aus Turin herangezogen, die die Energieeinsparungspotenziale im realen Netz eines der größten italienischen Internet-Service-Provider analysiert\cite{Chiaraviglio2009}. Das untersuchte Netzwerk gliedert sich in die vier Ebenen "Core", "Backbone", "Metro" und "Feeder", deren Energieverbrauch und Anzahl der Netzelemente in der Tabelle \ref{tab:beispielnetz} aufgelistet sind\cite[2]{Chiaraviglio2009}. Die Energie zur Kühlung der Netzelemente wird in der Fallstudie nicht betrachtet.
 
 
 
 
-\begin{table}[htp!]
+\begin{table}[ht]
 \centering
-\begin{tabular}{ | c | c | c | c | }
+\begin{tabularx}{\textwidth}{ | r | l | X | X | }
 	\hline
-	Knotentyp & Anzahl Knoten & Energieverbrauch je Knoten [kWh] & Energieverbrauch je Ebene [kWh]\\ \hline\hline
+	Knotentyp & Anzahl Knoten & Energieverbrauch \newline je Knoten [kWh] & Energieverbrauch \newline je Ebene [kWh]\\ \hline\hline
 Core & 8 & 10 & 80\\ \hline
 Backbone & 52 & 3 & 156\\ \hline
 Metro & 52 & 1 & 52\\ \hline
 Feeder & 260 & 2 & 520\\ \hline
-\end{tabular}
+\end{tabularx}
 \caption{Aufbau des Beispielnetzes}
 \label{tab:beispielnetz}
 \end{table}
@@ -370,14 +378,12 @@ Somit ergibt sich der Energieverbrauch pro Stunde für das nicht-optimierte Beis
 
 Pges/h = PNode + PLink = 0,808 MWh + 0,594 MWh = 1,42 MWh
 
-Als normalisierte Lastkurve wird die in \cite[3]{Chiaraviglio2009} dargestellte Sinus-Funktion sowohl für das herkömmliche als auch das energieeffiziente Netzwerk angenommen und im Java-Programm abgebildet. In der Fallstudie wurde die Energieffizienz durch dynamisches Abschalten von Geräten und Verbindungen, die keiner Netzwerklast ausgesetzt sind, erhöht.\cite[3]{Chiaraviglio2009} Für das nicht-optimierte Netz wird aufgrund fehlender Detaildaten angenommen, dass der Energieverbrauch unabhängig von der Netzlast ist. Dabei ergeben sich die in Tabelle YYY angegebenen Stromverbrauchswerte pro Stunde für beide Netze, welche in der Simulationssoftware statisch hinterlegt wurden und als Grundlage der Diagrammerstellung dienen.
+Als normalisierte Lastkurve wird die in \ref{fig:VorgModLast} dargestellte Sinus-Funktion sowohl für das her\-kömm\-liche als auch das energieeffiziente Netzwerk angenommen und im Java-Programm abgebildet. In der Fallstudie wurde die Energieffizienz durch dynamisches Abschalten von Geräten und Verbindungen, die keiner Netzwerklast ausgesetzt sind, erhöht.\cite[3]{Chiaraviglio2009} Für das nicht-optimierte Netz wird aufgrund fehlender Detaildaten angenommen, dass der Energieverbrauch unabhängig von der Netzlast ist. Dabei ergeben sich die in Tabelle \ref{tab:stromverbrauch} angegebenen Stromverbrauchswerte pro Stunde für beide Netze, welche in der Simulationssoftware statisch hinterlegt wurden und als Grundlage der Diagrammerstellung dienen.
 
-\begin{table}[htp!]
+\begin{table}[!ht]
 \centering
-\begin{tabular}{ | c | c | c | }
-	\hline
-	
-	\textbf{Zeit} & \multicolumn{2}{c|}{\textbf{Stromverbrauch/Stunde} [MWh]}   \\ \hline
+\begin{tabular}{cccc}	
+	\textbf{Zeit} & \multicolumn{2}{c}{\textbf{Stromverbrauch/Stunde} [MWh]}   \\
 	& Herkömmliches Netz & Energieeffizientes Netz \\ \hline \hline
 	0 Uhr & 1,42 & 0,95 \\ \hline
 	1 Uhr & 1,42 & 0,95 \\ \hline
@@ -403,7 +409,7 @@ Als normalisierte Lastkurve wird die in \cite[3]{Chiaraviglio2009} dargestellte 
 	21 Uhr & 1,42 & 0,95 \\ \hline
 	22 Uhr & 1,42 & 0,95 \\ \hline
 	23 Uhr & 1,42 & 0,95 \\ \hline\hline
-	\textbf{SUMME} & \textbf{34} & \textbf{26}\\  \hline 
+	\textbf{SUMME} & \textbf{34} & \textbf{26}\\ 
 \end{tabular}
 \caption{Vergleich des Energieverbrauchs pro Stunde zwischen herkömmlichem und energieeffizientem Netz}
 \label{tab:stromverbrauch}
@@ -411,11 +417,12 @@ Als normalisierte Lastkurve wird die in \cite[3]{Chiaraviglio2009} dargestellte 
 
 
 
+\section{Präsentation und Auswertung der Ergebnisse} \label{sec:Erg}
+Für die Darstellung der Ergebnisse des Projekts soll zunächst der entwickelte Algorithmus zur Berechnung des Stromverbrauchs im optimierten Netz beschrieben werden. Anschließend wird in \ref{subsec:ErgSoftware} ausführlich auf die erstellte Software „EnergyNetSim“ und deren Benutzung eingegangen, bevor in \ref{subsec:ErgDiskussion} eine Diskussion der Ergebnisse und Erkenntnisse folgt.
 
-\section{Präsentation und Auswertung der Ergebnisse} \label{Ergebnisse}
 \subsection{Algorithmus} \label{subsec:ErgAlg}
-% Hier bitte neutral den Algorithmus beschreiben (Pseudocode in Worte umsetzen)
-Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffic von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass Über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffene Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Diese werden je Iteration initial einmal neu berechnet. Durch die Verkürzung der Iterationsdauer und der dazu passenden Netzlast-Daten lässt sich bei geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
+Wie in Kapitel \ref{subsec:MethAlg} dargestellt, wurde ein Algorithmus entwickelt, der es erlaubt, Netzlast (Traffic) dynamisch durch ein definiertes Netz zu routen und anschließend nicht benötigte Geräte und Verbindungen abzuschalten.
+Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffic von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffenen Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Diese werden je Iteration initial einmal neu berechnet. Durch die Verkürzung der Iterationsdauer und der dazu passenden Netzlast-Daten ließe sich bei Bedarf mit geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
 
 
 \begin{figure}[!ht]
@@ -430,11 +437,11 @@ Je durch den Anwender in der Datenbank hinterlegtem statischen Netz wird eine Da
 Um diese Einzelwerte zu berechnen, werden zuerst die Lasten aus jedem Netzlastprofil-Eintrag auf möglichst effizient auf die Netzwerkhardware und Verbindungen projiziert, und danach abschließend abhängig von den berechneten Geräteauslastungen die Teil-Stromverbrauchswerte addiert.
 
 
-Mit dieser groben Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetzwerk inklusive dem zeitlichen Verlauf errechnen. Allerdings fehlt dazu noch die Antwort auf die Frage, wie die effizienten Routing-Entscheidungen getroffen werden können. Der folgende Teil des Algorithmus beschreibt eine möglichen Lösung:
+Mit dieser groben Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetzwerk inklusive des zeitlichen Verlaufs errechnen. Allerdings fehlt dazu noch die Antwort auf die Frage, wie die effizienten Routing-Entscheidungen getroffen werden können. Der folgende Teil des Algorithmus beschreibt eine möglichen Lösung:
 
 
-Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je mögliche Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Diese Kategorie von lokalen Lösungsverfahren nennt man Greedy Algorithmus. Dieser liefert nicht unbedingt das insgesamt beste Ergebnis, sondern berechnet nur das lokale Optimum für das betrachtete Teilproblem. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen beinhaltet dieser Algorithmus intelligente Entscheidungsfunktionen um schlechte Routen frühzeitig zu ignorieren und nicht zielführende Berechnungen wie sie beispielsweise bei Schleifenbildung auftreten zu verhindern.
-\begin{figure}[!ht]
+Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je möglicher Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Diese Kategorie von lokalen Lösungsverfahren nennt man Greedy Algorithmus. Dieser liefert nicht unbedingt das insgesamt beste Ergebnis, sondern berechnet nur das lokale Optimum für das betrachtete Teilproblem. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen beinhaltet dieser Algorithmus intelligente Entscheidungsfunktionen um schlechte Routen frühzeitig zu ignorieren und nicht zielführende Berechnungen, wie sie beispielsweise bei Schleifenbildung auftreten, zu verhindern.
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{2Routingentscheidung}
 	\caption{Programmablaufplan zum übergreifenden Anteil des Routing-Algorithmus}
@@ -442,7 +449,7 @@ Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge j
 \end{figure}
 
 Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektr. Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und diese einzelnen Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{3Rekursives_Routing}
 	\caption{Rekursiver Anteil des Routing-Algorithmus}
@@ -465,14 +472,14 @@ Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jewe
 
 %TODO: getroffene Annahmen und Verallgemeinerungen erläutern
 
-\subsection{Die erstellte Software aus Ergebnissicht}
+\subsection{Die erstellte Software aus Ergebnissicht}\label{subsec:ErgSoftware}
 Im Rahmen der Software-Entwicklung wurde das Java-Programm „EnergyNetSim“ mitsamt Anbindung an eine MySQL-Datenbank realisiert. Die folgenden Unterkapitel beschreiben die erzielten Resultate und geben Hinweise auf Installation und Benutzung der Software für Endanwender.
 
 \subsubsection{Ergebnisse der Software-Entwicklung}
 Die erstellte Software „EnergyNetSim“ stellt ein Rahmenwerk zur Verfügung, in das die in den Kapiteln
 \ref{subsec:MethAlg} und \ref{subsec:ErgAlg} beschriebenen Algorithmen zur Simulation von Netzauslastung, Datenverkehr zwischen zwei Netzknoten, dynamischem Routing und effizienzsteigernden Energiesparmechanismen eingefügt werden können. Im Programmcode und in der Dokumentation sind die dazu notwendigen Methoden bereits angelegt und gekennzeichnet. Das Kapitel \ref{sec:ErgSoftwErweiterung} gibt dazu detailliertere Hinweise.
 Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von Parametern zur Simulation, die persistente Speicherung der Konfigurationen und Netzstrukturen und die graphische Ausgabe der errechneten Ergebnisse übernimmt der aktuelle Softwarestand bereits. Die Grundlage dafür bietet die Einbindung der frei verfügbaren Java-Bibliothek „jFreeChart“\footnote{„JFreeChart is a free 100\% Java chart library that makes it easy for developers to display professional quality charts in their applications. JFreeChart's extensive feature set includes, a consistent and well-documented API, supporting a wide range of chart types; a flexible design that is easy to extend,[…] support for many output types, including Swing and JavaFX components, image files (including PNG and JPEG).[…] JFreeChart is open source or, more specifically, free software. It is distributed under the terms of the GNU Lesser General Public Licence (LGPL), which permits use in proprietary applications.“ \cite{jdbc}} und des offiziellen JDBC-Treibers\footnote{Frei verfügbar unter https://dev.mysql.com/downloads/connector/j/5.1.html} zur Verbindung mit der MySQL-Datenbank.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{ErgSoftwareMVC}
 	\caption{Schichtenarchitektur des EnergyNetSim (eigene Darstellung)}
@@ -492,7 +499,7 @@ Von den zwei vorgestellten möglichen Wegen, über die Simulationssoftware zu be
 Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git, einer zusätzlichen Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts sprengen. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/
 Ebenso bietet Oracle eine ausführliche Java-Dokumentation: http://www.oracle.com/technetwork/java/javase/downloads/index.html} zur Verwendung der beschriebenen Programme, sodass aus einer erneuten Schilderung kein wissenschaftlicher Mehrwehrt entstünde.
 Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abbildung \ref{fig:ErgSoftwareInst1} abgebildeten Schritte erforderlich.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst1}
 	\caption{Schritte der Installation}
@@ -505,7 +512,7 @@ Nach der erfolgreichen Installation der beschriebenen Komponenten muss der SQL-S
 \begin{description}
 \item [Starten des MySQL-Server-Dienstes:]
 Durch Klick auf „starten“ wird der SQL-Server hochgefahren und der Status ändert sich in „Gestartet“.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst2}
 	\caption{Starten des MySQL-Server-Dienstes}
@@ -513,7 +520,7 @@ Durch Klick auf „starten“ wird der SQL-Server hochgefahren und der Status ä
 \end{figure}
 \item [Anlegen einer neuen Verbindung zum Server:]
 Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in Tabelle \ref{tab:mysql} aufgeführten Daten hergestellt.
-\begin{table}[htp!]
+\begin{table}[ht]
 \centering
 	 \begin{tabular}{|l|l|l|}
 	 \hline
@@ -534,14 +541,14 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 \caption{Parameter für das Einrichten des DB-Verbindung in der MySQL Workbench}
 \label{tab:mysql}
 \end{table}
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst3}
 	\caption{Konfigurieren einer neuen Verbindung zum MySQL-Server}
 	\label{fig:ErgSoftwareInst3}
 \end{figure}
-\item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts angehängt ist, kann daraufhin über Server > Import Data > Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema „energynetsimdb“.
-\begin{figure}[!ht]
+\item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts angehängt ist, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema „energynetsimdb“.
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{ErgSoftwareInst4}
 	\caption{Das importierte Datenbankschema „energynetsimdb“}
@@ -552,27 +559,27 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 
 \subsubsection{Benutzung der Software zum aktuellem Stand}
 Da momentan nur das Rahmenwerk für eine spätere Implementierung von Simulationsansätzen realisiert ist, bietet das Programm nur eine eingeschränkte Funktionalität für den Endnutzer. Auf Erweiterungsmöglichkeiten und dafür vorgesehene Strukturen im Kode wird im Anschluss an dieses Kapitel eingegangen.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{ErgSoftwareUse1}
 	\caption{Hauptfenster nach dem Starten der Software}
 	\label{fig:ErgSoftwareUse1}
 \end{figure}
 Sofern eine Verbindung mit der Datenbank aufgebaut werden konnte, erhält der Benutzer nach Start der Anwendung das Hauptfenster wie in Abbildung 6 angezeigt. Es besteht die Möglichkeit zur Auswahl verschiedener Netze, die in der Datenbank angelegt wurden, über den Menüpunkt „Network selection“ und zur Änderung von Parametern wie beispielsweise dem Strompreis oder dem Netzlastprofil über die Schaltfläche „Settings“.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ErgSoftwareUse2}
 	\caption{Dialoge „Select networks“ und „Settings“}
 	\label{fig:ErgSoftwareUse2}
 \end{figure}
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{ErgSoftwareUse3}
 	\caption{Dialoge „Select networks“ und „Settings“}
 	\label{fig:ErgSoftwareUse3}
 \end{figure}
-Die geänderten Werte werden in der Datenbank hinterlegt, momentan jedoch von der Kalkulationsmethode nicht weiterverwendet. Stattdessen sind in ihr Werte für den Stromverbrauch, die Netzlast und Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:ErgSch} beschrieben wird.
-\begin{figure}[!ht]
+Die geänderten Werte werden in der Datenbank hinterlegt, momentan jedoch von der Kalkulationsmethode nicht weiterverwendet. Stattdessen sind in ihr Werte für den Stromverbrauch, die Netzlast und Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:MethSch} beschrieben wird.
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareUse4}
 	\caption{Ausgabe der Ergebnisse in Diagrammform}
@@ -580,7 +587,7 @@ Die geänderten Werte werden in der Datenbank hinterlegt, momentan jedoch von de
 \end{figure}
 Durch Klick auf die Schaltfläche „Calculate“ werden die Werte in Form von Histogrammen visualisiert.
 
-\subsubsection{Erweiterungsmöglichkeiten} \label{sec:ErgSoftwErweiterung}
+\subsubsection{Erweiterungsmöglichkeiten} \label{subsubsec:ErgSoftwErweiterung}
 Die beschriebene Software stellt freilich keine abgeschlossene Lösung zur Wirtschaftlichkeitsbetrachtung von energieeffizienten Konzepten in simulierten Netzen dar. Wie schon zu Beginn des Kapitels erwähnt, konnte die Entwicklung nicht in der zur Verfügung gestellten Zeit abgeschlossen werden. Vielmehr war die Zielsetzung der Arbeit, eine Anwendung zu erstellen, die es zukünftigen tiefergreifenden Forschungsvorhaben ermöglicht, die fehlenden Algorithmen zu implementieren, welche in Kapitel \ref{subsec:ErgAlg} beschrieben sind, ohne auf Aspekte der grafischen Ausgabe sowie der Anbindung an eine externe Datenbank achten zu müssen.
 Das vorliegende Java-Programm erfüllt diese Anforderungen, indem es folgende vordefinierte Methoden und Datenbankstrukturen enthält, die eine Erweiterung um Simulationsalgorithmen zulassen.
 
@@ -593,7 +600,7 @@ Das vorliegende Java-Programm erfüllt diese Anforderungen, indem es folgende vo
 Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Daten- und Logikschicht innerhalb der bereits vorgegebenen Strukturen durchgeführt werden müssen, um den noch nicht kodierten Simulationsalgorithmus einzubinden. Dazu liegt die vollständige Dokumentation der Software dem Anhang bei.
 
 
-\subsection{Diskussion und Erkenntnisse}
+\subsection{Diskussion und Erkenntnisse} \label{subsec:ErgDiskussion}
 %TODO Veronika
 Zu Beginn dieser Arbeit setzte sich die Projektgruppe zum Ziel, eine sachlich möglichst richtige Simulation der Netzlast zu entwickeln, um den Energieverbrauch der beiden Netze so realistisch wie möglich abschätzen zu können. Auf diese Art und Weise sollte ein valides Ergebnis entstehen.
 
@@ -609,14 +616,14 @@ Sobald dann mit der Entwicklung des Algorithmus angefangen worden war, stellte s
 
 Um eine Umsetzung des Algorithmus zu ermöglichen, mussten also sehr viele Annahmen getroffen werden. Hierdurch geht das eigentliche Ziel, eine sachlich richtige Simulation durchzuführen, weitgehend verloren, da im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der Simulation nicht gegeben ist.
 
-Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer dieser Arbeit nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer dieser Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vlg Kapitel \ref{Ergebnisse}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
+Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer dieser Arbeit nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer dieser Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vgl. Kapitel \ref{sec:Erg}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
 
 %MISSING Numerisches Ergebnis der Abschätzung diskutieren. Unterschied deutlich?
 %TODO 
 Bei Betrachtung des Gesamtverbrauchs resultiert ein Energieeinsparpotenzial von 23,5 \% pro Jahr  \cite[5]{Chiaraviglio2009}, in Geldeinheiten\cite{Proteus2016} bewertet, 91.500 €. 
 
 \newpage
-\section{Ausblick}
+\section{Ausblick}\label{sec:Ausbl}
 
 Die diskutierten Ergebnisse machen deutlich, dass eine vollständige Betrachtung der Wirtschaftlichkeit energieeffizienter Netzkonzepte weiterer Forschung bedarf. So wurden im Rahmen der vorliegenden Arbeit nur diejenigen Technologien näher betrachtet, die sich gut in das vereinfachte Netzschema des entwickelten Algorithmus einfügen ließen, und es wurden an vielen Stellen Näherungswerte verwendet.
 Die durch die Projektgruppe erarbeiteten Ergebnisse können weitere Forschungsvorhaben vereinfachen. So kann der Programmcode	 als Rahmen zur Implementierung des vorgeschlagenen Algorithmus dienen. Ist die Umsetzung in Java-Code erfolgt, können weitere Konzepte zur Energieeinsparung eingefügt werden. Das entwickelte Datenbankschema kann anschließend verfeinert werden, um schrittweise die zur Vereinfachung des Algorithmus getroffenen Annahmen durch reale Werte zu ersetzen. Schließlich müssen, um die Wirtschaftlichkeit und damit die Attraktivität energieeffizienter Netzkonzepte für die Netzbetreiber vollständig erfassen zu können, auch die Investitionskosten in die Berechnung miteinbezogen werden.
