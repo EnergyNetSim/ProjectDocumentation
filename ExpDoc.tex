@@ -100,18 +100,19 @@
 Die Weltbevölkerung wächst täglich um circa 229.000 Menschen \cite{statista:zuwachs}. Die Strompreise in Deutschland werden bis 2025 um 70 Prozent steigen\cite{welt}. Die EU fordert 20 Prozent mehr Energieeffizienz bis 2020\cite{bmwi:energiepolitik}. Diese Aussagen zeigen, dass die wachsende Bevölkerung, der Klimawandel und die Verknappung der Energieressourcen in einem starken Zielkonflikt stehen. 
 Einen großen Anteil am Gesamtstromverbrauch haben die Telekommunikations- und Informationsindustrie. 2012 verbrauchten die herkömmlichen Rechenzentren in Deutschland über zehn Terawattstunden Strom, was etwa der Leistung von zwei Kernkraftwerken des Typs Brunsbüttel entspricht. Laut einer Prognose vom Fraunhofer Institut werden Informations- und Kommunikationstechnologien im Jahr 2020 zwölf Prozent des Gesamtstrombedarfs verbrauchen\cite{fraunhofer:energiebedarf}. Das ist damit zu begründen, dass zunehmend immer mehr Datenverkehr auf den Kommunikationsnetzen lasten und sich die Breitbandnachfrage erhöhen wird. 
 
-Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte \cite{cisco} mit Internetzugang ausgestattet. Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden \cite{cisco}  erhöhen soll. 
+%Wohingegen Geräte früher überwiegend fest verbunden waren, entwickelte sich die Technik schnell hin zu mobilen Geräten. Mit dem Internet folgte ein technischer Fortschritt. Bereits 2003 waren circa 500 Millionen Geräte \cite{cisco} mit Internetzugang ausgestattet. Das vernetzte Handeln wurde immer weiter vorangetrieben. Durch die Einführung des „Internets der Dinge“ kam es dazu, dass Nutzer und Geräte vermehrt in ständigem Kontakt waren. Zunehmend werden immer mehr physikalische Objekte für digitale Kommunikation ausgestattet, wodurch sich die Anzahl der mit dem Internet verbundenen Geräte bis 2020 auf 50 Milliarden \cite{cisco}  erhöhen soll. 
+%Aus meiner Sicht hier nicht nötig - VL
 
 Die rasant steigende Nachfrage nach Bandbreite entsteht durch die Konvergenz von Medien- und Telekommunikationstechnologie. Orts- und zeitunabhängige TV-Nutzung, Video on Demand, Pay TV und HD sind beispielsweise treibende Faktoren für den Bedarf an Bandbreite. 
-Bedingt durch diese Entwicklungen gewinnen Energieverbrauch und Energieeffizienz von Kommunikationssystemen und -netzen immer mehr an Bedeutung. Denn „Green IT“ kann dieser Entwicklung gegensteuern. Im Rahmen des Hochschulmoduls „Wissenschaftlich angeleitete Berufspraxis 3 (Technik)“ wurde daher eine Simulationssoftware zur Dimensionierung des Energiebedarfs für ein fiktives effizientes Netz anhand von aktuellen Übertragungstechnologien entwickelt werden. 
+Bedingt durch diese Entwicklungen gewinnen Energieverbrauch und Energieeffizienz von Kommunikationssystemen und -netzen immer mehr an Bedeutung. Denn „Green IT“ kann dieser Entwicklung gegensteuern. Im Rahmen des Hochschulmoduls „Wissenschaftlich angeleitete Berufspraxis 3 (Technik)“ sollte daher eine Simulationssoftware zur Dimensionierung des Energiebedarfs für ein fiktives effizientes Netz anhand von aktuellen Übertragungstechnologien entwickelt werden. 
 
 In diesem Bericht gilt es, die Forschungsergebnisse und wichtigen Erkenntnisse dieser Arbeit zu dokumentieren. Dazu soll zunächst die Problemstellung detailliert beschrieben und die Ziele der Simulationssoftware erklärt werden. Im darauf folgenden Kapitel wird der Stand der Forschung ausführlich betrachtet und im Rahmen dessen auf Carrier-Netzwerke, Möglichkeiten der Energieeinsparung und energieeffiziente Technologien eingegangen. Für weitere Forschungsprojekte in diesem Themengebiet ist insbesondere das Vorgehen der Projektgruppe von Interesse. Wesentliche Inhalte sind daher die Modellierung der Netze, die Softwareentwicklung, die Erstellung eines geeigneten Routingalgorithmus und dabei auftretende Komplexitäten. Die Ergebnisse der Projektarbeit werden darauf folgend im Zuge der Auswertung dokumentiert und beschrieben. Aufbauend darauf werden im Ausblick weitere zu erforschende Problemstellungen aufgezeigt. 
 
 
 
 \section{Problemstellung}
-Wie oben beschrieben existieren bereits einige Möglichkeiten, den Energieverbrauch in Carrier-Netzwerken zu senken. Allerdings werden diese Möglichkeiten noch nicht umfänglich in realen Netzwerken umgesetzt. Ein denkbarer Grund für diesen Rückstand realer Backbone-Netze sind wirtschaftliche Bedenken der Netzbetreiber. Im Folgenden wird die Motivation für Netzbetreiber beschrieben, den Energieverbrauch ihrer Netze stärker zu berücksichtigen, sowie die Ziele dieser Arbeit.
-%citation needed!
+
+IT ist aus dem Alltag schon seit den 80er Jahren nicht mehr wegzudenken. Wie oben bereits angedeutet, hat der Gewinn an Produktivität und Bequemlichkeit, den die Welt durch den Einsatz von IT erreicht hat, einen Preis: Jeder Computer und jedes Datenpaket, das über das Internet versendet wird, benötigt Strom. In diesem Kapitel wird erläutert, inwiefern dieser Fakt ein Problem darstellt, das sich in Zukunft deutlich verschärfen wird, und wie daraus die Ziele dieser Arbeit abgeleitet werden.
 
 \subsection{Motivation}
 Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder sogar leicht zurück geht, wachsen die globalen Verbräuche weiter an (vgl. Abbildung \ref{fig:ProbStromSektor}). Dies kann vor allem auf  Schwellenländer zurückgeführt werden, die in kurzer Zeit ein rasantes wirtschaftliches Wachstum erleben.
@@ -119,7 +120,7 @@ Obwohl der Stromverbrauch der OECD-Staaten seit mehreren Jahren stagniert oder s
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ProbStromSektor}
-	\caption{Weltweiter Stromverbrauch nach Sektoren, basierend auf \cite{bibid}}
+	\caption{Weltweiter Stromverbrauch nach Sektoren, basierend auf \cite{eia2016}}
 	\label{fig:ProbStromSektor}
 \end{figure}
 Da aller Bemühungen zum Trotz die fossilen Energieträger Erdöl, Kohle und Erdgas weiterhin ca. 81\% der weltweiten Energieerzeugung ausmachen \cite{statista} und diese Ressourcen nicht regenerierbar sind, sind langfristig steigende Energiekosten (\cite{iea2015}, S. 40f) ein großes Risiko für ICT-Provider weltweit, die insgesamt mit steigenden Kosten zu kämpfen haben.
@@ -129,14 +130,11 @@ Steigende Energiekosten für sich genommen wären schon ein starkes Argument, Ne
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ProbStromICT}
-	\caption{Anteil von ICT am weltweiten Stromverbrauch, basierend auf \cite{bibid} und \cite{bibid}}
+	\caption{Anteil von ICT am weltweiten Stromverbrauch, basierend auf \cite{eia2016} und \cite{vanhsheet}}
 	\label{fig:ProbStromICT}
 \end{figure}
 
 Seit dem ist der Anteil der Bevölkerung weltweit, der das Internet verwendet, von 20,6\% (2007) auf 43,4\% (2015) gestiegen \cite{itu}. Dieses Wachstum wird sich in der nächsten Zukunft nicht verlangsamen. Weiterhin sorgen steigende Datenvolumen pro Nutzer für eine wachsende Netzlast. Welchen Effekt die Industrie 4.0 und das Internet of Things auf die Netze weltweit haben werden, lässt sich momentan  noch nicht abschätzen. Eins jedoch steht fest: Das Netz der Zukunft wird mehr Daten zu bewältigen haben als jemals zuvor.
-%evtl. nach oben ziehen als 1. Absatz für Problemstellung
-
-
 
 
 \subsection{Ziele}
@@ -148,20 +146,22 @@ Es soll eine Software entwickelt werden, die es ermöglicht, zwei hypothetische 
 
 Die Softwarelösung wird als objektorientierte Java Desktop Anwendung mit einer Einteilung der Klassen in die drei Bereiche Model, View und Controller implementiert.
 
-Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. Das genaue Vorgehen in der Softwareentwicklung wird im folgenden Kapitel erläutert.
+Der Prozess der Softwareentwicklung soll nach dem Wasserfallmodell ablaufen. Die Programmaufteilung und geforderte Funktionen sind bereits vor der Implementierung hinreichend bekannt, so dass die Anwendung eines agilen Entwicklungsmodells hier keine entscheidenden Vorteile bietet. 
+
+Doch bevor eine Software entwickelt werden kann, wird im folgenden auf Begriffe, die in dieser Arbeit verwendet werden, eingegangen und der Stand der Forschung in Bezug auf energieeffiziente Netzkonzepte und -technologien erläutert.
 
 
 \section{Stand der Forschung} \label{SdF}
 
 Bevor auf den Stand der Forschung mit den Technologien und Konzepten zur Energieeinsparung eingegangen wird, soll im Folgenden auf relevante Begrifflichkeiten eingegangen werden. Die Begrifflichkeiten sollen zunächst definiert und im Anschluss für die Arbeit abgegrenzt werden.  
 
-\subsection{Begrifflichkeiten}
+\subsection{Begriffe}
 \paragraph{Wirtschaftlichkeit}
 Bei der Betrachtung von Energieeinsparpotentialen in Netzwerken findet die Wirtschaftlichkeit häufig keine Beachtung. Die Wirtschaftlichkeit drück aus, wie sparsam mit vorhandenen Ressourcen umgegangen wurde.  Vor jeder Investition steht die Frage nach der betriebswirtschaftlichen Sinnhaftigkeit. Im ökonomischen Sinn bedeutet Wirtschaftlichkeit das Verhältnis aus monetären Kosten und Leistung. 
 
 %TODO Hier fehlt noch etwas - Input Max
 
-Für die Wirtschaftlichkeitsbetrachtung des Netzwerks werden die Ausgaben für die Anschaffung der Netzwerkkomponenten (Capex –Capital Expenditures) nicht berücksichtigt. Die für den operativen Geschäftsbetrieb anfallenden Aufwendungen werden „Operating Expenditures“ (kurz Opex) genannt und stellen die Betriebskosten dar. Zu den laufenden Ausgaben für den Geschäftsbetrieb gehören u.a. Mieten, Personal- und Energiekosten, Aufwendungen für Wartung und Support, Verbrauchsmaterialien und Betriebsstoffe. 
+Für die Wirtschaftlichkeitsbetrachtung des Netzwerks werden die Ausgaben für die Anschaffung der Netzwerkkomponenten (Capex –- Capital Expenditures) nicht berücksichtigt. Die für den operativen Geschäftsbetrieb anfallenden Aufwendungen werden „Operating Expenditures“ (kurz Opex) genannt und stellen die Betriebskosten dar. Zu den laufenden Ausgaben für den Geschäftsbetrieb gehören u.a. Mieten, Personal- und Energiekosten, Aufwendungen für Wartung und Support, Verbrauchsmaterialien und Betriebsstoffe. 
 
 \paragraph{Effizienz im Bereich von Telekommunikationsnetzen}
 %TODO Hier fehlt noch etwas - Input Max
