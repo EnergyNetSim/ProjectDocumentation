@@ -1,4 +1,12 @@
-\documentclass[12pt,titlepage]{article}
+\documentclass[
+  12pt,
+  titlepage,
+  parskip,
+  draft=true,
+  headsepline=true,
+  footsepline=true,
+  captions=tableheading
+]{scrartcl}
 
 \usepackage{import}
 % ------------
@@ -17,18 +25,24 @@
 \usepackage{marvosym}
 \DeclareUnicodeCharacter{20AC}{\EUR{}}
 
+% ------------
+% Formats
+% ------------
+
+
 
 % ------------
 % Header & Footer
 % ------------
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
-\rhead{\thepage} \lhead{\fancyplain{}{\rightmark }} %\chead{} 
-\lfoot{} \cfoot{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \rfoot{} 
-\renewcommand{\headrulewidth}{0.4pt} 
-\renewcommand{\footrulewidth}{0.4pt}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+%\rhead{\thepage} \lhead{\fancyplain{}{\rightmark }} %\chead{} 
+%\lfoot{} \cfoot{Wirtschaftlichkeit von energieeffizienten Netzkonzepten} \rfoot{} 
+%\renewcommand{\headrulewidth}{0.4pt} 
+%\renewcommand{\footrulewidth}{0.4pt}
+%% DO NOT USE WITH KOMA-Script
 
 % ------------
 % Bibliographical Stuff
@@ -108,6 +122,7 @@ eprint=false]{biblatex}%NC: replaced bibtex by biber
 %---------------
 
 \pagenumbering{arabic}%Reset page counter
+\pagestyle{headings}
 \import{tex/}{einleitung.tex}
 
 \import{tex/}{problemstellung.tex}
