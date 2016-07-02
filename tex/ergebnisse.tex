@@ -176,25 +176,25 @@ Das vorliegende Java-Programm erfüllt die gestellten Anforderungen, indem es fo
 \item [Das Datenbankschema \textquote{energynetsimdb}.] Im Rahmen des Software-Engineering-Prozesses wurde ein Datenbankschema entwickelt, das die Datenstruktur für spätere Simulationsalgorithmen abbilden kann. Das zugehörige Entity-Relationship-Diagramm wurde bereits in Kapitel \ref{subsec:VorgSoftwareEng} vorgestellt und ermöglicht die Generierung der SQL-Create-Befehle für die noch nicht angelegten Relationen.
 \end{description}
 
-Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Daten- und Logikschicht innerhalb der bereits vorgegebenen Strukturen durchgeführt werden müssen, um den noch nicht kodierten Simulationsalgorithmus einzubinden. Dazu liegt die vollständige Dokumentation der Software dem Anhang bei.
+Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Daten- und Logikschicht innerhalb der bereits vorgegebenen Strukturen durchgeführt werden müssen, um den noch nicht kodierten Simulationsalgorithmus einzubinden. Dazu kann der Quellcode im öffentlichen Github-Projekt \textquote{EnergyNetSim/Simulator}\footnote{https://github.com/EnergyNetSim/Simulator} eingesehen und heruntergeladen werden. Es empfiehlt sich, einen eigenen Fork des Projekts zu erzeugen, damit Änderungen ohne großen Aufwand wieder zurück in das Projekt übernommen werden können.
 
 
 \subsection{Diskussion und Erkenntnisse} \label{subsec:ErgDiskussion}
 
 Zu Beginn der Arbeit setzte sich die Projektgruppe zum Ziel, eine sachlich möglichst richtige Simulation der Netzlast zu entwickeln, um den Energieverbrauch der beiden Netze so realistisch wie möglich abschätzen zu können. 
 
-Schon während der Literaturrecherche war überraschend, dass vorhandene Arbeiten auf dem Gebiet sich immer mit einem kleinen Untergebiet des Themas beschäftigen -- die eine große Überblicksarbeit zum Stand der Forschung unter Kombination aller vorhandenen Technologien gab es nicht.
+Schon während der Literaturrecherche war überraschend, dass vorhandene Arbeiten auf dem Gebiet sich immer mit einem kleinen Untergebiet des Themas beschäftigen -- zum Stand der Forschung unter Kombination aller vorhandenen Technologien nicht.
 
 Sobald dann mit der Entwicklung des Algorithmus angefangen worden war, stellte sich heraus, dass für ein valides Ergebnis die Simulation sehr komplex werden musste. Hierbei stellten sich folgende Herausforderungen:
 \begin{itemize}
 	\item In den Nodes sind jeweils Geräte verschiedener Layer nötig, um das weitere Routing zu gewährleisten. 
 	\item Für eine realistische Berechnung der Netzlast reicht eine stundenweise Iteration nicht aus. Pro Stunde würde von jeder Quelle ein konstanter Datenstrom ausgehen, was in der Realität so nicht der Fall ist.
 	\item Die Einhaltung der QoS Parameter konnten mit dem gewählten Ansatz nicht ge\-währ\-lei\-stet werden.
-	\item Es ist unklar, welche Konzepte zur Erhöhung der Energieeffizienz miteinander kompatibel sind.
+	%\item Es ist unklar, welche Konzepte zur Erhöhung der Energieeffizienz miteinander kompatibel sind.
 \end{itemize}
 
 Um eine Umsetzung des Algorithmus zu ermöglichen, mussten also sehr viele Annahmen getroffen werden. Hierdurch geht das eigentliche Ziel, eine sachlich richtige Simulation durchzuführen, weitgehend verloren, da im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der Simulation nicht gegeben ist.
 
-Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer der Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vgl. Kapitel \ref{sec:Erg}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
+%Es zeigt sich also, dass der Algorithmus in der gegebenen Projektdauer nicht in der gewünschten Qualität zu implementieren ist. Nach Rücksprache mit dem Betreuer der Arbeit wurde beschlossen, den Algorithmus in der geplanten Form zu dokumentieren (vgl. Kapitel \ref{sec:Erg}) sowie das Grundgerüst der Softwarelösung zu implementieren. 
 
 Bei Betrachtung des Gesamtverbrauchs resultiert ein Energieeinsparpotenzial von 23,5 \% pro Jahr  \cite[5]{Chiaraviglio2009}, in Geldeinheiten\cite{Proteus2016} bewertet, 91.500 €. Die Modellierung des Netzes orientierte sich an \cite{Chiaraviglio2009}, worin ein Netz ähnlich dem eines großen italienischen Carriers definiert wird. Skaliert man das Einsparpotenzial auf einen großen europäischen Telekommunikationskonzern wie die Deutsche Telekom, ergeben sich weit größere Summen, die gespart werden können. Hierbei ist zu beachten, dass weitere Einsparungen durch die Integration weiterer energiesparender Technologien wie Hybrid Optical Switching erreicht werden können.
