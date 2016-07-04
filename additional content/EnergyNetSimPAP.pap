@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="4A17827E8E4EB42D">
-  <PROJECT FORMAT="1.00" NAME="EnergyNetSim" AUTHOR="Ludowicy" CREATED="2016.06.20 09:06:56" MODIFIED="2016.06.20 14:16:30">
+<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="B84E25DCD3190100">
+  <PROJECT FORMAT="1.00" NAME="EnergyNetSim" AUTHOR="Ludowicy" CREATED="2016.06.20 09:06:56" MODIFIED="2016.07.04 13:53:00">
     <DIAGRAMS>
-      <DIAGRAM FORMAT="1.00" ID="0" NAME="Berechnung elektr. Stromverbrauch" CREATED="2016.06.20 09:09:31" MODIFIED="2016.06.20 13:57:08">
+      <DIAGRAM FORMAT="1.00" ID="0" NAME="Berechnung elektr. Stromverbrauch" CREATED="2016.06.20 09:09:31" MODIFIED="2016.07.04 13:52:33">
         <LAYOUT FORMAT="1.00" COLUMNS="2" ROWS="19">
           <ENTRIES>
             <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
@@ -57,7 +57,7 @@
             </ENTRY>
             <ENTRY COLUMN="0" ROW="10">
               <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="13" ASSOCIATE="11">
-                <TEXT><![CDATA[]]></TEXT>
+                <TEXT><![CDATA[(je NetzlastprofilID)]]></TEXT>
               </FIGURE>
             </ENTRY>
             <ENTRY COLUMN="0" ROW="11">
@@ -67,12 +67,12 @@
             </ENTRY>
             <ENTRY COLUMN="0" ROW="12">
               <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="8" ASSOCIATE="6">
-                <TEXT><![CDATA[]]></TEXT>
+                <TEXT><![CDATA[(je Iterationsnummer)]]></TEXT>
               </FIGURE>
             </ENTRY>
             <ENTRY COLUMN="0" ROW="13">
               <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="26" ASSOCIATE="24">
-                <TEXT><![CDATA[]]></TEXT>
+                <TEXT><![CDATA[(je statisches Netz)]]></TEXT>
               </FIGURE>
             </ENTRY>
             <ENTRY COLUMN="0" ROW="14">
@@ -241,7 +241,7 @@
           <CONNECTION FORMAT="1.00" ID="41" FROM="40" TO="35" TEXT="" />
         </CONNECTIONS>
       </DIAGRAM>
-      <DIAGRAM FORMAT="1.00" ID="2" NAME="Rekursives Routing" CREATED="2016.06.20 13:30:52" MODIFIED="2016.06.20 14:16:30">
+      <DIAGRAM FORMAT="1.00" ID="2" NAME="Rekursives Routing" CREATED="2016.06.20 13:30:52" MODIFIED="2016.07.04 13:53:00">
         <LAYOUT FORMAT="1.00" COLUMNS="3" ROWS="15">
           <ENTRIES>
             <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
@@ -346,7 +346,7 @@
             </ENTRY>
             <ENTRY COLUMN="2" ROW="9">
               <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="41" ASSOCIATE="40">
-                <TEXT><![CDATA[]]></TEXT>
+                <TEXT><![CDATA[(je Netzwerkport)]]></TEXT>
               </FIGURE>
             </ENTRY>
             <ENTRY COLUMN="2" ROW="10">
