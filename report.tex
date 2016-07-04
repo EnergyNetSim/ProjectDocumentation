@@ -2,7 +2,7 @@
   12pt,
   titlepage,
   parskip,
-  draft=true,
+  draft=false,
   headsepline=true,
   footsepline=true,
   captions=tableheading
@@ -17,7 +17,7 @@
 \usepackage[autostyle=true,german=quotes]{csquotes}%NC: needed for babel
 \usepackage[a4paper , lmargin = {2.5cm} , rmargin = {2.5cm} , tmargin = {2.5cm} , bmargin = {2.5cm}]{geometry}
 \usepackage[hyphens]{url}
-\usepackage[linktocpage=true]{hyperref}
+\usepackage[linktocpage=true,hidelinks]{hyperref}
 \usepackage{tabularx}
 \usepackage{amsmath}
 %\numberwithin{equation}{section}
@@ -48,15 +48,19 @@
 % Bibliographical Stuff
 % Use \textcite{} and \parencite{} with biblatex!
 % ------------
-\usepackage[backend=biber,
-style=numeric-comp,%footnote-dw,%alphabetic-verb,
-sortlocale=de_DE,
-natbib=true,
-url=true,
-doi=true,
-eprint=false]{biblatex}%NC: replaced bibtex by biber
+\usepackage[
+  backend=biber,
+  style=numeric-comp,%footnote-dw,%alphabetic-verb,
+  sortlocale=de_DE,
+  natbib=true,
+  url=true,
+  doi=true,
+  eprint=false
+]{biblatex}%NC: replaced bibtex by biber
 \bibliography{literatur.bib}%Dateiname für Quellen einfügen
-\usepackage{ragged2e} %für bessere URL formatierung bei printbibliography
+%\usepackage{ragged2e} %für bessere URL formatierung bei printbibliography - Noch mal checken, was das tut...
+\setcounter{biburllcpenalty}{9000}% Trennung bei Kleinbuchstaben 
+\setcounter{biburlucpenalty}{9000}% Trennung bei Großbuchstaben
 
 %Bilder einbinden und auf der gleichen seite ein
 %Fußnotenzitat einzufügen
