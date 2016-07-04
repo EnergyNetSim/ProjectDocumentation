@@ -125,7 +125,7 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 \item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts befindet, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema \textquote{energynetsimdb}.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.4\textwidth]{ErgSoftwareInst4}
+	\includegraphics[width=0.3\textwidth]{ErgSoftwareInst4}
 	\caption{Das importierte Datenbankschema \textquote{energynetsimdb}}
 	\label{fig:ErgSoftwareInst4}
 \end{figure}
@@ -153,14 +153,14 @@ Sofern eine Verbindung mit der Datenbank aufgebaut werden konnte, erhält der Be
 	\caption{Dialoge \textquote{Select networks} und \textquote{Settings}}
 	\label{fig:ErgSoftwareUse3}
 \end{figure}
-Die geänderten Werte werden in der Datenbank hinterlegt. In ihr sind statische Ergebniswerte für die Netzlast, den Stromverbrauch und die resultierenden Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:VorgSch} beschrieben wird.
+Die geänderten Werte werden in der Datenbank gespeichert. In ihr sind statische Ergebniswerte für die Netzlast, den Stromverbrauch und die resultierenden Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:VorgSch} beschrieben wird.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareUse4}
-	\caption{Ausgabe der Ergebnisse in Diagrammform}
+	\caption{Ausgabe der Ergebnisse in Diagrammform (hier die in Kapitel \ref{subsec:VorgSch} ermittelten statischen Werte)}
 	\label{fig:ErgSoftwareUse4}
 \end{figure}
-Durch Klick auf die Schaltfläche \textquote{Calculate} werden die Werte in Form von Histogrammen visualisiert.
+Durch Klick auf die Schaltfläche \textquote{Calculate} werden die Werte in Form von Histogrammen visualisiert. Abbildung \ref{fig:ErgSoftwareUse4} zeigt das Programm, welches die Lastkurve, den Stromverbrauch und die Kosten der Netze ausgibt.
 
 \subsubsection{Erweiterungsmöglichkeiten} \label{subsubsec:ErgSoftwErweiterung}
 Die beschriebene Software stellt keine abgeschlossene Lösung zur Wirtschaftlichkeitsbetrachtung von energieeffizienten Konzepten in simulierten Netzen dar. Wie schon zu Beginn des Kapitels erwähnt, konnte die Entwicklung nicht in der zur Verfügung gestellten Zeit abgeschlossen werden. Vielmehr war die Zielsetzung der Arbeit, eine Anwendung zu erstellen, die es zukünftigen tiefergreifenden Forschungsvorhaben ermöglicht, die fehlenden Algorithmen zu implementieren, welche in Kapitel \ref{subsec:ErgAlg} beschrieben sind, ohne auf Aspekte der grafischen Ausgabe sowie der Anbindung an eine externe Datenbank achten zu müssen.
@@ -169,7 +169,7 @@ Das vorliegende Java-Programm erfüllt die gestellten Anforderungen, indem es fo
 \begin{description}
 \item [Die Funktion \textquote{calculate()} in der Klasse \textquote{MainModel}.] Bei Klick auf die Schalt\-flä\-che \textquote{Calculate} wird über den Controller in der Klasse \textquote{MainModel} die Funktion \textquote{public void calculate()} aufgerufen. Von dort können der komplette Simulationsalgorithmus gestartet, neue Instanzen von anderen Model-Klassen erzeugt und die erhaltenen Ergebnisse in Form einer Liste gespeichert werden.
 \item [Das Package \textquote{models}.] Das Java-Package \textquote{models} bietet Platz für weitere Klassendefinitionen, die von der \textquote{calculate()}-Methode der Klasse \textquote{MainModel} aufgerufen werden und ihrerseits auf die MySQL-Datenbank über die vorhandene Klasse \textquote{DatabaseQueries} zugreifen können. Beispielhaft wurden für die Gerätehardware und die physisch vorhandenen Verbindungen zwischen Knoten die Model-Klassen \textquote{HardwareDevices} und \textquote{Link} angelegt, in denen zukünftig Programmlogik implementiert werden kann.
-\item [Das Datenbankschema \textquote{energynetsimdb}.] Im Rahmen des Soft\-ware-Engi\-neering-Pro\-zess\-es wurde ein Datenbankschema entwickelt, das die Datenstruktur für spätere Simulationsalgorithmen abbilden kann. Das zugehörige Enti/-ty-Re\-lation\-ship-Dia\-gramm wurde bereits in Kapitel \ref{subsec:VorgSoftwareEng} vorgestellt und ermöglicht die Generierung der SQL-Create-Befehle für die noch nicht angelegten Relationen.
+\item [Das Datenbankschema \textquote{energynetsimdb}.] Im Rahmen des Soft\-ware-Engi\-neering-Pro\-zess\-es wurde ein Datenbankschema entwickelt, das die Datenstruktur für spätere Simulationsalgorithmen abbilden kann. Das zugehörige Enti\-ty-Re\-lation\-ship-Dia\-gramm wurde bereits in Kapitel \ref{subsubsec:VorgSoftDesign} vorgestellt und ermöglicht die Generierung der SQL-Create-Befehle für die noch nicht angelegten Relationen.
 \end{description}
 
 Zusammenfassend kann festgestellt werden, dass lediglich Änderungen in der Daten- und Logikschicht innerhalb der bereits vorgegebenen Strukturen durchgeführt werden müssen, um den noch nicht kodierten Simulationsalgorithmus einzubinden. Dazu kann der Quellcode im öffentlichen Github-Projekt \textquote{EnergyNetSim/Simulator}\footnote{https://github.com/EnergyNetSim/Simulator} eingesehen und heruntergeladen werden. Es empfiehlt sich, einen eigenen Fork des Projekts zu erzeugen, damit Änderungen ohne großen Aufwand wieder zurück in das Projekt übernommen werden können.

@@ -2,7 +2,7 @@
 In diesem Kapitel wird das Vorgehen der Projektgruppe detailliert dargestellt. Dabei soll als Struktur der Prozess der Softwareerstellung verwendet werden. Es gilt also zunächst die Phase der Modellierung zu beschreiben und anschließend die eigentliche Softwareentwicklung zu erläutern. Ebenso wird in diesem Kapitel dokumentiert, wie der Routing-Algorithmus entwickelt wurde und welche Komplexitäten im Rahmen dessen aufgetreten sind.
 
 \subsection{Modellierung}
-Zur Betrachtung der Wirtschaftlichkeit eines energieeffizienten Netzes muss ein Vergleich zwischen einem Standardnetz (Business-As-Usual-Netz) und einem energieeffizienten Netz durchgeführt werden. Bei der Spezifikation des Netzes liegt ein Hauptaugenmerk auf der Eingrenzung des Netzes. Im Rahmen dieser Arbeit soll dabei nur das Core-Netz betrachtet werden. Der eingerahmte Bereich aus Abbildung X beinhaltet die \textquote{Broadband Network Gateway} (BNG), \textquote{Label-Switch-Router} (LSR) und \textquote{Label-Edge-Router} (LER).
+Zur Betrachtung der Wirtschaftlichkeit eines energieeffizienten Netzes muss ein Vergleich zwischen einem Standardnetz (Business-As-Usual-Netz) und einem energieeffizienten Netz durchgeführt werden. Bei der Spezifikation des Netzes liegt ein Hauptaugenmerk auf der Eingrenzung des Netzes. Im Rahmen dieser Arbeit soll dabei nur das Core-Netz betrachtet werden. Der eingerahmte Bereich aus Abbildung \ref{fig:VorgModNetz} beinhaltet die \textquote{Broadband Network Gateway} (BNG), \textquote{Label-Switch-Router} (LSR) und \textquote{Label-Edge-Router} (LER).
 
 
 \begin{figure}[!ht]
@@ -104,7 +104,7 @@ Datenbezogene Anforderungen:
 	\item DA5:  Die Netzlast wird in Form von Datenpaketen mit den Attributen Volumen, Quelle, Senke, Uhrzeit, Profil-ID definiert
 \end{itemize}
 
-\subsubsection{Systemdesign}
+\subsubsection{Systemdesign}\label{subsubsec:VorgSoftDesign}
 In der Systemdesign-Phase werden einige Entscheidungen bezüglich der Softwareentwicklung getroffen. Als Programmiersprache für das Projekt wurde objektorientiertes Java ausgewählt. Die bereits vorhandene Entwicklungserfahrung im Team mit der Programmiersprache und der sehr guten Verfügbarkeit von kostenfreien Entwicklungstools und fertigen Bibliotheken waren für die Entscheidung ausschlaggebend.
 Die Architektur besteht aus einer 2-Tier Kombination aus einer relationalen MySQL/MariaDB Datenbank und einer Fat-Client Anwendung. Die Datenbank wird dabei zur Speicherung der zur Erstellung eines Netzes notwendigen Daten, sowie Hardware-, Topologie- und Netzwerkkonfiguration verwendet. Die Anwendung hingegen wird zur Parameterkonfiguration, Berechnung der Zielwerte und Ausgabe der Resultate verwendet.
 
@@ -115,7 +115,7 @@ Das Datenbank-Konzept ist entscheidend für die Softwareentwicklung. Es werden a
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=\textwidth]{VorgSoftwareER}
+	\includegraphics[width=0.9\textwidth]{VorgSoftwareER}
 	\caption{ER-Diagramm} %TODO Bezeichnung anpassen
 	\label{fig:VorgSoftwareER}
 \end{figure}
