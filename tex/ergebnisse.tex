@@ -7,7 +7,7 @@ Wie in Kapitel \ref{subsec:VorgAlg} dargestellt, wurde ein Algorithmus entwickel
 Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffenen Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Geht man von 24 Iterationen aus, so würde also der Zustand des Netzes für jede Stunde neu berechnet werden. Durch eine Verkürzung der Iterationsdauer und Generierung dazu passender Netzlast-Daten ließe sich bei Bedarf mit geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
 
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{1Berechnung_elektr_Stromverbrauch}
 	\caption{Programmablaufplan zur Anwendungslogik}
@@ -22,17 +22,17 @@ Mit der geschilderten Vorgehensweise lässt sich das gesuchte Ergebnis je Modell
 
 
 Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je möglicher Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Es handelt sich um einen sogenannten Greedy Algorithmus, ein lokales Lösungsverfahren, das nicht unbedingt das insgesamt beste Ergebnis liefert. Vielmehr wird nur das lokale Optimum für das betrachtete Teilproblem, hier also das Routing für ein Netzlast-Element, berechnet. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen, beinhaltet der entwickelte Algorithmus intelligente Entscheidungsfunktionen.  So werden schlechte Routen frühzeitig ignoriert und nicht zielführende Berechnungen, wie sie beispielsweise bei Schleifenbildung auftreten, verhindert.
-\begin{figure}[ht]
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{2Routingentscheidung}
+	\includegraphics[width=0.8\textwidth]{2Routingentscheidung}
 	\caption{Programmablaufplan zum übergreifenden Anteil des Routing-Algorithmus}
 	\label{fig:2Routingentscheidung}
 \end{figure}
 
 Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektrischer Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und die genannten Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
-\begin{figure}[ht]
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{3Rekursives_Routing}
+	\includegraphics[width=0.9\textwidth]{3Rekursives_Routing}
 	\caption{Rekursiver Anteil des Routing-Algorithmus}
 	\label{fig:3Rekursives_Routing}
 \end{figure}
@@ -56,7 +56,7 @@ Im Rahmen der Software-Entwicklung wurde das Java-Programm \textquote{EnergyNetS
 Die erstellte Software \textquote{EnergyNetSim} stellt ein Rahmenwerk zur Verfügung, in das die in den Kapiteln
 \ref{subsec:VorgAlg} und \ref{subsec:ErgAlg} beschriebenen Algorithmen zur Simulation von Netzauslastung, Datenverkehr zwischen zwei Netzknoten, dynamischem Routing und effizienzsteigernden Energiesparmechanismen eingefügt werden können. Im Programmcode und in der Dokumentation sind die dazu notwendigen Methoden bereits angelegt und gekennzeichnet. Das Kapitel \ref{subsubsec:ErgSoftwErweiterung} gibt dazu detailliertere Hinweise.
 Aufgaben wie die Selektion der zu betrachtenden Netze, die einfache Adaption von Parametern zur Simulation, die persistente Speicherung der Konfigurationen und Netzstrukturen und die graphische Ausgabe der errechneten Ergebnisse übernimmt der aktuelle Softwarestand bereits. Die Grundlage dafür bietet die Einbindung der frei verfügbaren Java-Bibliothek \textquote{jFreeChart}\footnote{\textquote{JFreeChart is a free 100\% Java chart library that makes it easy for developers to display professional quality charts in their applications. JFreeChart's extensive feature set includes, a consistent and well-documented API, supporting a wide range of chart types; a flexible design that is easy to extend,[…] support for many output types, including Swing and JavaFX components, image files (including PNG and JPEG).[…] JFreeChart is open source or, more specifically, free software. It is distributed under the terms of the GNU Lesser General Public Licence (LGPL), which permits use in proprietary applications.} \cite{jdbc}} und des offiziellen JDBC-Treibers\footnote{Frei verfügbar unter https://dev.mysql.com/downloads/connector/j/5.1.html} zur Verbindung mit der MySQL-Datenbank.
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{ErgSoftwareMVC}
 	\caption{Schichtenarchitektur des EnergyNetSim (eigene Darstellung)}
@@ -76,7 +76,7 @@ Von den zwei vorgestellten möglichen Wegen, über die die Simulationssoftware z
 Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git sowie einer Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts überschreiten. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/
 Ebenso bietet Oracle eine ausführliche Java-Dokumentation: http://www.oracle.com/technetwork/java/javase/downloads/index.html} zur Verwendung der beschriebenen Programme, sodass aus einer erneuten Schilderung kein wissenschaftlicher Mehrwehrt entstünde.
 Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abbildung \ref{fig:ErgSoftwareInst1} abgebildeten Schritte erforderlich.
-\begin{figure}[ht]
+\begin{figure}[]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst1}
 	\caption{Schritte der Installation}
@@ -89,7 +89,7 @@ Nach der erfolgreichen Installation der beschriebenen Komponenten muss der SQL-S
 \begin{description}
 \item [Starten des MySQL-Server-Dienstes:]
 Durch Klick auf \textquote{starten} wird der SQL-Server hochgefahren und der Status ändert sich in \textquote{Gestartet}.
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst2}
 	\caption{Starten des MySQL-Server-Dienstes}
@@ -97,7 +97,7 @@ Durch Klick auf \textquote{starten} wird der SQL-Server hochgefahren und der Sta
 \end{figure}
 \item [Anlegen einer neuen Verbindung zum Server:]
 Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in Tabelle \ref{tab:mysql} aufgeführten Daten hergestellt.
-\begin{table}[ht]
+\begin{table}[]
 \centering
 \caption{Parameter für das Einrichten des DB-Verbindung in der MySQL Workbench}
 \label{tab:mysql}
@@ -116,14 +116,14 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 	Passwort & NetSimUser\\
 	 \end{tabular}
 \end{table}
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst3}
 	\caption{Konfigurieren einer neuen Verbindung zum MySQL-Server}
 	\label{fig:ErgSoftwareInst3}
 \end{figure}
 \item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts befindet, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema \textquote{energynetsimdb}.
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{ErgSoftwareInst4}
 	\caption{Das importierte Datenbankschema \textquote{energynetsimdb}}
@@ -134,27 +134,27 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 
 \subsubsection{Benutzung der Software zum aktuellem Stand}
 Da momentan nur das Rahmenwerk für eine spätere Implementierung von Simulationsansätzen realisiert ist, bietet das Programm nur eine eingeschränkte Funktionalität für den Endnutzer. Auf Erweiterungsmöglichkeiten und dafür vorgesehene Strukturen im Kode wird in Abschnitt \ref{subsubsec:ErgSoftwErweiterung} eingegangen.
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{ErgSoftwareUse1}
 	\caption{Hauptfenster nach dem Starten der Software}
 	\label{fig:ErgSoftwareUse1}
 \end{figure}
 Sofern eine Verbindung mit der Datenbank aufgebaut werden konnte, erhält der Benutzer nach Start der Anwendung das Hauptfenster wie in Abbildung \ref{fig:ErgSoftwareUse1} angezeigt. Es besteht die Möglichkeit zur Auswahl verschiedener Netze, die in der Datenbank angelegt wurden, über den Menüpunkt \textquote{Network selection} und zur Änderung von Parametern wie beispielsweise dem Strompreis oder dem Netzlastprofil über die Schaltfläche \textquote{Settings}.
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ErgSoftwareUse2}
 	\caption{Dialoge \textquote{Select networks} und \textquote{Settings}}
 	\label{fig:ErgSoftwareUse2}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.4\textwidth]{ErgSoftwareUse3}
 	\caption{Dialoge \textquote{Select networks} und \textquote{Settings}}
 	\label{fig:ErgSoftwareUse3}
 \end{figure}
 Die geänderten Werte werden in der Datenbank gespeichert. In ihr sind statische Ergebniswerte für die Netzlast, den Stromverbrauch und die resultierenden Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:VorgSch} beschrieben wird.
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareUse4}
 	\caption{Ausgabe der Ergebnisse in Diagrammform (hier die in Kapitel \ref{subsec:VorgSch} ermittelten statischen Werte)}
