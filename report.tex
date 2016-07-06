@@ -56,11 +56,23 @@
   url=true,
   doi=true,
   eprint=false
-]{biblatex}%NC: replaced bibtex by biber
+]{biblatex}
 \bibliography{literatur.bib}%Dateiname für Quellen einfügen
 %\usepackage{ragged2e} %für bessere URL formatierung bei printbibliography - Noch mal checken, was das tut...
 \setcounter{biburllcpenalty}{9000}% Trennung bei Kleinbuchstaben 
 \setcounter{biburlucpenalty}{9000}% Trennung bei Großbuchstaben
+\AtEveryBibitem{%
+  \ifboolexpr
+    {
+      test { \ifentrytype{article} }
+      or
+      test { \ifentrytype{inbook} }
+      or
+      test { \ifentrytype{inproceedings} }
+    }
+    {\clearfield{url}}
+    {}%
+}
 
 %Bilder einbinden und auf der gleichen seite ein
 %Fußnotenzitat einzufügen
