@@ -156,12 +156,10 @@ Zu der genannten Problematik kommt noch die Komplexität der Berechnung des Stro
 
 \subsection{Abschätzung des Energieverbrauchs} \label{subsec:VorgSch}
 
+
 Obgleich die Komplexität des vollständigen Simulationsalgorithmus eine Implementierung im Rahmen der Arbeit verhinderte, wurde dennoch ein beispielhafter Vergleich eines herkömmlichen und eines energieeffizienten Telekommunikationsnetzwerkes durchgeführt. Ergebnisse hinsichtlich Energieverbrauch und Stromkosten sind in der aktuellen Software-Version statisch hinterlegt. Als Grundlage wurde die Fallstudie eines italienischen Forscher-Konsortiums aus Turin herangezogen, die die Energieeinsparungspotenziale im realen Netz eines der größten italienischen Internet-Service-Provider analysiert\cite{Chiaraviglio2009}. Das untersuchte Netzwerk gliedert sich in die vier Ebenen \textquote{Core}, \textquote{Backbone}, \textquote{Metro} und \textquote{Feeder}, deren Energieverbrauch und Anzahl der Netzelemente in der Tabelle \ref{tab:beispielnetz} aufgelistet sind\cite[2]{Chiaraviglio2009}. Die Energie zur Kühlung der Netzelemente wird in der Fallstudie nicht betrachtet.
 
-
-
-
-\begin{table}[htb]
+\begin{table}[!htb]
 \centering
 \caption{Aufbau des Beispielnetzes}
 \label{tab:beispielnetz}
@@ -181,10 +179,11 @@ Somit ergibt sich der Energieverbrauch pro Stunde für das nicht-optimierte Beis
 P_{ges/h} = P_{Node} + P_{Link} = 0,808 MWh + 0,594 MWh = 1,42 MWh
  \end{equation}
 
-
 Als normalisierte Lastkurve wird die in Abbildung \ref{fig:VorgModLast} dargestellte Sinus-Funktion sowohl für das her\-kömm\-liche als auch das energieeffiziente Netzwerk angenommen und im Java-Programm abgebildet. In der Fallstudie wurde die Energieeffizienz durch dynamisches Abschalten von Geräten und Verbindungen, die keiner Netzwerklast ausgesetzt sind, erhöht.\cite[3]{Chiaraviglio2009} Für das nicht-optimierte Netz wird aufgrund fehlender Detaildaten angenommen, dass der Energieverbrauch unabhängig von der Netzlast ist. Dabei ergeben sich die in Tabelle \ref{tab:stromverbrauch} angegebenen Stromverbrauchswerte pro Stunde für beide Netze, welche in der Simulationssoftware statisch hinterlegt wurden und als Grundlage der Diagrammerstellung dienen.
 
-\begin{table}[htb]
+
+
+\begin{table}[!htbp]
 \centering
 \caption{Vergleich des Energieverbrauchs pro Stunde zwischen herkömmlichem und energieeffizientem Netz}
 \label{tab:stromverbrauch}
@@ -193,11 +192,7 @@ Als normalisierte Lastkurve wird die in Abbildung \ref{fig:VorgModLast} dargeste
 	& Herkömmliches Netz & Energieeffizientes Netz \\ \hline \hline
 	0 Uhr & 1,42 & 0,95 \\ \hline
 	1 Uhr & 1,42 & 0,95 \\ \hline
-	2 Uhr & 1,42 & 0,95 \\ \hline
-	3 Uhr & 1,42 & 0,95 \\ \hline
-	4 Uhr & 1,42 & 0,95 \\ \hline
-	5 Uhr & 1,42 & 0,95 \\ \hline
-	6 Uhr & 1,42 & 0,95 \\ \hline
+	\dots & \dots & \dots \\ \hline
 	7 Uhr & 1,42 & 0,95 \\ \hline
 	8 Uhr & 1,42 & 1,08 \\ \hline
 	9 Uhr & 1,42 & 1,13 \\ \hline

@@ -6,36 +6,13 @@ Für die Darstellung der Ergebnisse des Projekts soll zunächst der entwickelte 
 Wie in Kapitel \ref{subsec:VorgAlg} dargestellt, wurde ein Algorithmus entwickelt, der es erlaubt, Netzlast (Traffic) dynamisch durch ein definiertes Netz zu routen und anschließend nicht benötigte Geräte und Verbindungen abzuschalten.
 Grundlegend ist das Ziel, für jeden Zeitabschnitt die beste erzielbare Lösung zur stromsparenden Bewältigung (Durchleitung) des Traffics von dem Eingangspunkt in das Netz (Quelle) bis zum Austrittspunkt (Senke) zu berechnen. Zur Vereinfachung wurde die Annahme getroffen, dass über die Dauer eines Zeitabschnittes (einer Iteration) die durch den Algorithmus getroffenen Routing-Entscheidungen und die Wahl der abzuschaltenden Hardware gleich bleiben. Geht man von 24 Iterationen aus, so würde also der Zustand des Netzes für jede Stunde neu berechnet werden. Durch eine Verkürzung der Iterationsdauer und Generierung dazu passender Netzlast-Daten ließe sich bei Bedarf mit geringem Aufwand ein genaueres, verfeinertes Modell durchrechnen, so dass ein realistischeres Resultat zu erwarten ist.
 
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.6\textwidth]{1Berechnung_elektr_Stromverbrauch}
-	\caption{Programmablaufplan zur Anwendungslogik}
-	\label{fig:1Berechnung_elektr_Stromverbrauch}
-\end{figure}
-
-
 Für jedes zu vergleichende Netz wird eine Datenreihe bestehend aus einem Stromverbrauchswert je Iterationszeitraum berechnet. Um die Einzelwerte zu berechnen, werden zuerst die Lasten aus jedem Netzlastprofil-Eintrag möglichst effizient auf die Netzwerkhardware und Verbindungen projiziert, und danach abschließend abhängig von den berechneten Geräteauslastungen die Teil-Stromverbrauchswerte addiert.
-
 
 Mit der geschilderten Vorgehensweise lässt sich das gesuchte Ergebnis je Modellnetzwerk inklusive des zeitlichen Verlaufs errechnen. Allerdings fehlt dazu noch die Antwort auf die Frage, wie die effizienten Routing-Entscheidungen getroffen werden können. Der folgende Teil des Algorithmus beschreibt eine mögliche Lösung:
 
-
 Um zu entscheiden, welches Routing für die einzelnen Netzlastprofil-Einträge je Iteration das beste Resultat liefert, wird je möglicher Route eine dynamische Penalty (Kosten-Faktor) berechnet. Anschließend wird für das Netzlastprofil die Route mit der niedrigsten errechneten Penalty, welche die Datendurchsatzgrenzen der Hardware und somit der einzelnen Verbindungen nicht überschreiten, als beste Route angenommen. Es handelt sich um einen sogenannten Greedy Algorithmus, ein lokales Lösungsverfahren, das nicht unbedingt das insgesamt beste Ergebnis liefert. Vielmehr wird nur das lokale Optimum für das betrachtete Teilproblem, hier also das Routing für ein Netzlast-Element, berechnet. Um eine schnelle praktische Ausführungszeit auch bei Berechnungen mehrerer Vergleichsnetze mit kurzen Iterationsintervallen zu erreichen, beinhaltet der entwickelte Algorithmus intelligente Entscheidungsfunktionen.  So werden schlechte Routen frühzeitig ignoriert und nicht zielführende Berechnungen, wie sie beispielsweise bei Schleifenbildung auftreten, verhindert.
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth]{2Routingentscheidung}
-	\caption{Programmablaufplan zum übergreifenden Anteil des Routing-Algorithmus}
-	\label{fig:2Routingentscheidung}
-\end{figure}
 
 Da die zur Verbindungsbewertung verwendete Penalty mehreren Faktoren wie Latenz, elektrischer Stromverbrauch, Kapazität der Verbindung und auch An-/Aus-Status der Hardware berücksichtigen muss, und die genannten Faktoren je nach Verwendungszweck des Netzes unterschiedliche Gewichtung haben, müssen die einzelnen Anteile mit vom Anwender der Simulationssoftware festgelegten Gewichtungsfaktoren multipliziert werden. Damit kann der Nutzer die Netzsimulation auf seine Anforderungen ansatzweise anpassen.
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.9\textwidth]{3Rekursives_Routing}
-	\caption{Rekursiver Anteil des Routing-Algorithmus}
-	\label{fig:3Rekursives_Routing}
-\end{figure}
 
 
 Alles in allem ist ein Regelsatz zur Penaltyberechnung je Iteration notwendig, an Hand dessen die Algorithmus-Implementierung jeweils versucht, das lokale Optimum zum Routingproblem als Lösung zu finden.
@@ -49,6 +26,29 @@ Der folgende Regelsatz ergab sich aus dem Durchlaufen einer solchen Simulation a
 \end{itemize}
 Einzelne Verbindungen haben zusätzlich zu dem dynamischen Anteil außerdem jeweils eine feste Penalty, die sich aus  ihrer Länge und damit der Anzahl an Signalverstärkern ergibt und statisch in der Datenbank hinterlegt ist.
 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.65\textwidth]{1Berechnung_elektr_Stromverbrauch}
+	\caption{Programmablaufplan zur Anwendungslogik}
+	\label{fig:1Berechnung_elektr_Stromverbrauch}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{2Routingentscheidung}
+	\caption{Programmablaufplan zum übergreifenden Anteil des Routing-Algorithmus}
+	\label{fig:2Routingentscheidung}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{3Rekursives_Routing}
+	\caption{Rekursiver Anteil des Routing-Algorithmus}
+	\label{fig:3Rekursives_Routing}
+\end{figure}
+
+\newpage
 \subsection{Die erstellte Software aus Ergebnissicht}\label{subsec:ErgSoftware}
 Im Rahmen der Software-Entwicklung wurde das Java-Programm \textquote{EnergyNetSim} mitsamt Anbindung an eine MySQL-Datenbank realisiert. Die folgenden Unterkapitel beschreiben die erzielten Resultate und geben Hinweise auf Installation und Benutzung der Software für Endanwender.
 
@@ -72,16 +72,17 @@ Auf die notwendigen Schritte zur Installation der erstellten Software wird im na
 \end{itemize}
 
 \subsubsection{Installation der Software}\label{subsubsec:ErgSoftwareInst}
-Von den zwei vorgestellten möglichen Wegen, über die die Simulationssoftware zu beziehen ist, wird im Anschluss die Inbetriebnahme mittels JAR-Datei beschrieben. Das Kapitel richtet sich somit vornehmlich an Endanwender.
-Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git sowie einer Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts überschreiten. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/
-Ebenso bietet Oracle eine ausführliche Java-Dokumentation: http://www.oracle.com/technetwork/java/javase/downloads/index.html} zur Verwendung der beschriebenen Programme, sodass aus einer erneuten Schilderung kein wissenschaftlicher Mehrwehrt entstünde.
-Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abbildung \ref{fig:ErgSoftwareInst1} abgebildeten Schritte erforderlich.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst1}
 	\caption{Schritte der Installation}
 	\label{fig:ErgSoftwareInst1}
 \end{figure}
+Von den zwei vorgestellten möglichen Wegen, über die die Simulationssoftware zu beziehen ist, wird im Anschluss die Inbetriebnahme mittels JAR-Datei beschrieben. Das Kapitel richtet sich somit vornehmlich an Endanwender.
+Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git sowie einer Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts überschreiten. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/
+Ebenso bietet Oracle eine ausführliche Java-Dokumentation: http://www.oracle.com/technetwork/java/javase/downloads/index.html} zur Verwendung der beschriebenen Programme, sodass aus einer erneuten Schilderung kein wissenschaftlicher Mehrwehrt entstünde.
+Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abbildung \ref{fig:ErgSoftwareInst1} abgebildeten Schritte erforderlich.
+
 Voraussetzung ist das Vorhandensein der aktuellsten Version der Java-Laufzeitumgebung, kurz \textquote{JRE}. Innerhalb der JRE kann die Anwendung betriebssystemunabhängig in der Java-Virtual-Maschine (kurz: \textquote{JVM}) ausgeführt werden. Das Java Runtime Environment ist über die Webseite der Firma ORACLE\footnote{Zum Zeitpunkt der Abgabe des Berichtes ist der Download über folgenden Link möglich: http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html} zu beziehen und zu installieren.
 Weil die Java-Anwendung auf eine MySQL-Datenbank als Persistenzschicht zugreifen soll, wird zusätzlich ein lokaler MySQL-Server benötigt, der über die IP-Adresse 127.0.0.1 / \textquote{localhost} und den Port 3306 erreichbar ist. Das Entwicklerteam empfiehlt den Einsatz des Open-Source-Datenbankservers \textquote{MySQL Community Server}, der ebenfalls von ORACLE\footnote{Zum Zeitpunkt der Abgabe des Berichtes ist der Download über folgenden Link möglich: http://dev.mysql.com/downloads/mysql/} unter der GNU General Public License kostenlos angeboten wird. Ebenfalls empfehlenswert ist die Verwendung des Datenbank-Modellierungs- und Manipulationswerkzeugs \textquote{MySQL Workbench}, das über denselben Weg bezogen werden kann.
 Nach der erfolgreichen Installation der beschriebenen Komponenten muss der SQL-Server gestartet werden, um die Datenbank anzulegen. Für Nutzer eines Windows-Betriebssystems sind dazu folgende Schritte erforderlich:
@@ -89,14 +90,22 @@ Nach der erfolgreichen Installation der beschriebenen Komponenten muss der SQL-S
 \begin{description}
 \item [Starten des MySQL-Server-Dienstes:]
 Durch Klick auf \textquote{starten} wird der SQL-Server hochgefahren und der Status ändert sich in \textquote{Gestartet}.
+
+\item [Anlegen einer neuen Verbindung zum Server:]
+Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in Tabelle \ref{tab:mysql} aufgeführten Daten hergestellt.
+
+\item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts befindet, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema \textquote{energynetsimdb}.
+
+\item [Ausführen der JAR-Datei:] Durch Doppelklick auf die Datei \textquote{EnergyNetSim.jar} wird das Programm gestartet. Im weiteren Verlauf wird die Verwendung des Programmes aus Endanwender-Sicht geschildert.
+\end{description}
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst2}
 	\caption{Starten des MySQL-Server-Dienstes}
 	\label{fig:ErgSoftwareInst2}
 \end{figure}
-\item [Anlegen einer neuen Verbindung zum Server:]
-Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in Tabelle \ref{tab:mysql} aufgeführten Daten hergestellt.
+
 \begin{table}[htb]
 \centering
 \caption{Parameter für das Einrichten des DB-Verbindung in der MySQL Workbench}
@@ -116,21 +125,19 @@ Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in T
 	Passwort & NetSimUser\\
 	 \end{tabular}
 \end{table}
-\begin{figure}[htb]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst3}
 	\caption{Konfigurieren einer neuen Verbindung zum MySQL-Server}
 	\label{fig:ErgSoftwareInst3}
 \end{figure}
-\item [Importieren des Datenbank-Schemas:] Das Initialisierungsskript der Datenbank, welches sich im Anhang des Projektberichts befindet, kann daraufhin über Server $ > $ Import Data $ > $ Import from Self-Contained File auf dem neuen MySQL-Server ausgeführt werden. Im Ergebnis existiert nun das Schema \textquote{energynetsimdb}.
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{ErgSoftwareInst4}
 	\caption{Das importierte Datenbankschema \textquote{energynetsimdb}}
 	\label{fig:ErgSoftwareInst4}
 \end{figure}
-\item [Ausführen der JAR-Datei:] Durch Doppelklick auf die Datei \textquote{EnergyNetSim.jar} wird das Programm gestartet. Im weiteren Verlauf wird die Verwendung des Programmes aus Endanwender-Sicht geschildert.
-\end{description}
 
 \subsubsection{Benutzung der Software zum aktuellem Stand}
 Da momentan nur das Rahmenwerk für eine spätere Implementierung von Simulationsansätzen realisiert ist, bietet das Programm nur eine eingeschränkte Funktionalität für den Endnutzer. Auf Erweiterungsmöglichkeiten und dafür vorgesehene Strukturen im Kode wird in Abschnitt \ref{subsubsec:ErgSoftwErweiterung} eingegangen.
@@ -154,7 +161,7 @@ Sofern eine Verbindung mit der Datenbank aufgebaut werden konnte, erhält der Be
 	\label{fig:ErgSoftwareUse3}
 \end{figure}
 Die geänderten Werte werden in der Datenbank gespeichert. In ihr sind statische Ergebniswerte für die Netzlast, den Stromverbrauch und die resultierenden Kosten hinterlegt, deren Ermittlung in Kapitel \ref{subsec:VorgSch} beschrieben wird.
-\begin{figure}[htb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareUse4}
 	\caption{Ausgabe der Ergebnisse in Diagrammform (hier die in Kapitel \ref{subsec:VorgSch} ermittelten statischen Werte)}
