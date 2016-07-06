@@ -5,7 +5,7 @@ In diesem Kapitel wird das Vorgehen der Projektgruppe detailliert dargestellt. D
 Zur Betrachtung der Wirtschaftlichkeit eines energieeffizienten Netzes muss ein Vergleich zwischen einem Standardnetz (Business-As-Usual-Netz) und einem energieeffizienten Netz durchgeführt werden. Bei der Spezifikation des Netzes liegt ein Hauptaugenmerk auf der Eingrenzung des Netzes. Im Rahmen dieser Arbeit soll dabei nur das Core-Netz betrachtet werden. Der eingerahmte Bereich aus Abbildung \ref{fig:VorgModNetz} beinhaltet die \textquote{Broadband Network Gateway} (BNG), \textquote{Label-Switch-Router} (LSR) und \textquote{Label-Edge-Router} (LER).
 
 
-\begin{figure}[!ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{VorgModNetz}
 	\caption{Eingrenzung des Netzwerks} 
@@ -15,7 +15,7 @@ Zur Betrachtung der Wirtschaftlichkeit eines energieeffizienten Netzes muss ein 
 
 Damit ein Vergleich möglich ist, müssen beide Netze identisch modelliert werden. Das statische soll in der Simulation nicht  verändert werden. Das zweite Netz soll die im Kapitel \ref{SdF} beschriebenen Technologien anwenden und die Effizienz des Netzes damit zu steigern. Um sowohl das Standard als auch das effiziente Netz möglichst realistisch zu modellieren, sollen die Geräte pro Layer gewählt werden. Die Geräte werden dann in der Datenbank konfiguriert.  Die Modellierung des Netzes erfolgt durch die Erstellung von Verbindungen zwischen den Geräten in Abhängigkeit von der Netzlastverteilung. Zuvor muss eine Anzahl von Knoten im Netz definiert und ein Netzlastprofil erstellt werden.
 
-\begin{figure}[!ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{VorgModLast}
 	\caption{Idealtypische Netzlast-Kurve (nach \cite[3]{Chiaraviglio2009})} 
@@ -29,7 +29,7 @@ Die Kurve aus Abbildung \ref{fig:VorgModLast} hat ihren Tiefpunkt um kurz nach 3
 \subsection{Entwicklung des Routing-Algorithmus}\label{subsec:VorgAlg}
 Zur Simulation des Netzwerkes, der Lastverteilung und darauf basierend zur Berechnung des elektrischen Stromverbrauches des Netzwerkes ist ein iterativer Ansatz notwendig. Jede Iteration stellt einen Zeitabschnitt dar, für den mehrere Datenströme, definiert durch eine Netzlast, den Traffic-Ursprung (Quelle) und das Traffic-Ziel (Senke), durch das Netz geleitet werden. Die iterative Berechnung erlaubt die getrennte Bestimmung des Stromverbrauches für jeden Zeitraum. Dies ermöglicht die Beachtung der Uhrzeit-abhängigen Belastung der Carrier-Netze und darauf basierend das An- oder Ausschalten von Netzkomponenten zur Steigerung der Energieeffizienz des Carrier-Netzes.  
 
-\begin{figure}[!ht]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{VorgAlgNetzrouting}
 	\caption{Modellnetz mit mehreren Routingmöglichkeiten}
@@ -113,7 +113,7 @@ Die Vorteile der Architektur sind die gute Portabilität der resultierenden Lös
 Das Datenbank-Konzept ist entscheidend für die Softwareentwicklung. Es werden alle relevanten Daten für Berechnungen, Konfigurationen und Darstellungen gespeichert. Auf der Basis der Datenbankstruktur kann die Entwicklung der Softwarelösung weitergeführt werden.
 
 
-\begin{figure}[!ht]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{VorgSoftwareER}
 	\caption{ER-Diagramm} %TODO Bezeichnung anpassen
@@ -159,7 +159,7 @@ Obgleich die Komplexität des vollständigen Simulationsalgorithmus eine Impleme
 
 
 
-\begin{table}[ht]
+\begin{table}[htb]
 \centering
 \caption{Aufbau des Beispielnetzes}
 \label{tab:beispielnetz}
@@ -182,7 +182,7 @@ P_{ges/h} = P_{Node} + P_{Link} = 0,808 MWh + 0,594 MWh = 1,42 MWh
 
 Als normalisierte Lastkurve wird die in Abbildung \ref{fig:VorgModLast} dargestellte Sinus-Funktion sowohl für das her\-kömm\-liche als auch das energieeffiziente Netzwerk angenommen und im Java-Programm abgebildet. In der Fallstudie wurde die Energieeffizienz durch dynamisches Abschalten von Geräten und Verbindungen, die keiner Netzwerklast ausgesetzt sind, erhöht.\cite[3]{Chiaraviglio2009} Für das nicht-optimierte Netz wird aufgrund fehlender Detaildaten angenommen, dass der Energieverbrauch unabhängig von der Netzlast ist. Dabei ergeben sich die in Tabelle \ref{tab:stromverbrauch} angegebenen Stromverbrauchswerte pro Stunde für beide Netze, welche in der Simulationssoftware statisch hinterlegt wurden und als Grundlage der Diagrammerstellung dienen.
 
-\begin{table}[!ht]
+\begin{table}[htb]
 \centering
 \caption{Vergleich des Energieverbrauchs pro Stunde zwischen herkömmlichem und energieeffizientem Netz}
 \label{tab:stromverbrauch}
