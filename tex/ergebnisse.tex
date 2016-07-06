@@ -76,7 +76,7 @@ Von den zwei vorgestellten möglichen Wegen, über die die Simulationssoftware z
 Die Einbindung des GitHub-Repositories ist vor allem für Entwickler interessant und erfordert daher Kenntnisse im Umgang mit der Versionsverwaltungssoftware Git sowie einer Java-Entwicklungsumgebung, beispielsweise IntelliJ oder Eclipse. Des Weiteren muss das Java-Development-Kit in seiner aktuellsten Version installiert werden. Was gerade in Kurzform skizziert wurde, würde in einer ausführlichen Fassung den Rahmen des Berichts überschreiten. Außerdem existiert eine ausreichende Zahl an Online-Communities und Anleitungen\footnote{Auf der Webseite von GitHub findet sich eine Sammlung von Links zum Erlernen von Git: https://help.github.com/articles/good-resources-for-learning-git-and-github/
 Ebenso bietet Oracle eine ausführliche Java-Dokumentation: http://www.oracle.com/technetwork/java/javase/downloads/index.html} zur Verwendung der beschriebenen Programme, sodass aus einer erneuten Schilderung kein wissenschaftlicher Mehrwehrt entstünde.
 Bis das Java-Programm mittels JAR-Datei ausgeführt werden kann, sind die in Abbildung \ref{fig:ErgSoftwareInst1} abgebildeten Schritte erforderlich.
-\begin{figure}[]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{ErgSoftwareInst1}
 	\caption{Schritte der Installation}
@@ -97,7 +97,7 @@ Durch Klick auf \textquote{starten} wird der SQL-Server hochgefahren und der Sta
 \end{figure}
 \item [Anlegen einer neuen Verbindung zum Server:]
 Innerhalb der MySQL-Workbench wird eine Verbindung zum MySQL-Server mit den in Tabelle \ref{tab:mysql} aufgeführten Daten hergestellt.
-\begin{table}[]
+\begin{table}[htb]
 \centering
 \caption{Parameter für das Einrichten des DB-Verbindung in der MySQL Workbench}
 \label{tab:mysql}
@@ -191,6 +191,6 @@ Sobald mit der Entwicklung des Algorithmus angefangen wurde, stellte sich heraus
 
 Um eine Umsetzung des Algorithmus zu ermöglichen, mussten also sehr viele Annahmen getroffen werden. Hierdurch geht das eigentliche Ziel, eine sachlich richtige Simulation durchzuführen, weitgehend verloren, da im Vergleich zu echten existierenden Backbone-Netzwerken die Vergleichbarkeit und damit die Praxistauglichkeit der Simulation nicht gegeben ist.
 
-Stattdessen wurde ein solides Grundgerüst in Softwareform entwickelt, auf das weitere Forschungen aufsetzen können. Es erleichtert die Implementierung von Algorithmen wie jenen, die im Kapitel 4 beschrieben wurden, da die Konzeption in dieser Arbeit bereits umfänglich beschrieben wird. Zur Darstellung der Potenziale von energieeinsparenden Verfahren wurde auf vorhandene Forschungsergebnisse aufgesetzt.
+Stattdessen wurde ein solides Grundgerüst in Softwareform entwickelt, auf das weitere Forschungen aufsetzen können. Es erleichtert die Implementierung von Algorithmen wie jenen, die im Kapitel \ref{subsec:ErgAlg} beschrieben wurden, da die Konzeption in der vorliegenden Arbeit bereits umfänglich vorgestellt wird. Zur Darstellung der Potenziale von energieeinsparenden Verfahren wurde auf vorhandene Forschungsergebnisse aufgesetzt.
 
-Bei Betrachtung des Gesamtverbrauchs resultiert ein Energieeinsparpotenzial von 23,5 Prozent pro Jahr  \cite[5]{Chiaraviglio2009}, in Geldeinheiten\cite{Proteus2016} bewertet, 91.500 Euro. Die Modellierung des Netzes orientierte sich an \cite{Chiaraviglio2009}, worin ein Netz ähnlich dem eines großen italienischen Carriers definiert wird. Skaliert man das Einsparpotenzial auf einen großen europäischen Telekommunikationskonzern wie die Deutsche Telekom AG, ergeben sich weit größere Summen, die gespart werden können. Hierbei ist zu beachten, dass weitere Einsparungen durch die Integration zusätzlicher energiesparender Technologien wie Hybrid Optical Switching erreicht werden können.
+Bei Betrachtung des Gesamtverbrauchs ergibt sich für das Beispielnetz ein Energieeinsparpotenzial von 23,5 Prozent pro Jahr  \cite[5]{Chiaraviglio2009}, in Geldeinheiten\cite{Proteus2016} bewertet 91.500 Euro. Die Modellierung des Netzes orientierte sich an \cite{Chiaraviglio2009}, worin ein Netz ähnlich dem eines großen italienischen Carriers definiert wird. Skaliert man das Einsparpotenzial auf einen großen europäischen Telekommunikationskonzern wie die Deutsche Telekom AG, ergeben sich weit größere Summen, die gespart werden können. Hierbei ist zu beachten, dass weitere Einsparungen durch die Integration zusätzlicher energiesparender Technologien wie Hybrid Optical Switching erreicht werden können.
