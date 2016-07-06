@@ -128,36 +128,50 @@
 
 
 
-\import{tex/}{title.tex}
-
-
-\newpage
-\tableofcontents{}
-%\addtocontents{toc}{~\hfill\textbf{Seite}\par}
-\newpage
-\listoffigures
-\listoftables
-\newpage
-
-%---------------
-% Import contents
-%---------------
-
-\pagenumbering{arabic}%Reset page counter
-\pagestyle{headings}
-\import{tex/}{einleitung.tex}
-
-\import{tex/}{problemstellung.tex}
-
-\import{tex/}{stand-der-forschung.tex}
-
-\import{tex/}{vorgehen.tex}
-
-\import{tex/}{ergebnisse.tex}
-
-\import{tex/}{ausblick.tex}
-
-\newpage
-\printbibliography[heading=bibintoc]
-
+	\import{tex/}{title.tex}
+	
+	
+	\newpage
+	\tableofcontents{}
+	%\addtocontents{toc}{~\hfill\textbf{Seite}\par}
+	\newpage
+	\listoffigures
+	\listoftables
+	\newpage
+	
+	%---------------
+	% Import contents
+	%---------------
+	
+	\pagenumbering{arabic}%Reset page counter
+	\pagestyle{headings}
+	\import{tex/}{einleitung.tex}
+	
+	\import{tex/}{problemstellung.tex}
+	
+	\import{tex/}{stand-der-forschung.tex}
+	
+	\import{tex/}{vorgehen.tex}
+	
+	\import{tex/}{ergebnisse.tex}
+	
+	\import{tex/}{ausblick.tex}
+	
+	\newpage
+	\printbibliography[heading=bibintoc]
+	
+	\newpage
+	\appendix
+	
+	\addcontentsline{toc}{section}{Anhang}
+	\section{Dateianhang appendix.zip}
+	Die folgenden Bestandteile befinden sich als komprimiertes zip-Archiv im Anhang des Projektberichts:
+		\begin{description}
+			\item[/documentation] Die vollständige Dokumentation des Programmcodes ist unter dem Pfad /documentation/index.html über einen Webbrowser aufrufbar.
+			\item[/sql] Zur initialen Erstellung des Datenbank-Schemas inklusive Benutzer und Tabelleninhalten ist das im Verzeichnis /sql abgelegte Skript zu verwenden.
+			\item[/src] Alle Java-Packages mit ihren Klassen können im Ordner /src unkompiliert eingesehen werden.
+			\item[EnergyNetSim.jar] Die ausführbare Programmdatei des erstellten Simulators, die durch einen Doppelklick gestartet werden kann. Installationshinweise finden sich in Kapitel \ref{subsubsec:ErgSoftwareInst}.
+		\end{description}
+	
+	
 \end{document}
